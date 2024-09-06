@@ -3,16 +3,8 @@
 //!Connect To DB
 require("./core/Database.php");
 
-//!Fetch Data
-function fetchData($connect,$sql){
-  $stmt=mysqli_prepare($connect,$sql);
-  if(!$stmt || !mysqli_stmt_execute($stmt)){
-    die("Error Execute Query:".mysqli_stmt_error($stmt));
-  }
-  $result=mysqli_stmt_get_result($stmt);
-  $data=mysqli_fetch_all($result,MYSQLI_ASSOC);
-  return $data;
-}
+//!Fetch Function
+require("./core/model.php");
 
 //!SLIDER
 $sliders=fetchData($connect,"SELECT * FROM `tbl_slider`");
