@@ -23,7 +23,7 @@
             <input type="text" placeholder="Search.." name="search" />
           </div>
         </div>
-        <a href="/">
+        <a href="./">
           <img src="./public/images/logo.png" alt="" />
         </a>
         <nav>

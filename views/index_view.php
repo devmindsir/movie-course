@@ -15,7 +15,7 @@
           <?php
           foreach($sliders as $slider):
           ?>
-          <a class="mySlides fade">
+          <a href="./movie-details?id=<?=$slider['id']?>" class="mySlides fade">
             <img src="<?=$slider['image']?>" />
             <div class="slider-text"><?=$slider['title']?></div>
           </a>
@@ -47,7 +47,7 @@
             <?php
             foreach($newMovies as $newMovie):
             ?>
-            <a href="#" class="info-box">
+            <a href="./movie-details?id=<?=$newMovie['id']?>" class="info-box">
               <img
                 src="<?=$newMovie['image_path']?>" />
               <div class="home-scrollbar-title"><?=$newMovie['title']?></div>
@@ -74,7 +74,7 @@
             <?php
             foreach($popularMovies as $popularMovie):
             ?>
-            <a href="#" class="info-box">
+            <a href="./movie-details?id=<?=$popularMovie['id']?>" class="info-box">
               <img
                 src="<?=$popularMovie['image_path']?>" />
               <div class="home-scrollbar-title"><?=$popularMovie['title']?></div>

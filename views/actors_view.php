@@ -12,7 +12,7 @@
           <?php
           foreach($actors as $row):
           ?>
-          <div class="list-item-people">
+          <a href="./actor-details?id=<?=$row['id']?>" class="list-item-people">
             <img
               class="list-item-image"
               src="<?=$row['image']?>"
@@ -20,7 +20,7 @@
             <div class="list-item-details-people">
               <p class="item-title-people"><?=$row['name']." ".$row["family"]?></p>
             </div>
-          </div>
+          </a>
           <?php
           endforeach;
           ?>

@@ -11,7 +11,7 @@
           <?php
           foreach($movies as $row):
           ?>
-          <div class="list-item">
+          <a href="./movie-details?id=<?=$row['id']?>" class="list-item">
             <img
               class="list-item-image"
               src="<?=$row['image_path']?>"
@@ -24,7 +24,7 @@
                 <h5><?=$row['rate']?></h5>
               </div>
             </div>
-          </div>
+          </a>
 
           <?php
           endforeach;
