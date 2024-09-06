@@ -34,17 +34,17 @@
               <i class="fa-solid fa-layer-group"></i>
               <a href="./">Discover</a>
             </li>
-            <li class="<?=getUrl("/movies.php")? "active-link" : "" ?>">
+            <li class="<?=getUrl("/movies")? "active-link" : "" ?>">
               <i class="fa-solid fa-video"></i>
-              <a href="./movies.php">Movies</a>
+              <a href="./movies">Movies</a>
             </li>
-            <li class="<?=getUrl("/series.php")? "active-link" : "" ?>">
+            <li class="<?=getUrl("/series")? "active-link" : "" ?>">
               <i class="fa-solid fa-tv"></i>
-              <a href="./series.php">Tv Series</a>
+              <a href="./series">Tv Series</a>
             </li>
-            <li class="<?=getUrl("/actors.php")? "active-link" : "" ?>">
+            <li class="<?=getUrl("/actors")? "active-link" : "" ?>">
               <i class="fa-solid fa-users"></i>
-              <a href="./actors.php">People</a>
+              <a href="./actors">People</a>
             </li>
           </ul>
         </nav>
