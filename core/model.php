@@ -1,20 +1,31 @@
 <?php
 
 //!Fetch Data
-function fetchData($sql,$prams=[],$fetch=""){
-  global $connect;
-  $stmt=mysqli_prepare($connect,$sql);
-  if(!$stmt || !mysqli_stmt_execute($stmt,$prams)){
-    die("Error Execute Query:".mysqli_stmt_error($stmt));
-  }
-  $result=mysqli_stmt_get_result($stmt);
-  if($fetch===""){
-  $data=mysqli_fetch_all($result,MYSQLI_ASSOC);
-  }elseif($fetch==="fetch"){
-    $data=mysqli_fetch_assoc($result);
-  }
-  return $data;
+interface FetchInterface{
+  public function fetchData($sql,$params=[],$fetch="");
 }
+class DatabaseFetcher extends Database implements FetchInterface{
+  public function fetchData($sql,$params=[],$fetch=""){
+    $pdo=$this->getConnection();
+    try{
+    $stmt=$pdo->prepare($sql);
+    foreach($params as $key=>$value){
+      $stmt->bindValue($key+1,$value);
+    }
+    $stmt->execute();
+    if($fetch===''){
+      return $stmt->fetchAll();
+    }elseif($fetch==='fetch'){
+      return $stmt->fetch();
+    }
+  }catch(PDOException $e){
+    error_log($e->getMessage(),3,'./errors.log');
+    echo "query Error=".$e->getMessage();
+    return[];
+  }
+  }
+}
+$fetcher=new DatabaseFetcher('localhost','db_movie','root','');
 
 
 ?>

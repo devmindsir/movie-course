@@ -4,7 +4,7 @@
 require("./core/model.php");
 
 //!actors
-$actors=fetchData("SELECT id,name,family,image FROM `tbl_actors`");
+$actors=$fetcher->fetchData("SELECT id,name,family,image FROM `tbl_actors`");
 
 require("./views/actors_view.php");
 ?>

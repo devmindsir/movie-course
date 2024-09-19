@@ -92,6 +92,6 @@
         </div>
       </div>
     </div>
-    <script type="module" src="./js/details.js"></script>
+    <script type="module" src="./public/js/details.js"></script>
   </body>
 </html>

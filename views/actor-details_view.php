@@ -77,6 +77,6 @@
         </div>
       </div>
     </div>
-    <script type="module" src="./js/people-details.js"></script>
+    <script type="module" src="./public/js/people-details.js"></script>
   </body>
 </html>

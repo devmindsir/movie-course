@@ -5,7 +5,7 @@ require("./core/model.php");
 
 //!Movie
 $movieId=$_GET['id'];
-$movie=fetchData("
+$movie=$fetcher->fetchData("
 SELECT 
 m.*,
 GROUP_CONCAT(DISTINCT a.image) AS actor_image,
