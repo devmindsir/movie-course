@@ -1,6 +1,5 @@
 <?php
+require("./core/config.php");
 require("./core/Database.php");
-require("./global.php");
-require("./router.php");
-?>
-
+require("./core/global.php");
+require("./core/router.php");
