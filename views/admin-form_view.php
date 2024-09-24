@@ -16,7 +16,7 @@
     <form action="<?= URL ?>addmovie" method="post">
       <div class="form-group">
         <label for="title">Title</label>
-        <input type="text" id="title" name="title" required>
+        <input type="text" value="<?= ($title ?? '') ?>" id="title" name="title" required>
         <?php
         if (isset($errors['title'])) {
         ?>
@@ -27,7 +27,7 @@
       </div>
       <div class="form-group">
         <label for="description">Description</label>
-        <input type="text" id="description" name="description" required>
+        <input type="text" value="<?= ($description ?? '') ?>" id="description" name="description" required>
         <?php
         if (isset($errors['description'])) {
         ?>
@@ -41,9 +41,10 @@
         <select id="genre" name="genre" required>
           <option value="">Select</option>
           <?php
-          foreach ($genres as $genre):
+          foreach ($genres as $row):
+            $selected = ($genre ?? null) == $row['id'] ? 'selected' : '';
           ?>
-            <option class="form-option" value="<?= $genre['id'] ?>"><?= $genre['title'] ?></option>
+            <option class="form-option" <?= $selected ?> value="<?= $row['id'] ?>"><?= $row['title'] ?></option>
           <?php
           endforeach;
           ?>
@@ -62,9 +63,10 @@
         <select id="actor" name="actor" required>
           <option value="">select</option>
           <?php
-          foreach ($actors as $actor):
+          foreach ($actors as $row):
+            $selected = ($actor ?? null) == $row['id'] ? 'selected' : '';
           ?>
-            <option class="form-option" value="<?= $actor['id'] ?>"><?= $actor['name'] . " " . $actor['family'] ?></option>
+            <option class="form-option" <?= $selected ?> value="<?= $row['id'] ?>"><?= $row['name'] . " " . $row['family'] ?></option>
 
           <?php
 
@@ -83,7 +85,7 @@
       </div>
       <div class="form-group">
         <label for="image-url">image src</label>
-        <input type="url" id="image-url" name="image-url" required>
+        <input type="url" id="image-url" value="<?= ($image ?? '') ?>" name="image-url" required>
         <?php
         if (isset($errors['image'])) {
         ?>
@@ -95,8 +97,8 @@
       <div class="form-group">
         <label for="type">Movie/Series</label>
         <select id="type" name="type" required>
-          <option class="form-option" value="0">Movie</option>
-          <option class="form-option" value="1">Series</option>
+          <option class="form-option" <?= ($type ?? null) == 0 ? 'selected' : '' ?> value="0">Movie</option>
+          <option class="form-option" <?= ($type ?? null) == 1 ? 'selected' : '' ?> value="1">Series</option>
         </select>
       </div>
       <div class="form-group">

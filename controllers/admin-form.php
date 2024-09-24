@@ -20,22 +20,13 @@ if (isset($_POST['title'])) {
   $image = $_POST['image-url'];
   $type = $_POST['type'];
   $user_id = 2;
-  $errors = [];
-  if (trim(strlen($title)) < 2) {
-    $errors['title'] = "the title filed is required";;
-  }
-  if (trim(strlen($description)) < 2) {
-    $errors['description'] = "the description filed is required";;
-  }
-  if (trim(strlen($image)) < 2) {
-    $errors['image'] = "the image filed is required";;
-  }
-  if ($genre === "") {
-    $errors['genre'] = "the genre filed is required";;
-  }
-  if ($actor === "") {
-    $errors['actor'] = "the actor filed is required";;
-  }
+
+  //!instantiate Validate
+  $validate = new Validate();
+
+  //!Validate Form
+  $errors = $validate->validateAdd($title, $description, $image, $genre, $actor);
+
   if (empty($errors)) {
     $movie = $fetcher->setData("INSERT INTO tbl_movie (user_id,title,description,genres,actors,image_path,series) VALUES(?,?,?,?,?,?,?)", [$user_id, $title, $description, $genre, $actor, $image, $type]);
 

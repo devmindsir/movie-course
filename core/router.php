@@ -12,6 +12,7 @@ $routes = [
   '/addmovie' => "./controllers/admin-form.php",
   '/edit' => "./controllers/admin-edit.php",
   '/delete' => "./controllers/admin-delete.php",
+  '/404' => "./controllers/not-exist.php",
 
 ];
 
