@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="fa">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./public/css/style.css">
-  <title>admin</title>
-</head>
+<?php
+require("./views/partials/_header.php");
+?>
 
 <body class="admin-body">
   <div class="admin">
@@ -65,8 +59,6 @@
         </tbody>
       </table>
     </div>
-  </div>
-
-</body>
-
-</html>
+    <?php
+    require("./views/partials/_footer.php");
+    ?>

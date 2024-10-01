@@ -4,8 +4,8 @@
 require("./core/model.php");
 
 //!Movie
-$movieId=$_GET['id'];
-$movie=$fetcher->fetchData("
+$movieId = $_GET['id'];
+$movie = $fetcher->fetchData("
 SELECT 
 m.*,
 GROUP_CONCAT(DISTINCT a.image) AS actor_image,
@@ -18,10 +18,12 @@ ON FIND_IN_SET(a.id,m.actors)
 JOIN
 tbl_genres g
 ON FIND_IN_SET(g.id,m.genres)
-WHERE m.id=?",[$movieId],"fetch");
+WHERE m.id=?", [$movieId], "fetch");
 
-$actor_images=explode(",",$movie['actor_image']);
-$genre_titles=explode(",",$movie['genre_title']);
+if (!$movie['id']) {
+  abort();
+}
+$actor_images = explode(",", $movie['actor_image']);
+$genre_titles = explode(",", $movie['genre_title']);
 
- require("./views/movie-details_view.php");
-?>
+require("./views/movie-details_view.php");

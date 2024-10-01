@@ -12,8 +12,6 @@ $routes = [
   '/addmovie' => "./controllers/admin-form.php",
   '/edit' => "./controllers/admin-edit.php",
   '/delete' => "./controllers/admin-delete.php",
-  '/404' => "./controllers/not-exist.php",
-
 ];
 
 
@@ -21,4 +19,11 @@ if (array_key_exists($url, $routes)) {
   require($routes[$url]);
 } else {
   header("location:./");
+}
+
+function abort($code = 404)
+{
+  http_response_code($code);
+  require("./views/errors/{$code}_view.php");
+  die();
 }

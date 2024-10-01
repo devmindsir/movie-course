@@ -30,8 +30,9 @@ if (isset($_POST['title'])) {
   if (empty($errors)) {
     $movie = $fetcher->setData("INSERT INTO tbl_movie (user_id,title,description,genres,actors,image_path,series) VALUES(?,?,?,?,?,?,?)", [$user_id, $title, $description, $genre, $actor, $image, $type]);
 
+    //!redirect
     $message = 'successfully add movie';
-    header('location:' . URL . 'admin?message=' . $message);
+    redirect("admin", $message);
   }
 }
 
