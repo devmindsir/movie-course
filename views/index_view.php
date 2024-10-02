@@ -1,6 +1,6 @@
 <?php
-require("./views/partials/_header.php");
-require("./views/partials/_nav.php");
+require(BASE_PATH . "views/partials/_header.php");
+require(BASE_PATH . "views/partials/_nav.php");
 
 ?>
 <main>
@@ -13,7 +13,7 @@ require("./views/partials/_nav.php");
     <?php
     foreach ($sliders as $slider):
     ?>
-      <a href="./movie-details?id=<?= $slider['id'] ?>" class="mySlides fade">
+      <a href="/movies/show?id=<?= $slider['id'] ?>" class="mySlides fade">
         <img src="<?= $slider['image'] ?>" />
         <div class="slider-text"><?= $slider['title'] ?></div>
       </a>
@@ -45,7 +45,7 @@ require("./views/partials/_nav.php");
       <?php
       foreach ($newMovies as $newMovie):
       ?>
-        <a href="./movie-details?id=<?= $newMovie['id'] ?>" class="info-box">
+        <a href="/movies/show?id=<?= $newMovie['id'] ?>" class="info-box">
           <img
             src="<?= $newMovie['image_path'] ?>" />
           <div class="home-scrollbar-title"><?= $newMovie['title'] ?></div>
@@ -72,7 +72,7 @@ require("./views/partials/_nav.php");
       <?php
       foreach ($popularMovies as $popularMovie):
       ?>
-        <a href="./movie-details?id=<?= $popularMovie['id'] ?>" class="info-box">
+        <a href="/movies/show?id=<?= $popularMovie['id'] ?>" class="info-box">
           <img
             src="<?= $popularMovie['image_path'] ?>" />
           <div class="home-scrollbar-title"><?= $popularMovie['title'] ?></div>
@@ -86,5 +86,5 @@ require("./views/partials/_nav.php");
   <!-- custom scrollbar  -->
 </main>
 <?php
-require("./views/partials/_footer.php");
+require(BASE_PATH . "views/partials/_footer.php");
 ?>

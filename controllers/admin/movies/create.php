@@ -1,7 +1,7 @@
 <?php
 
 //!Fetch Function
-require("./core/model.php");
+require(BASE_PATH . "core/model.php");
 
 
 //!getActors
@@ -36,4 +36,4 @@ if (isset($_POST['title'])) {
   }
 }
 
-require("./views/admin-form_view.php");
+require(BASE_PATH . "views/admin/movies/create_view.php");

@@ -1,5 +1,5 @@
 <?php
-require("./views/partials/_header.php");
+require(BASE_PATH . "views/partials/_header.php");
 ?>
 
 <body>
@@ -9,7 +9,7 @@ require("./views/partials/_header.php");
     <!-- header  -->
     <div class="details-header">
       <a href="/">
-        <img src="./images/logo.png" alt="" />
+        <img src="<?= BASE_PATH ?>images/logo.png" alt="" />
       </a>
       <div class="search-container-details">
         <input type="text" placeholder="Search.." name="search" />
@@ -81,5 +81,5 @@ require("./views/partials/_header.php");
       </div>
     </div>
     <?php
-    require("./views/partials/_footer.php");
+    require(BASE_PATH . "views/partials/_footer.php");
     ?>

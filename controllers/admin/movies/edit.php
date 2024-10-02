@@ -1,7 +1,7 @@
 <?php
 
 //!Fetch Function
-require("./core/model.php");
+require(BASE_PATH . "core/model.php");
 
 $movie_id = $_GET['id'];
 $user_id = 2;
@@ -34,8 +34,8 @@ if (isset($_POST['title'])) {
 
     //!redirect
     $message = 'successfully Update movie';
-    redirect("edit?id=$movie_id", $message);
+    redirect("admin/edit?id=$movie_id", $message);
   }
 }
 
-require("./views/admin-edit_view.php");
+require(BASE_PATH . "views/admin/movies/edit_view.php");

@@ -1,7 +1,7 @@
 <?php
 
 //!Fetch Function
-require("./core/model.php");
+require(BASE_PATH . "core/model.php");
 
 //!SLIDER
 $sliders = $fetcher->fetchData("SELECT * FROM `tbl_slider`");
@@ -14,4 +14,4 @@ $popularMovies = $fetcher->fetchData("SELECT id,title,rate,image_path FROM `tbl_
 
 
 
-require("./views/index_view.php");
+require(BASE_PATH . "views/index_view.php");

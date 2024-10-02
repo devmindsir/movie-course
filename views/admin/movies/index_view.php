@@ -1,5 +1,5 @@
 <?php
-require("./views/partials/_header.php");
+require(BASE_PATH . "views/partials/_header.php");
 ?>
 
 <body class="admin-body">
@@ -14,7 +14,7 @@ require("./views/partials/_header.php");
       <?php
       }
       ?>
-      <a href="./addmovie" class="admin-header-link">+ New Movie</a>
+      <a href="/admin/create" class="admin-header-link">+ New Movie</a>
     </div>
     <div class="admin-content">
       <table class="admin-table">
@@ -44,8 +44,8 @@ require("./views/partials/_header.php");
                 ?>
               </td>
               <td class="admin-table-col"><img src="<?= $row['image_path'] ?>" alt="Cover" style="width: 100px;"></td>
-              <td class="admin-table-col"><a href="./edit?id=<?= $row['id'] ?>" class="edit-btn">edit</a></td>
-              <form action="<?= URL ?>delete?id=<?= $row['id'] ?>" method="post">
+              <td class="admin-table-col"><a href="/admin/edit?id=<?= $row['id'] ?>" class="edit-btn">edit</a></td>
+              <form action="<?= URL ?>admin/destroy?id=<?= $row['id'] ?>" method="post">
                 <td class="admin-table-col">
                   <button class="delete-btn">delete</button>
                 </td>
@@ -60,5 +60,5 @@ require("./views/partials/_header.php");
       </table>
     </div>
     <?php
-    require("./views/partials/_footer.php");
+    require(BASE_PATH . "views/partials/_footer.php");
     ?>

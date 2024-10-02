@@ -1,7 +1,7 @@
 <?php
 
 //!Fetch Function
-require("./core/model.php");
+require(BASE_PATH . "core/model.php");
 
 //!actors
 $id = $_GET['id'];
@@ -16,4 +16,4 @@ $movies = $fetcher->fetchData("SELECT image_path,title
  FROM tbl_movie
  WHERE FIND_IN_SET(?,actors)", [$id]);
 
-require("./views/actor-details_view.php");
+require(BASE_PATH . "views/actors/show_view.php");

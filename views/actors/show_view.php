@@ -1,5 +1,5 @@
 <?php
-require("./views/partials/_header.php");
+require(BASE_PATH . "views/partials/_header.php");
 ?>
 
 <body>
@@ -69,5 +69,5 @@ require("./views/partials/_header.php");
       </div>
     </div>
     <?php
-    require("./views/partials/_footer.php");
+    require(BASE_PATH . "views/partials/_footer.php");
     ?>

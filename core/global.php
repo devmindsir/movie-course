@@ -3,7 +3,7 @@
 //Current URL
 function currentUrl()
 {
-  return substr(parse_url($_SERVER["REQUEST_URI"])['path'], strlen("/movie"));
+  return parse_url($_SERVER["REQUEST_URI"])['path'];
 }
 //!GET URL
 function getUrl($url)

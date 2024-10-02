@@ -1,7 +1,7 @@
 <?php
 
 //!Fetch Function
-require("./core/model.php");
+require(BASE_PATH . "core/model.php");
 
 //!Movie
 $movieId = $_GET['id'];
@@ -26,4 +26,4 @@ if (!$movie['id']) {
 $actor_images = explode(",", $movie['actor_image']);
 $genre_titles = explode(",", $movie['genre_title']);
 
-require("./views/movie-details_view.php");
+require(BASE_PATH . "views/movies/show_view.php");

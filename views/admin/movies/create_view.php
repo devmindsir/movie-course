@@ -1,5 +1,5 @@
 <?php
-require("./views/partials/_header.php");
+require(BASE_PATH . "views/partials/_header.php");
 ?>
 
 <body class="admin-body">
@@ -7,7 +7,7 @@ require("./views/partials/_header.php");
   <div class="form-container">
     <h2>Add Movie / Series</h2>
 
-    <form action="<?= URL ?>addmovie" method="post">
+    <form action="<?= URL ?>admin/create" method="post">
       <div class="form-group">
         <label for="title">Title</label>
         <input type="text" value="<?= ($title ?? '') ?>" id="title" name="title" required>
@@ -100,5 +100,5 @@ require("./views/partials/_header.php");
       </div>
     </form>
     <?php
-    require("./views/partials/_footer.php");
+    require(BASE_PATH . "views/partials/_footer.php");
     ?>
