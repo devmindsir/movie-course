@@ -9,7 +9,7 @@ interface RouterInterface
   public function put($url, $controller);
   public function patch($url, $controller);
   public function delete($url, $controller);
-  public function checkRoute($url);
+  public function checkRoute($url, $method);
   public function abort($code);
 }
 
@@ -45,10 +45,10 @@ class Router implements RouterInterface
       'method' => $method
     ];
   }
-  public function checkRoute($url)
+  public function checkRoute($url, $method)
   {
     foreach ($this->routes as $route) {
-      if ($route['url'] === $url) {
+      if ($url === $route['url'] && $method === $route['method']) {
         return require(BASE_PATH . $route['controller']);
       }
     }

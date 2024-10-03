@@ -17,9 +17,9 @@ $router->get('/actors/show', 'controllers/actors/show.php');
 
 //!ADMIN
 $router->get('/admin', 'controllers/admin/movies/index.php');
+$router->delete('/admin', 'controllers/admin/movies/destroy.php');
+$router->post('/admin', 'controllers/admin/movies/store.php');
+$router->patch('/admin', 'controllers/admin/movies/update.php');
 
-
-//   //!ADMIN
-//   '/admin/create' => BASE_PATH . "controllers/admin/movies/create.php",
-//   '/admin/edit' => BASE_PATH . "controllers/admin/movies/edit.php",
-//   '/admin/destroy' => BASE_PATH . "controllers/admin/movies/destroy.php",
+$router->get('/admin/create', 'controllers/admin/movies/create.php');
+$router->get('/admin/edit', 'controllers/admin/movies/edit.php');

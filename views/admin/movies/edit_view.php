@@ -15,7 +15,8 @@ require(BASE_PATH . "views/partials/_header.php");
     <h2 style="color:#000;">Add Movie / Series</h2>
 
 
-    <form action="<?= URL ?>admin/edit?id=<?= $movie_id ?>" method="post">
+    <form action="<?= URL ?>admin?id=<?= $movie_id ?>" method="post">
+      <input type="hidden" name="_method_" value="PATCH">
       <div class="form-group">
         <label for="title">Title</label>
         <input value="<?= $movie['title'] ?>" type="text" id="title" name="title" required>

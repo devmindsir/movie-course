@@ -2,13 +2,14 @@
 
 //!Fetch Function
 require(BASE_PATH . "core/model.php");
+$router = new core\Router();
 
 //!actors
 $id = $_GET['id'];
 $actor = $fetcher->fetchData("SELECT * FROM `tbl_actors` WHERE id=?", [$id], "fetch");
 
 if (!$actor) {
-  abort();
+  $router->abort();
 }
 
 //!Movie Actors

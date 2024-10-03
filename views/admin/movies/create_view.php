@@ -7,7 +7,7 @@ require(BASE_PATH . "views/partials/_header.php");
   <div class="form-container">
     <h2>Add Movie / Series</h2>
 
-    <form action="<?= URL ?>admin/create" method="post">
+    <form action="<?= URL ?>admin" method="post">
       <div class="form-group">
         <label for="title">Title</label>
         <input type="text" value="<?= ($title ?? '') ?>" id="title" name="title" required>

@@ -2,6 +2,7 @@
 
 //!Fetch Function
 require(BASE_PATH . "core/model.php");
+$router = new core\Router();
 
 //!Movie
 $movieId = $_GET['id'];
@@ -21,7 +22,7 @@ ON FIND_IN_SET(g.id,m.genres)
 WHERE m.id=?", [$movieId], "fetch");
 
 if (!$movie['id']) {
-  abort();
+  $router->abort();
 }
 $actor_images = explode(",", $movie['actor_image']);
 $genre_titles = explode(",", $movie['genre_title']);

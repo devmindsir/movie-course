@@ -26,4 +26,5 @@ function redirect($path, $message = '')
   }
 
   header('location:' . $url);
+  die();
 }
