@@ -1,4 +1,11 @@
 <?php
+
+namespace core;
+
+use PDO;
+use PDOException;
+
+
 interface DatabaseInterface
 {
   public function getConnection();

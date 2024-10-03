@@ -22,7 +22,7 @@ if (isset($_POST['title'])) {
   $user_id = 2;
 
   //!instantiate Validate
-  $validate = new Validate();
+  $validate = new core\Validate();
 
   //!Validate Form
   $errors = $validate->validateAdd($title, $description, $image, $genre, $actor);

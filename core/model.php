@@ -1,5 +1,8 @@
 <?php
 
+namespace core;
+
+use PDOException;
 //!Fetch Data
 interface FetchInterface
 {

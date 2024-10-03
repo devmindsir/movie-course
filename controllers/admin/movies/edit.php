@@ -24,7 +24,7 @@ if (isset($_POST['title'])) {
   $type = $_POST['type'];
 
   //!instantiate Validate
-  $validate = new Validate();
+  $validate = new core\Validate();
 
   //!Validate Form
   $errors = $validate->validateEdit($title, $description, $image);
