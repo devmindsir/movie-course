@@ -47,6 +47,7 @@ require(BASE_PATH . "views/partials/_header.php");
               <td class="admin-table-col"><a href="/admin/edit?id=<?= $row['id'] ?>" class="edit-btn">edit</a></td>
               <form action="<?= URL ?>admin/destroy?id=<?= $row['id'] ?>" method="post">
                 <td class="admin-table-col">
+                  <input type="hidden" name="_method_" value="DELETE">
                   <button class="delete-btn">delete</button>
                 </td>
               </form>
