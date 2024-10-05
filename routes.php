@@ -23,3 +23,8 @@ $router->patch('/admin', 'controllers/admin/movies/update.php');
 
 $router->get('/admin/create', 'controllers/admin/movies/create.php');
 $router->get('/admin/edit', 'controllers/admin/movies/edit.php');
+
+//!LOGIN
+$router->get('/login', 'controllers/login/create.php');
+//!REGISTER
+$router->get('/register', 'controllers/register/create.php');

@@ -13,6 +13,7 @@
 
 a {
   text-decoration: none;
+  color: #fff;
 }
 
 button {
@@ -1323,7 +1324,9 @@ table {
 .form-group {
   margin-bottom: 15px;
 }
-
+label{
+  color: #000;
+}
 .form-group label {
   display: block;
   margin-bottom: 5px;
@@ -1367,6 +1370,15 @@ table {
   padding: 1rem;
   background-color: green;
   border-radius: 1rem;
+}
+.cascading-right {
+  margin-right: -50px;
+}
+
+@media (max-width: 991.98px) {
+  .cascading-right {
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 600px) {
