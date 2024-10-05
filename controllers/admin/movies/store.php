@@ -9,7 +9,8 @@ if (isset($_POST['title'])) {
   $actor = $_POST['actor'];
   $image = $_POST['image-url'];
   $type = $_POST['type'];
-  $user_id = 2;
+  $user_id = session_get('user_id');
+
 
   //!instantiate Validate
   $validate = new core\Validate();

@@ -9,7 +9,8 @@ if (isset($_POST['title'])) {
   $type = $_POST['type'];
 
   $movie_id = $_GET['id'];
-  $user_id = 2;
+  $user_id = session_get('user_id');
+
 
   //!instantiate Validate
   $validate = new core\Validate();

@@ -52,7 +52,9 @@ require(BASE_PATH . "views/partials/_header.php");
                     <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
                   </div>
                 </form>
-
+                <div class="mt-4 text-black fw-bold fs-6">No Account ?
+                  <a href="/register" class="text-primary fs-6">Register!</a>
+                </div>
               </div>
             </div>
           </div>

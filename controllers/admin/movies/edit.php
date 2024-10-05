@@ -7,7 +7,8 @@ $router = new core\Router();
 
 
 $movie_id = $_GET['id'];
-$user_id = 2;
+$user_id = session_get('user_id');
+
 //!get Movie Id
 //!Movie
 $movie = $fetcher->fetchData("SELECT id,user_id,image_path,title,description,series FROM `tbl_movie` WHERE id=?", [$movie_id], "fetch");

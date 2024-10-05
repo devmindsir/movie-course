@@ -1,5 +1,5 @@
 <body>
-  <div class="container">
+  <div class="">
     <!-- header  -->
     <header>
       <div class="mobile-nav">
@@ -11,9 +11,21 @@
           <input type="text" placeholder="Search.." name="search" />
         </div>
       </div>
-      <a href="./">
-        <img src="./public/images/logo.png" alt="" />
-      </a>
+      <?php
+      if (!session_get('user_id')):
+      ?>
+        <a class="my-5 bg-primary py-2 px-4 d-flex rounded-start-2 justify-content-center" href="/login">
+          Login/Register
+        </a>
+      <?php
+      else:
+      ?>
+        <a class="my-5 bg-primary py-2 px-4 d-flex rounded-start-2 justify-content-center" href="/admin">
+          Dashboard
+        </a>
+      <?php
+      endif;
+      ?>
       <nav>
         <h2>Browse</h2>
 

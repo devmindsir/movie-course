@@ -76,6 +76,9 @@ require(BASE_PATH . "views/partials/_header.php");
               </button>
 
             </form>
+            <div class="mt-4 text-black fw-bold fs-6">Already Have An Account ?
+              <a href="/login" class="text-primary fs-6">Login!</a>
+            </div>
           </div>
         </div>
       </div>

@@ -40,5 +40,5 @@ function session_set($name, $value)
 function session_get($name)
 {
   session_start();
-  return $_SESSION[$name];
+  return $_SESSION[$name] ?? false;
 }

@@ -2,14 +2,15 @@
 
 //!Fetch Function
 require(BASE_PATH . "core/model.php");
+$router = new core\Router();
 
 $id = $_GET['id'];
-$user_id = 2;
+$user_id = session_get('user_id');
 //!getMovie
 $movie = $fetcher->fetchData("SELECT user_id FROM `tbl_movie` WHERE id=?", [$id], "fetch");
 
 if ($user_id !== $movie['user_id']) {
-  abort(403);
+  $router->abort(403);
 }
 
 //!DeleteMovie
