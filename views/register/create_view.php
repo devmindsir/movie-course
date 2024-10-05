@@ -1,5 +1,6 @@
 <?php
 require(BASE_PATH . "views/partials/_header.php");
+
 ?>
 
 <section class="text-center text-lg-start">
@@ -17,14 +18,14 @@ require(BASE_PATH . "views/partials/_header.php");
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div data-mdb-input-init class="form-outline">
-                    <input name="name" type="text" value="<?= $_POST['name'] ?? '' ?>" id="form3Example1" class="form-control" />
+                    <input name="name" value="<?= $_POST['name'] ?? '' ?>" type="text" id="form3Example1" class="form-control" />
                     <label class="form-label" for="form3Example1">First name</label>
                     <?php
-                    if (isset($errors['name'])) {
+                    if (isset($errors['name'])):
                     ?>
                       <p class="red"><?= $errors['name'] ?></p>
                     <?php
-                    }
+                    endif;
                     ?>
                   </div>
                 </div>
@@ -33,11 +34,11 @@ require(BASE_PATH . "views/partials/_header.php");
                     <input name="family" value="<?= $_POST['family'] ?? '' ?>" type="text" id="form3Example2" class="form-control" />
                     <label class="form-label" for="form3Example2">Last name</label>
                     <?php
-                    if (isset($errors['family'])) {
+                    if (isset($errors['family'])):
                     ?>
                       <p class="red"><?= $errors['family'] ?></p>
                     <?php
-                    }
+                    endif;
                     ?>
                   </div>
                 </div>
@@ -45,14 +46,14 @@ require(BASE_PATH . "views/partials/_header.php");
 
               <!-- Email input -->
               <div data-mdb-input-init class="form-outline mb-4">
-                <input name="email" type="email" value="<?= $_POST['email'] ?? '' ?>" id="form3Example3" class="form-control" />
+                <input name="email" value="<?= $_POST['email'] ?? '' ?>" type="email" id="form3Example3" class="form-control" />
                 <label class="form-label" for="form3Example3">Email address</label>
                 <?php
-                if (isset($errors['email'])) {
+                if (isset($errors['email'])):
                 ?>
                   <p class="red"><?= $errors['email'] ?></p>
                 <?php
-                }
+                endif;
                 ?>
               </div>
 
@@ -61,11 +62,11 @@ require(BASE_PATH . "views/partials/_header.php");
                 <input name="password" type="password" id="form3Example4" class="form-control" />
                 <label class="form-label" for="form3Example4">Password</label>
                 <?php
-                if (isset($errors['password'])) {
+                if (isset($errors['password'])):
                 ?>
                   <p class="red"><?= $errors['password'] ?></p>
                 <?php
-                }
+                endif;
                 ?>
               </div>
 

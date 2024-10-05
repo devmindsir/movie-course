@@ -28,3 +28,17 @@ function redirect($path, $message = '')
   header('location:' . $url);
   die();
 }
+
+//!Session SET
+function session_set($name, $value)
+{
+  session_start();
+  $_SESSION[$name] = $value;
+}
+
+//!Session GET
+function session_get($name)
+{
+  session_start();
+  return $_SESSION[$name];
+}

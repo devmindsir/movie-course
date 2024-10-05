@@ -15,7 +15,7 @@ require(BASE_PATH . "views/partials/_header.php");
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
 
-                <form action="<?= URL ?>login" method="post">
+                <form action="<?= URL ?>login" method="POST">
 
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -25,14 +25,28 @@ require(BASE_PATH . "views/partials/_header.php");
                   <h5 class="fw-normal mb-3 pb-3 text-black" style="letter-spacing: 1px;">Sign into your account</h5>
 
                   <div data-mdb-input-init class="form-outline mb-4">
-                    <input name="email" type="email" id="form2Example17" class="form-control form-control-lg" />
+                    <input name="email" value="<?= $_POST['email'] ?? '' ?>" type="email" id="form2Example17" class="form-control form-control-lg" />
                     <label class="form-label" for="form2Example17">Email address</label>
+                    <?php
+                    if (isset($errors['email'])):
+                    ?>
+                      <p class="red"><?= $errors['email'] ?></p>
+                    <?php
+                    endif;
+                    ?>
                   </div>
 
                   <div data-mdb-input-init class="form-outline mb-4">
                     <input name="password" type="password" id="form2Example27" class="form-control form-control-lg" />
                     <label class="form-label" for="form2Example27">Password</label>
                   </div>
+                  <?php
+                  if (isset($errors['password'])):
+                  ?>
+                    <p class="red"><?= $errors['password'] ?></p>
+                  <?php
+                  endif;
+                  ?>
 
                   <div class="pt-1 mb-4">
                     <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
