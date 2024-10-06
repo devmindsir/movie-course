@@ -1,6 +1,5 @@
 <?php
 
-
 //!ROOT
 $router->get('/', 'controllers/index.php');
 
@@ -16,18 +15,18 @@ $router->get('/actors', 'controllers/actors/index.php');
 $router->get('/actors/show', 'controllers/actors/show.php');
 
 //!ADMIN
-$router->get('/admin', 'controllers/admin/movies/index.php');
-$router->delete('/admin', 'controllers/admin/movies/destroy.php');
-$router->post('/admin', 'controllers/admin/movies/store.php');
-$router->patch('/admin', 'controllers/admin/movies/update.php');
+$router->get('/admin', 'controllers/admin/movies/index.php')->auth('login');
+$router->delete('/admin', 'controllers/admin/movies/destroy.php')->auth('login');
+$router->post('/admin', 'controllers/admin/movies/store.php')->auth('login');
+$router->patch('/admin', 'controllers/admin/movies/update.php')->auth('login');
 
-$router->get('/admin/create', 'controllers/admin/movies/create.php');
-$router->get('/admin/edit', 'controllers/admin/movies/edit.php');
+$router->get('/admin/create', 'controllers/admin/movies/create.php')->auth('login');
+$router->get('/admin/edit', 'controllers/admin/movies/edit.php')->auth('login');
 
 //!REGISTER
-$router->get('/register', 'controllers/register/create.php');
-$router->post('/register', 'controllers/register/store.php');
+$router->get('/register', 'controllers/register/create.php')->auth('guest');
+$router->post('/register', 'controllers/register/store.php')->auth('guest');
 
 //!LOGIN
-$router->get('/login', 'controllers/login/create.php');
-$router->post('/login', 'controllers/login/show.php');
+$router->get('/login', 'controllers/login/create.php')->auth('guest');
+$router->post('/login', 'controllers/login/show.php')->auth('guest');

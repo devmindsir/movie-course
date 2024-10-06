@@ -32,13 +32,13 @@ function redirect($path, $message = '')
 //!Session SET
 function session_set($name, $value)
 {
-  session_start();
+  @session_start();
   $_SESSION[$name] = $value;
 }
 
 //!Session GET
 function session_get($name)
 {
-  session_start();
+  @session_start();
   return $_SESSION[$name] ?? false;
 }

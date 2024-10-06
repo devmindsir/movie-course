@@ -2,6 +2,8 @@
 
 namespace core;
 
+use Core\Middlewares\Middleware;
+
 interface RouterInterface
 {
   public function get($url, $controller);
@@ -11,44 +13,57 @@ interface RouterInterface
   public function delete($url, $controller);
   public function checkRoute($url, $method);
   public function abort($code);
+  public function auth($auth);
 }
 
 
 class Router implements RouterInterface
 {
   public $routes = [];
+  public function auth($auth)
+  {
+    $this->routes[array_key_last($this->routes)]['auth'] = $auth;
+  }
   public function get($url, $controller)
   {
-    $this->addRoute($url, $controller, 'GET');
+    return $this->addRoute($url, $controller, 'GET');
   }
   public function post($url, $controller)
   {
-    $this->addRoute($url, $controller, 'POST');
+    return $this->addRoute($url, $controller, 'POST');
   }
   public function put($url, $controller)
   {
-    $this->addRoute($url, $controller, 'PUT');
+    return $this->addRoute($url, $controller, 'PUT');
   }
   public function patch($url, $controller)
   {
-    $this->addRoute($url, $controller, 'PATCH');
+    return $this->addRoute($url, $controller, 'PATCH');
   }
   public function delete($url, $controller)
   {
-    $this->addRoute($url, $controller, 'DELETE');
+    return $this->addRoute($url, $controller, 'DELETE');
   }
   private function addRoute($url, $controller, $method)
   {
     $this->routes[] = [
       'url' => $url,
       'controller' => $controller,
-      'method' => $method
+      'method' => $method,
+      'auth' => null,
     ];
+
+    return $this;
   }
   public function checkRoute($url, $method)
   {
+
     foreach ($this->routes as $route) {
       if ($url === $route['url'] && $method === $route['method']) {
+
+        //!Middleware
+        Middleware::handle($route['auth']);
+
         return require(BASE_PATH . $route['controller']);
       }
     }

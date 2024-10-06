@@ -1,5 +1,6 @@
 <?php
 
+
 //!Fetch Function
 require(BASE_PATH . "core/model.php");
 
