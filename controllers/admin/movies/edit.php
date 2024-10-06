@@ -1,13 +1,17 @@
 <?php
 
 //!Fetch Function
+
+use core\Session;
+
 require(BASE_PATH . "core/model.php");
 
 $router = new core\Router();
 
 
 $movie_id = $_GET['id'];
-$user_id = session_get('user_id');
+$user_id = Session::get('user_id');
+
 
 //!get Movie Id
 //!Movie
@@ -19,6 +23,8 @@ if (!$movie) {
 if ($user_id !== $movie['user_id']) {
   $router->abort(403);
 }
+
+$errors = $_SESSION['_flash_']['errors'] ?? [];
 
 
 require(BASE_PATH . "views/admin/movies/edit_view.php");

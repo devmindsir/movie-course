@@ -1,5 +1,8 @@
 <?php
 
+use core\Session;
+
+@session_start();
 require(__DIR__ . "/../core/config.php");
 require(BASE_PATH . "core/global.php");
 //!Autoload Class
@@ -13,3 +16,5 @@ require(BASE_PATH . "routes.php");
 
 $method = $_POST['_method_'] ?? $_SERVER['REQUEST_METHOD'];
 $router->checkRoute($url, $method);
+
+Session::unFlash();

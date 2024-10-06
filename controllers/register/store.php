@@ -1,5 +1,7 @@
 <?php
 
+use core\Session;
+
 require(BASE_PATH . "core/model.php");
 
 if (isset($_POST['name'])) {
@@ -14,19 +16,17 @@ if (isset($_POST['name'])) {
   $validate = new core\Validate();
   $errors = $validate->validateRegister($name, $family, $email, $password);
 
-  //!Check Errors
-  if (!empty($errors)) {
-    require(BASE_PATH . 'views/register/create_view.php');
-    die();
-  }
-
   //!Check User
   $user = $fetcher->fetchData("SELECT * FROM `tbl_users` WHERE email=?", [$email], 'fetch');
   if ($user) {
-    $message = "This Email has already exist";
-    redirect('register', $message);
+    $errors['user'] = "This Email has already exist";
   }
 
+  //!Check Errors
+  if (!empty($errors)) {
+    Session::setFlash('errors', $errors);
+    redirect('register');
+  }
 
   //!Store
   $password_hash = password_hash($password, PASSWORD_BCRYPT);

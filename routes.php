@@ -30,3 +30,6 @@ $router->post('/register', 'controllers/register/store.php')->auth('guest');
 //!LOGIN
 $router->get('/login', 'controllers/login/create.php')->auth('guest');
 $router->post('/login', 'controllers/login/show.php')->auth('guest');
+
+//!LOGOUT
+$router->delete('/login', 'controllers/login/destroy.php')->auth('login');

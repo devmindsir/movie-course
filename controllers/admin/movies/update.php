@@ -1,4 +1,7 @@
 <?php
+
+use core\Session;
+
 require(BASE_PATH . "core/model.php");
 
 //!add Movie
@@ -9,7 +12,8 @@ if (isset($_POST['title'])) {
   $type = $_POST['type'];
 
   $movie_id = $_GET['id'];
-  $user_id = session_get('user_id');
+  $user_id = Session::get('user_id');
+
 
 
   //!instantiate Validate
@@ -25,5 +29,6 @@ if (isset($_POST['title'])) {
     $message = 'successfully Update movie';
     redirect("admin/edit?id=$movie_id", $message);
   }
+  $_SESSION['_flash_']['errors'] = $errors;
   redirect('admin/edit?id=' . $movie_id);
 }

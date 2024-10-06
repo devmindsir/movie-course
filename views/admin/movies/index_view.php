@@ -6,7 +6,10 @@ require(BASE_PATH . "views/partials/_header.php");
   <div class="position-fixed top-0 start-0 py-2 px-5 bg-primary w-100">
     <div class="d-flex justify-content-between align-items-center">
       <div>
-        <a class="bg-white text-primary py-2 px-4 rounded-2 fs-6 fw-bold">Exit Panel</a>
+        <form action="<?= URL ?>login" method="POST">
+          <input type="hidden" name="_method_" value="DELETE">
+          <button class="bg-white text-primary py-2 px-4 rounded-2 fs-6 fw-bold">Exit Panel</button>
+        </form>
       </div>
       <div style="width: 3rem;height: 3rem;" class="border border-1 rounded-circle d-flex justify-content-center align-items-center bg-white">
         <i class="fa-solid fa-user-tie text-primary fs-3"></i>
