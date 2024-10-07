@@ -5,80 +5,58 @@ namespace core;
 class Validate
 {
 
-  private $errors = [];
+  protected static $errors = [];
 
-  public function validateEdit($title, $description, $image)
+  public static function getErrors()
   {
-    $this->validateInput($title, $description, $image);
-    return $this->errors;
+    return self::$errors;
   }
 
-  public function validateAdd($title, $description, $image, $genre, $actor)
+  public static function resetError()
   {
-    $this->validateInput($title, $description, $image);
-    $this->validateRequired('genre', $genre);
-    $this->validateRequired('actor', $actor);
-    return $this->errors;
+    self::$errors = [];
   }
 
-  public function validateRegister($name, $family, $email, $password)
+  public static function validateInput($title, $description, $image)
   {
-    $this->errors = [];
-    $this->validateFullName($name, $family);
-    $this->validatePassword($password);
-    $this->validateEmail($email);
-    return $this->errors;
+    self::validateField('title', $title, 2, 200);
+    self::validateField('description', $description, 5, 500);
+    self::validateField('image', $image, 4, 200);
   }
 
-  public function validateLogin($email, $password)
+  public static function validateFullName($name, $family)
   {
-    $this->errors = [];
-    $this->validatePassword($password);
-    $this->validateEmail($email);
-    return $this->errors;
+    self::validateField('name', $name, 2, 40);
+    self::validateField('family', $family, 3, 60);
+  }
+  public static function validatePassword($password)
+  {
+    self::validateRequired('password', $password);
+    self::validateField('password', $password, 6, 60);
   }
 
-  private function validateInput($title, $description, $image)
+  public static function validateEmail($email)
   {
-    $this->errors = [];
-    $this->validateField('title', $title, 2, 200);
-    $this->validateField('description', $description, 5, 500);
-    $this->validateField('image', $image, 4, 200);
-  }
-
-  private function validateFullName($name, $family)
-  {
-    $this->validateField('name', $name, 2, 40);
-    $this->validateField('family', $family, 3, 60);
-  }
-  private function validatePassword($password)
-  {
-    $this->validateRequired('password', $password);
-    $this->validateField('password', $password, 6, 60);
-  }
-
-  private function validateEmail($email)
-  {
-    $this->validateRequired('email', $email);
+    self::validateRequired('email', $email);
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $this->errors['email'] = 'Email format is invalid';
+      self::$errors['email'] = 'Email format is invalid';
     }
   }
 
-  private function validateField($fieldName, $fieldValue, $minLength, $maxLength)
+  public static function validateField($fieldName, $fieldValue, $minLength, $maxLength)
   {
     if (trim(strlen($fieldValue)) < $minLength) {
-      $this->errors[$fieldName] = ucfirst($fieldName) . " filed is required and Must be {$minLength} characters";
+      self::$errors[$fieldName] = ucfirst($fieldName) . " filed is required and Must be {$minLength} characters";
     }
     if (trim(strlen($fieldValue)) > $maxLength) {
-      $this->errors[$fieldName] = ucfirst($fieldName) . " It must not Exceed {$maxLength} characters";
+      self::$errors[$fieldName] = ucfirst($fieldName) . " It must not Exceed {$maxLength} characters";
     }
   }
 
-  private function validateRequired($fieldName, $fieldValue)
+  public static function validateRequired($fieldName, $fieldValue)
   {
     if (empty($fieldValue)) {
-      $this->errors[$fieldName] = ucfirst($fieldName) . " field is required";
+      self::$errors[$fieldName] = ucfirst($fieldName) . " field is required";
     }
   }
 }

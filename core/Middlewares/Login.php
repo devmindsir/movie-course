@@ -2,12 +2,14 @@
 
 namespace core\Middlewares;
 
+use core\Session;
+
 class Login
 {
 
   public function handle()
   {
-    if (!session_get('user_id')) {
+    if (!Session::get('user_id')) {
       redirect('login');
     }
   }

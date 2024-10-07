@@ -64,7 +64,7 @@ class Router implements RouterInterface
         //!Middleware
         Middleware::handle($route['auth']);
 
-        return require(BASE_PATH . $route['controller']);
+        return require(BASE_PATH . 'App/Http/controllers/' . $route['controller']);
       }
     }
     $this->abort();
@@ -73,7 +73,7 @@ class Router implements RouterInterface
   public function abort($code = 404)
   {
     http_response_code($code);
-    require(BASE_PATH . "views/errors/{$code}_view.php");
+    view("errors/{$code}");
     die();
   }
 }
