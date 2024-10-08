@@ -1,5 +1,5 @@
 <?php
-
+//!use Class
 use App\Http\Requests\RegisterRequest;
 use core\Session;
 
@@ -24,11 +24,11 @@ if (isset($_POST['name'])) {
 
   //!Check Errors
   if (!empty($errors)) {
-    $_SESSION['_flash_']['old'] = [
+    Session::setFlash('old', [
       'name' => $name,
       'family' => $family,
       'email' => $email
-    ];
+    ]);
     Session::setFlash('errors', $errors);
     redirect('register');
   }

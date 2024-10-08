@@ -1,7 +1,8 @@
 <?php
-
+//!use Class
 use App\Http\Requests\EditMovieRequest;
 use core\Session;
+use core\Validate;
 
 require(BASE_PATH . "core/model.php");
 
@@ -16,7 +17,7 @@ if (isset($_POST['title'])) {
   $user_id = Session::get('user_id');
 
   //!instantiate Validate
-  $validate = new core\Validate();
+  $validate = new Validate();
 
   //!VALIDATE
   $errors = (new EditMovieRequest)->validate($title, $description, $image)->getError();

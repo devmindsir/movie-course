@@ -23,7 +23,7 @@ if (isset($_POST['email'])) {
   }
   //!check Errors
   if (!empty($errors)) {
-    $_SESSION['_flash_']['old'] = ['email' => $email];
+    Session::setFlash('old', ['email' => $email]);
     Session::setFlash('errors', $errors);
     redirect('login');
   }

@@ -1,7 +1,9 @@
 <?php
 
+//!use Class
 use App\Http\Requests\AddMovieRequest;
 use core\Session;
+use core\Validate;
 
 require(BASE_PATH . "core/model.php");
 
@@ -18,7 +20,7 @@ if (isset($_POST['title'])) {
 
 
   //!instantiate Validate
-  $validate = new core\Validate();
+  $validate = new Validate();
 
   //!VALIDATE
   $errors = (new AddMovieRequest)->validate($title, $description, $image, $genre, $actor)->getError();

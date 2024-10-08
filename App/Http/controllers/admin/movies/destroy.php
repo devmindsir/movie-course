@@ -1,14 +1,16 @@
 <?php
 
-//!Fetch Function
-
+//!use Class
+use core\Router;
 use core\Session;
 
+//!Fetch Function
 require(BASE_PATH . "core/model.php");
-$router = new core\Router();
+$router = new Router();
 
 $id = $_GET['id'];
 $user_id = Session::get('user_id');
+
 //!getMovie
 $movie = $fetcher->fetchData("SELECT user_id FROM `tbl_movie` WHERE id=?", [$id], "fetch");
 

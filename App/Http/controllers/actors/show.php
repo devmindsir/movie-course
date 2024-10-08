@@ -1,8 +1,11 @@
 <?php
 
+//!use Class
+use core\Router;
+
 //!Fetch Function
 require(BASE_PATH . "core/model.php");
-$router = new core\Router();
+$router = new Router();
 
 //!actors
 $id = $_GET['id'];
