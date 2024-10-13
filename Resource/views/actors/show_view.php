@@ -18,9 +18,9 @@ view('partials/_header');
     <div class="people-details-content">
       <div class="personal-info">
         <img
-          src="<?= $actor['image'] ?>"
+          src="<?= $actor->image ?>"
           alt="" />
-        <h1 class="people-details-name-mobile"><?= $actor['name'] . " " . $actor['family'] ?></h1>
+        <h1 class="people-details-name-mobile"><?= $actor->name . " " . $actor->family ?></h1>
         <h3 class="personal-info-text">Personal Info</h3>
         <div class="personal-info-items">
           <strong>count Movie</strong>
@@ -28,23 +28,23 @@ view('partials/_header');
         </div>
         <div class="personal-info-items">
           <strong>Gender</strong>
-          <p><?= $actor['gender'] == 1 ? "Male" : "Female" ?></p>
+          <p><?= $actor->gender == 1 ? "Male" : "Female" ?></p>
         </div>
         <div class="personal-info-items">
           <strong>Birthday</strong>
-          <p><?= $actor['birthday'] ?></p>
+          <p><?= $actor->birthday ?></p>
         </div>
         <div class="personal-info-items">
           <strong>Place of Birth</strong>
-          <p><?= $actor['place_birthday'] ?></p>
+          <p><?= $actor->place_birthday ?></p>
         </div>
       </div>
       <div class="people-details-right">
-        <h1 class="people-details-name"><?= $actor['name'] . " " . $actor['family'] ?></h1>
+        <h1 class="people-details-name"><?= $actor->name . " " . $actor->family ?></h1>
         <div class="biography">
           <h3>Biography</h3>
           <p>
-            <?= $actor['biography'] ?>
+            <?= $actor->biography ?>
           </p>
         </div>
         <div class="people-details-scroll-container">
@@ -56,9 +56,9 @@ view('partials/_header');
             ?>
               <div class="people-details-scroll-item">
                 <img
-                  src="<?= $movie['image_path'] ?>"
-                  alt="<?= $movie['title'] ?>" />
-                <p><?= $movie['title'] ?></p>
+                  src="<?= $movie->image_path ?>"
+                  alt="<?= $movie->title ?>" />
+                <p><?= $movie->title ?></p>
               </div>
             <?php
             endforeach;

@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use core\Validate;
+use App\Core\Validate;
 
 interface RequestInterface
 {

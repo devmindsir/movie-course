@@ -1,9 +1,9 @@
 <?php
 
 //!Fetch Function
-require(BASE_PATH . "core/model.php");
+use App\Models\Actor;
 
 //!actors
-$actors = $fetcher->fetchData("SELECT id,name,family,image FROM `tbl_actors`");
+$actors = (new Actor)->all();
 
 view('actors/index', ['actors' => $actors]);

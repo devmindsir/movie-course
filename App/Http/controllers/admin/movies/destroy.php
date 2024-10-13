@@ -1,11 +1,10 @@
 <?php
 
 //!use Class
-use core\Router;
-use core\Session;
+use App\Core\Router;
+use App\Core\Session;
 
-//!Fetch Function
-require(BASE_PATH . "core/model.php");
+
 $router = new Router();
 
 $id = $_GET['id'];

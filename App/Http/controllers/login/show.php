@@ -1,16 +1,14 @@
 <?php
 
 use App\Http\Requests\LoginRequest;
-use core\Session;
-
-require(BASE_PATH . "core/model.php");
+use App\Core\Session;
 
 if (isset($_POST['email'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];
 
   //!VALIDATE
-  $errors = (new LoginRequest)->validate($email, $password)->getError();
+  $errors = (new LoginRequest)->validate($email, $password)?->getError();
 
   //!Check User
   $user = $fetcher->fetchData("SELECT * FROM `tbl_users` WHERE email=?", [$email], 'fetch');

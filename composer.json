@@ -1,0 +1,14 @@
+{
+    "name": "pc/movie",
+    "authors": [
+        {
+            "name": "devminds",
+            "email": "devmindco@gmail.com"
+        }
+    ],
+    "require": {
+        "nesbot/carbon": "^3.8",
+        "morilog/jalali": "^3.4"
+    },
+    "autoload": {"psr-4": {"App\\":"App"}}
+}

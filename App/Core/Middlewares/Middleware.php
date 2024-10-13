@@ -1,9 +1,9 @@
 <?php
 
-namespace core\Middlewares;
+namespace  App\Core\Middlewares;
 
-use core\Middlewares\Guest;
-use core\Middlewares\Login;
+use  App\Core\Middlewares\Guest;
+use  App\Core\Middlewares\Login;
 
 class Middleware
 {

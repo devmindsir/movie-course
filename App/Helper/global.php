@@ -2,7 +2,7 @@
 
 //Current URL
 
-use core\Session;
+use App\Core\Session;
 
 function currentUrl()
 {

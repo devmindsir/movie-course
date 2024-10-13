@@ -1,13 +1,11 @@
 <?php
 
 //!use Class
-use core\Router;
-use core\Session;
+use App\Core\Router;
+use App\Core\Session;
 
 //!Fetch Function
-
-
-require(BASE_PATH . "core/model.php");
+require(model());
 
 $router = new Router();
 

@@ -13,9 +13,9 @@ view('partials/_nav');
     <?php
     foreach ($sliders as $slider):
     ?>
-      <a href="/movies/show?id=<?= $slider['id'] ?>" class="mySlides fade">
-        <img src="<?= $slider['image'] ?>" />
-        <div class="slider-text"><?= $slider['title'] ?></div>
+      <a href="/movies/show?id=<?= $slider->id ?>" class="mySlides fade">
+        <img src="<?= $slider->image ?>" />
+        <div class="slider-text"><?= $slider->title ?></div>
       </a>
     <?php
     endforeach;
@@ -45,11 +45,11 @@ view('partials/_nav');
       <?php
       foreach ($newMovies as $newMovie):
       ?>
-        <a href="/movies/show?id=<?= $newMovie['id'] ?>" class="info-box">
+        <a href="/movies/show?id=<?= $newMovie->id ?>" class="info-box">
           <img
-            src="<?= $newMovie['image_path'] ?>" />
-          <div class="home-scrollbar-title"><?= $newMovie['title'] ?></div>
-          <div class="home-scrollbar-rating"><?= $newMovie['rate'] ?></div>
+            src="<?= $newMovie->image_path ?>" />
+          <div class="home-scrollbar-title"><?= $newMovie->title ?></div>
+          <div class="home-scrollbar-rating"><?= $newMovie->rate ?></div>
         </a>
       <?php
       endforeach;
@@ -72,11 +72,11 @@ view('partials/_nav');
       <?php
       foreach ($popularMovies as $popularMovie):
       ?>
-        <a href="/movies/show?id=<?= $popularMovie['id'] ?>" class="info-box">
+        <a href="/movies/show?id=<?= $popularMovie->id ?>" class="info-box">
           <img
-            src="<?= $popularMovie['image_path'] ?>" />
-          <div class="home-scrollbar-title"><?= $popularMovie['title'] ?></div>
-          <div class="home-scrollbar-rating"><?= $popularMovie['rate'] ?></div>
+            src="<?= $popularMovie->image_path ?>" />
+          <div class="home-scrollbar-title"><?= $popularMovie->title ?></div>
+          <div class="home-scrollbar-rating"><?= $popularMovie->rate ?></div>
         </a>
       <?php
       endforeach;

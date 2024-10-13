@@ -1,23 +1,20 @@
 <?php
 
 //!use Class
-use core\Router;
+use App\Core\Router;
+use App\Models\Actor;
+use App\Models\Movie;
 
-//!Fetch Function
-require(BASE_PATH . "core/model.php");
 $router = new Router();
 
 //!actors
 $id = $_GET['id'];
-$actor = $fetcher->fetchData("SELECT * FROM `tbl_actors` WHERE id=?", [$id], "fetch");
+$actor = (new Actor)->find($id);
 
 if (!$actor) {
   $router->abort();
 }
 
 //!Movie Actors
-$movies = $fetcher->fetchData("SELECT image_path,title
- FROM tbl_movie
- WHERE FIND_IN_SET(?,actors)", [$id]);
-
+$movies = (new Movie)->actor($id);
 view('actors/show', ['actor' => $actor, 'movies' => $movies]);

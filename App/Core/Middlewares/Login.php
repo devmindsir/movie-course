@@ -1,8 +1,8 @@
 <?php
 
-namespace core\Middlewares;
+namespace  App\Core\Middlewares;
 
-use core\Session;
+use  App\Core\Session;
 
 class Login
 {

@@ -13,7 +13,7 @@
       </div>
       <?php
 
-      use core\Session;
+      use App\Core\Session;
 
       if (!Session::get('user_id')):
       ?>

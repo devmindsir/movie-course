@@ -10,13 +10,13 @@ view('partials/_nav');
     <?php
     foreach ($actors as $row):
     ?>
-      <a href="/actors/show?id=<?= $row['id'] ?>" class="list-item-people">
+      <a href="/actors/show?id=<?= $row->id ?>" class="list-item-people">
         <img
           class="list-item-image"
-          src="<?= $row['image'] ?>"
-          alt="<?= $row['family'] ?>" />
+          src="<?= $row->image ?>"
+          alt="<?= $row->family ?>" />
         <div class="list-item-details-people">
-          <p class="item-title-people"><?= $row['name'] . " " . $row["family"] ?></p>
+          <p class="item-title-people"><?= $row->name . " " . $row->family ?></p>
         </div>
       </a>
     <?php

@@ -1,17 +1,19 @@
 <?php
 
-use core\Session;
+use App\Core\Router;
+use App\Core\Session;
 
 @session_start();
+
 require(__DIR__ . "/../config/config.php");
-require(BASE_PATH . "App/Helper/global.php");
+
 //!Autoload Class
-spl_autoload_register(function ($class) {
-  $className = str_replace('\\', '/', $class);
-  require(BASE_PATH . $className . '.php');
-});
+require(BASE_PATH . 'vendor/autoload.php');
+
+require(BASE_PATH . "App/Helper/global.php");
+
 $url = currentUrl();
-$router = new core\Router();
+$router = new Router();
 require(BASE_PATH . "routes/routes.php");
 
 $method = $_POST['_method_'] ?? $_SERVER['REQUEST_METHOD'];

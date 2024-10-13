@@ -1,6 +1,6 @@
 <?php
 
-use core\Session;
+use App\Core\Session;
 
 Session::destroy();
 //!redirect

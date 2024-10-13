@@ -1,9 +1,9 @@
 <?php
 //!use Class
 use App\Http\Requests\RegisterRequest;
-use core\Session;
+use App\Core\Session;
 
-require(BASE_PATH . "core/model.php");
+require(model());
 
 if (isset($_POST['name'])) {
 

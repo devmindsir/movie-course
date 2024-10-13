@@ -1,8 +1,8 @@
 <?php
 
-namespace core;
+namespace  App\Core;
 
-use Core\Middlewares\Middleware;
+use  App\Core\Middlewares\Middleware;
 
 interface RouterInterface
 {

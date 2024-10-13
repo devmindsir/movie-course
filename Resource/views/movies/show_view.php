@@ -20,17 +20,17 @@ view('partials/_header');
     <!-- end header  -->
     <div class="details-content">
       <img
-        src="<?= $movie['image_path'] ?>"
+        src="<?= $movie->image_path ?>"
         alt="details" />
       <div class="details-image-right">
         <div class="details-image-right-top">
-          <h1><?= $movie['title'] ?></h1>
+          <h1><?= $movie->title ?></h1>
           <i class="fa-regular fa-star">
-            <span><?= $movie['rate'] ?></span>
+            <span><?= $movie->rate ?></span>
           </i>
         </div>
         <p id="details-overview">
-          <?= $movie['description'] ?>
+          <?= $movie->description ?>
         </p>
         <h2>Genres</h2>
         <div class="details-genres-container">

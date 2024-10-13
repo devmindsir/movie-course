@@ -2,10 +2,10 @@
 
 //!use Class
 use App\Http\Requests\AddMovieRequest;
-use core\Session;
-use core\Validate;
+use App\Core\Session;
+use App\Core\Validate;
 
-require(BASE_PATH . "core/model.php");
+require(model());
 
 //!add Movie
 if (isset($_POST['title'])) {
