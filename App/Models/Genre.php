@@ -6,7 +6,7 @@ use App\Core\Model;
 
 class Genre extends Model
 {
-  protected $table = 'tbl_genre';
+  protected $table = 'tbl_genres';
 
   public function __construct()
   {

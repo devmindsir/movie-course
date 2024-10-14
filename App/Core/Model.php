@@ -14,7 +14,7 @@ class Model
   }
   public function all()
   {
-    return $this->db->doSelect("SELECT * FROM `$this->table`", [], class: get_called_class());
+    return $this->db->doSelect("SELECT * FROM `$this->table`", class: get_called_class());
   }
 
   public function find($id)

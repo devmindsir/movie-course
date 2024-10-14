@@ -1,2 +1,0 @@
-<?php
-view('register/create');

@@ -4,12 +4,7 @@ namespace App\Http\Requests;
 
 use App\Core\Validate;
 
-interface RequestInterface
-{
-  public function getError();
-}
-
-class AddMovieRequest implements RequestInterface
+class AddMovieRequest extends BaseRequest
 {
   protected $errors = [];
 
@@ -21,9 +16,5 @@ class AddMovieRequest implements RequestInterface
     Validate::validateRequired('actor', $actor);
     $this->errors = Validate::getErrors();
     return $this;
-  }
-  public function getError()
-  {
-    return $this->errors;
   }
 }

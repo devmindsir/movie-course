@@ -1,35 +1,45 @@
 <?php
 
+
+//!USE
+use App\Http\controllers\actors\ActorControllers;
+use App\Http\controllers\admin\movies\AdminMovieController;
+use App\Http\controllers\IndexController;
+use App\Http\controllers\login\LoginController;
+use App\Http\controllers\movies\MovieController;
+use App\Http\controllers\register\RegisterController;
+use App\Http\controllers\series\SerieController;
+
 //!ROOT
-$router->get('/', 'index.php');
+$router->get('/', [IndexController::class, 'index']);
 
 //!MOVIE
-$router->get('/movies', 'movies/index.php');
-$router->get('/movies/show', 'movies/show.php');
+$router->get('/movies', [MovieController::class, 'index']);
+$router->get('/movies/show', [MovieController::class, 'show']);
 
 //!SERIES
-$router->get('/series', 'series/index.php');
+$router->get('/series', [SerieController::class, 'index']);
 
 //!ACTOR
-$router->get('/actors', 'actors/index.php');
-$router->get('/actors/show', 'actors/show.php');
+$router->get('/actors', [ActorControllers::class, 'index']);
+$router->get('/actors/show', [ActorControllers::class, 'show']);
 
 //!ADMIN
-$router->get('/admin', 'admin/movies/index.php')->auth('login');
-$router->delete('/admin', 'admin/movies/destroy.php')->auth('login');
-$router->post('/admin', 'admin/movies/store.php')->auth('login');
-$router->patch('/admin', 'admin/movies/update.php')->auth('login');
+$router->get('/admin', [AdminMovieController::class, 'index'])->auth('login');
+$router->delete('/admin', [AdminMovieController::class, 'destroy'])->auth('login');
+$router->post('/admin', [AdminMovieController::class, 'store'])->auth('login');
+$router->patch('/admin', [AdminMovieController::class, 'update'])->auth('login');
 
-$router->get('/admin/create', 'admin/movies/create.php')->auth('login');
-$router->get('/admin/edit', 'admin/movies/edit.php')->auth('login');
+$router->get('/admin/create',  [AdminMovieController::class, 'create'])->auth('login');
+$router->get('/admin/edit',  [AdminMovieController::class, 'edit'])->auth('login');
 
 //!REGISTER
-$router->get('/register', 'register/create.php')->auth('guest');
-$router->post('/register', 'register/store.php')->auth('guest');
+$router->get('/register', [RegisterController::class, 'index'])->auth('guest');
+$router->post('/register', [RegisterController::class, 'store'])->auth('guest');
 
 //!LOGIN
-$router->get('/login', 'login/create.php')->auth('guest');
-$router->post('/login', 'login/show.php')->auth('guest');
+$router->get('/login', [LoginController::class, 'index'])->auth('guest');
+$router->post('/login', [LoginController::class, 'login'])->auth('guest');
 
 //!LOGOUT
-$router->delete('/login', 'login/destroy.php')->auth('login');
+$router->delete('/login', [LoginController::class, 'destroy'])->auth('login');

@@ -53,24 +53,25 @@ class Database implements DatabaseInterface
         $stmt->setFetchMode(PDO::FETCH_CLASS, $class);
       }
       $stmt->execute();
+
       if ($fetchMode === 'fetchAll') {
         return $stmt->fetchAll();
       } elseif ($fetchMode === 'fetch') {
         return $stmt->fetch();
       }
     } catch (PDOException $e) {
-      error_log($e->getMessage(), 3, './errors.log');
-      echo "query Error=" . $e->getMessage();
+      error_log($e->getMessage(), 3, BASE_PATH . 'storage/errors.log');
+      (new Router)->abort(500);
       return [];
     }
   }
   //!fetch All
-  public function doSelect($sql, $params = [], $class = __CLASS__)
+  public function doSelect($sql, $params = [], $class = null)
   {
     return $this->executeQuery($sql, $params, 'fetchAll', $class);
   }
   //!fetch
-  public function doFetch($sql, $params = [], $class = __CLASS__)
+  public function doFetch($sql, $params = [], $class = null)
   {
     return $this->executeQuery($sql, $params, 'fetch', $class);
   }

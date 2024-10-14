@@ -36,9 +36,9 @@ view('partials/_header');
           <option value="">Select</option>
           <?php
           foreach ($genres as $row):
-            $selected = (old('genre') ?? null) == $row['id'] ? 'selected' : '';
+            $selected = (old('genre') ?? null) == $row->id ? 'selected' : '';
           ?>
-            <option class="form-option" <?= $selected ?> value="<?= $row['id'] ?>"><?= $row['title'] ?></option>
+            <option class="form-option" <?= $selected ?> value="<?= $row->id ?>"><?= $row->title ?></option>
           <?php
           endforeach;
           ?>
@@ -58,9 +58,9 @@ view('partials/_header');
           <option value="">select</option>
           <?php
           foreach ($actors as $row):
-            $selected = (old('actor') ?? null) == $row['id'] ? 'selected' : '';
+            $selected = (old('actor') ?? null) == $row->id ? 'selected' : '';
           ?>
-            <option class="form-option" <?= $selected ?> value="<?= $row['id'] ?>"><?= $row['name'] . " " . $row['family'] ?></option>
+            <option class="form-option" <?= $selected ?> value="<?= $row->id ?>"><?= $row->name . " " . $row->family ?></option>
 
           <?php
 

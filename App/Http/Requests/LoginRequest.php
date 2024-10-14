@@ -4,12 +4,7 @@ namespace App\Http\Requests;
 
 use App\Core\Validate;
 
-interface RequestInterface
-{
-  public function getError();
-}
-
-class LoginRequest implements RequestInterface
+class LoginRequest extends BaseRequest
 {
   protected $errors = [];
   public function validate($email, $password)
@@ -19,10 +14,5 @@ class LoginRequest implements RequestInterface
     Validate::validateEmail($email);
     $this->errors = Validate::getErrors();
     return $this;
-  }
-
-  public function getError()
-  {
-    return $this->errors;
   }
 }

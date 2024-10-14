@@ -3,6 +3,7 @@
 namespace  App\Core;
 
 use  App\Core\Middlewares\Middleware;
+use App\Http\IndexController;
 
 interface RouterInterface
 {
@@ -64,7 +65,11 @@ class Router implements RouterInterface
         //!Middleware
         Middleware::handle($route['auth']);
 
-        return require(BASE_PATH . 'App/Http/controllers/' . $route['controller']);
+        //!Controller
+        $nameController = $route['controller'][0];
+        $methodController = $route['controller'][1];
+
+        return (new $nameController)->$methodController();
       }
     }
     $this->abort();

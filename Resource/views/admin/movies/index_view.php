@@ -48,17 +48,17 @@ view('partials/_header');
           ?>
             <tr class="admin-table-row">
               <td class="admin-table-col"><?= $i ?></td>
-              <td class="admin-table-col"><?= $row['title'] ?></td>
+              <td class="admin-table-col"><?= $row->title ?></td>
               <td class="admin-table-col">
                 <?php
 
-                echo $row['series'] === 1 ? "Series" : "Movie";
+                echo $row->series === 1 ? "Series" : "Movie";
 
                 ?>
               </td>
-              <td class="admin-table-col"><img src="<?= $row['image_path'] ?>" alt="Cover" style="width: 100px;"></td>
-              <td class="admin-table-col"><a href="/admin/edit?id=<?= $row['id'] ?>" class="edit-btn">edit</a></td>
-              <form action="<?= URL ?>admin?id=<?= $row['id'] ?>" method="post">
+              <td class="admin-table-col"><img src="<?= $row->image_path ?>" alt="Cover" style="width: 100px;"></td>
+              <td class="admin-table-col"><a href="/admin/edit?id=<?= $row->id ?>" class="edit-btn">edit</a></td>
+              <form action="<?= URL ?>admin?id=<?= $row->id ?>" method="post">
                 <td class="admin-table-col">
                   <input type="hidden" name="_method_" value="DELETE">
                   <button class="delete-btn">delete</button>
