@@ -3,8 +3,8 @@
 namespace App\Http\controllers\login;
 
 use App\Core\Session;
-use App\Http\Requests\LoginRequest;
 use App\Models\User;
+use App\Services\JwtService;
 
 class LoginController
 {
@@ -30,14 +30,29 @@ class LoginController
         redirect('login');
       }
 
-      //!SET SESSION
+      //!FIREBASE START
+      // (new JwtService)->createToken($user);
+      // $this->validateToken();
+      //!FIREBASE END
+
+      // //!SET SESSION
       Session::set('user_id', $user->id);
       redirect('admin');
       die();
     }
   }
+
+  // public function validateToken()
+  // {
+  //   $check = (new JwtService)->validateToken();
+  //   if ($check) {
+  //     redirect('admin');
+  //   }
+  //   redirect('login');
+  // }
   public function destroy()
   {
+    // (new JwtService)->destroyToken();
     Session::destroy();
     //!redirect
     redirect();

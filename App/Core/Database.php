@@ -2,6 +2,7 @@
 
 namespace  App\Core;
 
+use Dotenv\Dotenv;
 use PDO;
 use PDOException;
 
@@ -15,9 +16,19 @@ interface DatabaseInterface
 }
 class Database implements DatabaseInterface
 {
+  private $host;
+  private $db;
+  private $username;
+  private $password;
   private $pdo;
-  public function __construct(private $host = 'localhost', private $db = 'db_movie', private $username = 'root', private $password = '', private $charset = "utf8mb4")
+  public function __construct(private $charset = "utf8mb4")
   {
+    $dotenv = Dotenv::createImmutable(BASE_PATH);
+    $dotenv->load();
+    $this->host = $_ENV['HOST_NAME'];
+    $this->db = $_ENV['DB_NAME'];
+    $this->username = $_ENV['USERNAME'];
+    $this->password = $_ENV['PASSWORD'];
     $this->connect();
   }
   private function connect()
