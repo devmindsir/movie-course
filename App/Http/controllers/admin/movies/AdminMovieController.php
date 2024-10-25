@@ -2,6 +2,7 @@
 
 namespace App\Http\controllers\admin\movies;
 
+use App\Core\Controller;
 use App\Core\Router;
 use App\Core\Session;
 use App\Http\Requests\AddMovieRequest;
@@ -10,22 +11,21 @@ use App\Models\Actor;
 use App\Models\Genre;
 use App\Models\Movie;
 
-class AdminMovieController
+class AdminMovieController extends Controller
 {
   public function index()
   {
     //!Movie
     $user_id = Session::get('user_id');
     $movies = (new Movie)->getMovieUser($user_id);
-    view('admin/movies/index', ['movies' => $movies]);
+    $this->view('admin.movies.index', ['movies' => $movies], noNav: true);
   }
 
-  public function destroy()
+  public function destroy($id)
   {
 
     $router = new Router();
 
-    $id = $_GET['id'];
     $user_id = Session::get('user_id');
 
     //!getMovie
@@ -76,7 +76,7 @@ class AdminMovieController
     }
   }
 
-  public function update()
+  public function update($id)
   {
     if (isset($_POST['title'])) {
       $title = $_POST['title'];
@@ -84,25 +84,24 @@ class AdminMovieController
       $image = $_POST['image-url'];
       $type = $_POST['type'];
 
-      $movie_id = $_GET['id'];
       $user_id = Session::get('user_id');
 
       //!VALIDATE
       $errors = (new EditMovieRequest)->validate($title, $description, $image)->getError();
 
-      if (empty($errors)) {;
+      if (empty($errors)) {
 
-        (new Movie)->updateMovie($title, $description, $image, $type, $movie_id);
+        (new Movie)->updateMovie($title, $description, $image, $type, $id);
         //!redirect
         $message = 'successfully Update movie';
-        redirect("admin/edit?id=$movie_id", $message);
+        redirect("admin/edit/$id", $message);
       }
       //!session Set
       Session::setFlash('old', $_POST);
       Session::setFlash('errors', $errors);
 
       //!redirect
-      redirect('admin/edit?id=' . $movie_id);
+      redirect('admin/edit/' . $id);
     }
   }
 
@@ -113,19 +112,18 @@ class AdminMovieController
     //!getGenres
     $genres = (new Genre)->all();
 
-    view('admin/movies/create', ['actors' => $actors, 'genres' => $genres]);
+    $this->view('admin.movies.create', ['actors' => $actors, 'genres' => $genres], noNav: true);
   }
 
-  public function edit()
+  public function edit($id)
   {
     $router = new Router();
 
     //!get Movie Id
-    $movie_id = $_GET['id'];
     $user_id = Session::get('user_id');
 
     //!Movie
-    $movie = (new Movie)->find($movie_id);
+    $movie = (new Movie)->find($id);
 
     if (!$movie) {
       $router->abort();
@@ -134,6 +132,6 @@ class AdminMovieController
       $router->abort(403);
     }
 
-    view('admin/movies/edit', ['movie' => $movie, 'movie_id' => $movie_id]);
+    $this->view('admin.movies.edit', ['movie' => $movie, 'movie_id' => $id], noNav: true);
   }
 }

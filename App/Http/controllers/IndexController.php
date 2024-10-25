@@ -2,16 +2,18 @@
 
 namespace App\Http\controllers;
 
+use App\Core\Controller;
 use App\Models\Movie;
 use App\Models\Slider;
 
-class IndexController
+class IndexController extends Controller
 {
 
   public function index()
   {
     $data = $this->loadData();
-    view('index', $data);
+
+    $this->view('index', $data);
   }
 
   private function loadData()

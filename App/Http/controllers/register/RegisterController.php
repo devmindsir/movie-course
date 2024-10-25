@@ -2,15 +2,16 @@
 
 namespace App\Http\controllers\register;
 
+use App\Core\Controller;
 use App\Core\Session;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 
-class RegisterController
+class RegisterController extends Controller
 {
   public function index()
   {
-    view('register/create');
+    $this->view('register.create', noNav: true);
   }
 
   public function store()

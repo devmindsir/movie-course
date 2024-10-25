@@ -1390,4 +1390,27 @@ label{
   .list-item-people {
     flex: 0 0 calc(50% - 1 * var(--margin-value));
   }
+
+}
+
+@media only screen and (max-width: 800px) {
+  .login-item{
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 0 !important;
+  margin-bottom: 1rem;
+  }
+  .admin-body{
+    padding: 0;
+  }
+  .header-admin{
+    position: relative !important;
+    margin-bottom: 3rem;
+  }
+  .admin-header{
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

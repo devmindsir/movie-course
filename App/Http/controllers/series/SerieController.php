@@ -2,13 +2,14 @@
 
 namespace App\Http\controllers\series;
 
+use App\Core\Controller;
 use App\Models\Movie;
 
-class SerieController
+class SerieController extends Controller
 {
   public function index()
   {
     $series = (new Movie)->getSeries();
-    view('series/index', ['series' => $series]);
+    $this->view('series.index', ['series' => $series]);
   }
 }

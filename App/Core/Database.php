@@ -71,7 +71,7 @@ class Database implements DatabaseInterface
         return $stmt->fetch();
       }
     } catch (PDOException $e) {
-      error_log($e->getMessage(), 3, BASE_PATH . 'storage/errors.log');
+      error_log($e->getMessage(), 3, BASE_PATH . 'storage/log/errors.log');
       (new Router)->abort(500);
       return [];
     }

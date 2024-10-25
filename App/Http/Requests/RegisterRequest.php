@@ -14,6 +14,7 @@ class RegisterRequest extends BaseRequest
     Validate::resetError();
     Validate::validateFullName($name, $family);
     Validate::validatePassword($password);
+    Validate::validateRegexPassword($password);
     Validate::validateEmail($email);
     $this->errors = Validate::getErrors();
     return $this;

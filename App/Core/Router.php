@@ -60,16 +60,17 @@ class Router implements RouterInterface
   {
 
     foreach ($this->routes as $route) {
-      if ($url === $route['url'] && $method === $route['method']) {
+
+      $pattern = preg_replace('/{(\w+)}/', '([\w\-]+)', $route['url']);
+      if (preg_match('#^' . $pattern . '$#', $url, $matches) && $method === $route['method']) {
 
         //!Middleware
         Middleware::handle($route['auth']);
 
         //!Controller
         $nameController = $route['controller'][0];
-        $methodController = $route['controller'][1];
-
-        return (new $nameController)->$methodController();
+        $methodController = $route['controller'][1];;
+        return (new $nameController)->$methodController(...array_slice($matches, 1));
       }
     }
     $this->abort();

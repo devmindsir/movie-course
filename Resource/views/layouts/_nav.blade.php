@@ -17,13 +17,13 @@
 
       if (!Session::get('user_id')):
       ?>
-        <a class="my-5 bg-primary py-2 px-4 d-flex rounded-start-2 justify-content-center" href="/login">
+        <a class="login-item my-5 bg-primary py-2 px-4 d-flex rounded-start-2 justify-content-center" href="/login">
           Login/Register
         </a>
       <?php
       else:
       ?>
-        <a class="my-5 bg-primary py-2 px-4 d-flex rounded-start-2 justify-content-center" href="/admin">
+        <a class="login-item my-5 bg-primary py-2 px-4 d-flex rounded-start-2 justify-content-center" href="/admin">
           Dashboard
         </a>
       <?php
@@ -73,3 +73,10 @@
         </div>
       </div>
     </div>
+
+
+    {{-- !PUSH --}}
+    @push('stack')
+        {{-- !NAV --}}
+<script type="module" src="/js/header.js"></script>
+    @endpush

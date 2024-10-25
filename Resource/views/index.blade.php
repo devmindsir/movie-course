@@ -1,8 +1,8 @@
-<?php
-view('partials/_header');
-view('partials/_nav');
+@extends('layouts.master',[
+  'pageTitle'=>"HOME"
+])
 
-?>
+@section('content')
 <main>
   <!-- slider  -->
   <div class="search-container search-in-slider">
@@ -10,16 +10,14 @@ view('partials/_nav');
     <input type="text" placeholder="Search.." name="search" />
   </div>
   <div class="slideshow-container">
-    <?php
-    foreach ($sliders as $slider):
-    ?>
-      <a href="/movies/show?id=<?= $slider->id ?>" class="mySlides fade">
-        <img src="<?= $slider->image ?>" />
-        <div class="slider-text"><?= $slider->title ?></div>
+
+    @foreach ($sliders as $slider)
+      <a  class="mySlides fade">
+        <img src=" {{$slider->image}} " />
+        <div class="slider-text"> {{$slider->title}} </div>
       </a>
-    <?php
-    endforeach;
-    ?>
+    @endforeach
+
     <a class="prev" onclick="plusSlides(-1)">❮</a>
     <a class="next" onclick="plusSlides(1)">❯</a>
   </div>
@@ -33,7 +31,7 @@ view('partials/_nav');
   <!-- custom scrollbar  -->
   <div class="custom-scrollbar-container">
     <div class="upper-scrollbar">
-      <h3>new</h3>
+     <h3>new</h3>
     </div>
     <div id="custom-scrollbar-trending" class="custom-scrollbar">
       <button id="left-scroll" onclick="scrollLeftTrending()">
@@ -42,22 +40,23 @@ view('partials/_nav');
       <button id="right-scroll" onclick="scrollRightTrending()">
         <i class="fa-solid fa-angle-right"></i>
       </button>
-      <?php
-      foreach ($newMovies as $newMovie):
-      ?>
-        <a href="/movies/show?id=<?= $newMovie->id ?>" class="info-box">
+   
+      @foreach ($newMovies as $newMovie)
+      @php
+      $slug=generateSlug($newMovie->title);   
+     @endphp
+        <a href="/movies/show/{{$newMovie->id}}/{{$slug}} " class="info-box">
           <img
-            src="<?= $newMovie->image_path ?>" />
-          <div class="home-scrollbar-title"><?= $newMovie->title ?></div>
-          <div class="home-scrollbar-rating"><?= $newMovie->rate ?></div>
+            src=" {{$newMovie->image_path}} " />
+          <div class="home-scrollbar-title"> {{$newMovie->title}} </div>
+          <div class="home-scrollbar-rating"> {{$newMovie->rate}} </div>
         </a>
-      <?php
-      endforeach;
-      ?>
+     
+      @endforeach
+      
     </div>
   </div>
-  <!-- custom scrollbar  -->
-  <!-- custom scrollbar  -->
+
   <div class="custom-scrollbar-container">
     <div class="upper-scrollbar">
       <h3>Popular</h3>
@@ -69,22 +68,27 @@ view('partials/_nav');
       <button id="right-scroll" onclick="scrollRightPopular()">
         <i class="fa-solid fa-angle-right"></i>
       </button>
-      <?php
-      foreach ($popularMovies as $popularMovie):
-      ?>
-        <a href="/movies/show?id=<?= $popularMovie->id ?>" class="info-box">
+      
+      @foreach ($popularMovies as $popularMovie)
+      @php
+      $slug=generateSlug($popularMovie->title);   
+     @endphp
+        <a href="/movies/show/{{$popularMovie->id}}/{{$slug}} " class="info-box">
           <img
-            src="<?= $popularMovie->image_path ?>" />
-          <div class="home-scrollbar-title"><?= $popularMovie->title ?></div>
-          <div class="home-scrollbar-rating"><?= $popularMovie->rate ?></div>
+            src=" {{$popularMovie->image_path }}" />
+          <div class="home-scrollbar-title"> {{$popularMovie->title}} </div>
+          <div class="home-scrollbar-rating">{{$popularMovie->rate}} </div>
         </a>
-      <?php
-      endforeach;
-      ?>
+     
+      @endforeach
+      
     </div>
   </div>
   <!-- custom scrollbar  -->
 </main>
-<?php
-view('partials/_footer');
-?>
+@endsection()
+
+@push('script')
+   {{-- !MAIN --}}
+<script type="module" src="/js/main.js"></script> 
+@endpush

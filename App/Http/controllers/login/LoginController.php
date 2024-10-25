@@ -2,15 +2,16 @@
 
 namespace App\Http\controllers\login;
 
+use App\Core\Controller;
 use App\Core\Session;
 use App\Models\User;
 use App\Services\JwtService;
 
-class LoginController
+class LoginController extends Controller
 {
   public function index()
   {
-    view('login/create');
+    $this->view('login.create', noNav: true);
   }
   public function login()
   {
@@ -52,6 +53,7 @@ class LoginController
   // }
   public function destroy()
   {
+
     // (new JwtService)->destroyToken();
     Session::destroy();
     //!redirect

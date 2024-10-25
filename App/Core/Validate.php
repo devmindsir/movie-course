@@ -28,11 +28,26 @@ class Validate
   {
     self::validateField('name', $name, 2, 40);
     self::validateField('family', $family, 3, 60);
+    self::validateRegex('name', $name);
+    self::validateRegex('family', $family);
+  }
+  public static function validateRegex($fieldName, $value)
+  {
+    if (!preg_match('/^[a-zA-Z]+$/', $value)) {
+      self::$errors[$fieldName] = 'must contain only letters and no special characters or numbers';
+    }
   }
   public static function validatePassword($password)
   {
     self::validateRequired('password', $password);
     self::validateField('password', $password, 6, 60);
+  }
+  public static function validateRegexPassword($password)
+  {
+    $pattern = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[\W_]).{6,60}$/';
+    if (!preg_match($pattern, $password)) {
+      self::$errors['password'] = 'Uppercase & LowerCase Letters & Number & special Characters';
+    }
   }
 
   public static function validateEmail($email)

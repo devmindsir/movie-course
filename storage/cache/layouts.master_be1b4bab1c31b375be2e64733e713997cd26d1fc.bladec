@@ -1,0 +1,14 @@
+
+<?php if(empty($noHeader)): ?>
+<?php echo $this->runChild('layouts._header'); ?>
+<?php endif; ?>
+
+<?php if(empty($noNav)): ?>
+<?php echo $this->runChild('layouts._nav'); ?>
+<?php endif; ?>
+
+<?php echo $this->yieldContent('content'); ?>
+
+<?php if(empty($noFooter)): ?>
+<?php echo $this->runChild('layouts._footer'); ?>
+<?php endif; ?>

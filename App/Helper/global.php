@@ -51,3 +51,30 @@ function view($path, $params = [])
   extract($params);
   require(BASE_PATH . "Resource/views/{$path}_view.php");
 }
+
+
+//!SLUG
+function generateSlug($string)
+{
+
+  $slug = trim($string);
+  //!تبدیل به حروف کوچک
+
+  $slug = strtolower($string);
+
+  //!جایگزینی فاصله ها با -
+
+  $slug = preg_replace('/\s+/', '-', $slug);
+
+  //!حذف کاراکترهای غیر مجاز
+
+  $slug = preg_replace('/[^a-z0-9\-]/', '', $slug);
+
+  //!حذف - های اضافی   
+
+  $slug = preg_replace('/-+/', '-', $slug);
+
+  $slug = trim($slug, '-');
+  //!return
+  return $slug;
+}

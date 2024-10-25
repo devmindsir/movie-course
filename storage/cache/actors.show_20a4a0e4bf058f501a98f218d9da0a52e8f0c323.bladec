@@ -1,0 +1,86 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('content'); ?>
+<body>
+ <div class="details-container">
+ <!-- header  -->
+ <div class="details-header">
+ <a href="/">
+ <img src="./images/logo.png" alt="" />
+ </a>
+ <div class="search-container-details">
+ <input type="text" placeholder="Search.." name="search" />
+ <i class="fa-solid fa-magnifying-glass"></i>
+ </div>
+ </div>
+ <!-- end header  -->
+ <div class="people-details-content">
+ <div class="personal-info">
+ <img
+ src="<?php echo \htmlentities($actor->image??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ alt="" />
+ <h1 class="people-details-name-mobile"><?php echo \htmlentities($actor->name . " " . $actor->family??'', ENT_QUOTES, 'UTF-8', false); ?></h1>
+ <h3 class="personal-info-text">Personal Info</h3>
+ <div class="personal-info-items">
+ <strong>count Movie</strong>
+ <p><?php echo \htmlentities(sizeof($movies)??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ </div>
+ <div class="personal-info-items">
+ <strong>Gender</strong>
+ <p><?php echo \htmlentities($actor->gender == 1 ? "Male" : "Female"??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ </div>
+ <div class="personal-info-items">
+ <strong>Birthday</strong>
+ <p><?php echo \htmlentities($actor->birthday??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ </div>
+ <div class="personal-info-items">
+ <strong>Place of Birth</strong>
+ <p><?php echo \htmlentities($actor->place_birthday??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ </div>
+ </div>
+ <div class="people-details-right">
+ <h1 class="people-details-name"><?php echo \htmlentities($actor->name . " " . $actor->family??'', ENT_QUOTES, 'UTF-8', false); ?></h1>
+ <div class="biography">
+ <h3>Biography</h3>
+ <p>
+ <?php echo \htmlentities($actor->biography??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </p>
+ </div>
+ <div class="people-details-scroll-container">
+ <h3>Known For</h3>
+
+ <div class="people-details-scroll">
+ 
+ <?php $__currentLoopData = $movies; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $movie): $loop = $this->incrementLoopIndices();  ?>
+ 
+ <div class="people-details-scroll-item">
+ <img
+ src="<?php echo \htmlentities($movie->image_path??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ alt="<?php echo \htmlentities($movie->title??'', ENT_QUOTES, 'UTF-8', false); ?>" />
+ <p><?php echo \htmlentities($movie->title??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ </div>
+ 
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ 
+ </div>
+
+ </div>
+ </div>
+ </div>
+ <?php $this->stopSection(); ?>
+
+
+ <?php /*! ACTOR PUSH */ ?>
+
+ <?php $this->startPush('script'); ?>
+ 
+<?php /* !SHOW PEAPOLE */ ?>
+<script type="module" src="/js/people-details.js"></script>
+<script type="module" src="/js/people.js"></script>
+
+ <?php $this->stopPush(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layouts.master',[
+ 'pageTitle'=>$actor->name." ".$actor->family
+]); } ?>

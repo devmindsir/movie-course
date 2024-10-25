@@ -1,9 +1,8 @@
-<?php
-view('partials/_header');
+@extends('layouts.master',[
+  'pageTitle'=>$movie->title
+])
 
-?>
-
-<body>
+@section('content')
   <div class="details-container">
 
 
@@ -81,6 +80,10 @@ view('partials/_header');
         ?>
       </div>
     </div>
-    <?php
-    view('partials/_footer');
-    ?>
+    @endsection()
+
+
+    @push('script')
+        {{-- !SHOW MOVIE --}}
+<script type="module" src="/js/movies-tv.js"></script>
+    @endpush

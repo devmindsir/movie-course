@@ -2,31 +2,30 @@
 
 namespace App\Http\controllers\actors;
 
+use App\Core\Controller;
 use App\Core\Router;
 use App\Models\Actor;
 use App\Models\Movie;
 
-class ActorControllers
+class ActorControllers extends Controller
 {
 
   public function index()
   {
     $actors = (new Actor)->all();
-
-    view('actors/index', ['actors' => $actors]);
+    $this->view('actors.index', ['actors' => $actors]);
   }
 
-  public function show()
+  public function show($id, $slug)
   {
-    //!Get Id
-    $id = $_GET['id'];
 
     $router = new Router();
 
     //!Get Actor
     $actor = (new Actor)->find($id);
+    $actorSlug = generateSlug($actor->name . ' ' . $actor->family);
 
-    if (!$actor) {
+    if (!$actor || $actorSlug !== $slug) {
       $router->abort();
     }
 
@@ -34,6 +33,6 @@ class ActorControllers
     $movies = (new Movie)->actor($id);
 
     //!View
-    view('actors/show', ['actor' => $actor, 'movies' => $movies]);
+    $this->view('actors.show', ['actor' => $actor, 'movies' => $movies], noNav: true);
   }
 }
