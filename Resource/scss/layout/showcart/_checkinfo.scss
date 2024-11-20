@@ -1,0 +1,52 @@
+.address{
+  width: 100%;
+  border: 1px solid #ccc;
+  &-item{
+    height: 6rem;
+    vertical-align: middle;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+  }
+  &-circle{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+    &.checked{
+      background-color: #4caf50;
+      &::after{
+        content: '✔'; /* Check mark */
+        position: absolute;
+        top: 0;
+        left:0;
+        right:0;
+        bottom: 0;
+        margin: auto;
+        color: white;
+        font-size: 20px;
+      }
+    }
+  }
+  &-radio {
+    display: none; 
+  }
+  &-post{
+  width: 90px;
+  height: 65px;
+
+  display: inline-block;
+  background: url("/public/images/slices.png");
+    &--1{
+background-position: -867px -347px;
+    }
+  }
+}
+
+.table.checked-table {
+  border: 2px solid #4caf50; /* Green border */
+}

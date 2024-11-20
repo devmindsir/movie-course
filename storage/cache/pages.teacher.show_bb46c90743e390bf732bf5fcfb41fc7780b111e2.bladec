@@ -1,0 +1,358 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('content'); ?>
+<main>
+ <div class="container my-9">
+ <div class="p-shadow bg-white py-3 px-4 rounded-3">
+ <div class="row">
+ <div class="col-5 d-flex gap-4 align-items-center">
+ <img
+ class="border border-2 object-fit-cover border-gray rounded-4 overflow-hidden"
+ width="200px"
+ height="200px"
+ src="public/images/teacher/teacher.jpg" />
+ <div class="d-flex flex-column gap-3">
+ <h1 class="title-structuring fs-3">فرهاد کاظم زاده</h1>
+ <div class="flex-start gap-2">
+ <i class="fas fa-code text-primary"></i>
+ <span class="fw-bold fs-4">برنامه نویس فول استک وب</span>
+ </div>
+ <div class="flex-start gap-2">
+ <i class="fas fa-code text-primary"></i>
+ <div class="fs-4 flex-start gap-3">
+ <span>تاریخ عضویت:</span>
+ <span class="text-subtitle">1403/08/12</span>
+ </div>
+ </div>
+ <div class="flex-start gap-2">
+ <i class="fas fa-code text-primary"></i>
+ <div class="fs-4 flex-start gap-3">
+ <span>تعداد بازدید دوره ها:</span>
+ <span class="text-subtitle">85000</span>
+ </div>
+ </div>
+ <div class="flex-start gap-2">
+ <i class="fas fa-code text-primary"></i>
+ <div class="fs-4 flex-start gap-3">
+ <span>تعداد دوره ها:</span>
+ <span class="text-subtitle">10</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="col-7">
+ <h2 class="title-structuring">درباره مدرس :</h2>
+ <p class="text-subtitle mt-5 line2 text-justify width-18 fs-4">
+ در ابتدا به عنوان برنامه‌نویس ارشد،مدیر پروژه و مدیر کارآموزی در
+ چندین شرکت فعالیت کردم و توانستم با پیشرفت تجربه کاری خود، در
+ این حوزه تخصص بیشتری به دست آورم. پس از مدتی، با توجه به تجربه‌ی
+ کسب شده، به عنوان برنامه‌نویس فول استک استخدام شدم و با توانایی
+ برنامه‌نویسی در تمامی لایه‌های یک برنامه، از جمله فرانت‌اند،
+ بک‌اند ، پایگاه داده و ... به ایجاد برنامه‌های کاربردی و پیچیده
+ پرداختم. سپس پس از کسب بیش از 5 سال تجربه در این حوزه به عنوان
+ استعدادیاب و مدرس حوزه کودک و نوجوان با دپارتمان های تخصصی کودک
+ و نوجوان و وزارت آموزش و پرورش همکاری کردم در ادامه به عنوان
+ مدرس در موسسات آموزشی و دانشگاه ها مشغول به تدریس شدم و در سال
+ 1401 آکادمی توسعه دهندگان ذهن را تاسیس و به عنوان مدیر عامل این
+ مجموعه انتخاب شدم و سپس با انتقال تجربیات و دانش خود به
+ دانشجویان، توانستم آن‌ها را در زمینه‌ی برنامه‌نویسی در تمامی
+ لایه‌های یک برنامه، از جمله فرانت‌اند، بک‌اند و پایگاه داده،
+ آموزش دهم.
+ </p>
+ </div>
+ </div>
+ </div>
+ <div class="row justify-content-center">
+ <div class="col-lg-4 col-md-6 col-12">
+ <div class="card mt-5 rounded-5 overflow-hidden">
+ <div class="w-100">
+ <a href="#" class="w-100">
+ <img class="w-100" src="public/images/course/sass.webp" />
+ </a>
+ </div>
+ <div class="w-100 py-4 px-5">
+ <h2 class="mb-3">
+ <a href="#" class="fw-bold fs-4"> دوره آموزشی SASS </a>
+ </h2>
+ <div class="flex-between">
+ <div class="text-subtitle fs-4">
+ <i class="fas fa-chalkboard-user"></i>
+ <a href="#"> فرهاد کاظم زاده </a>
+ </div>
+ <div>
+ <img src="public/images/star/star.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ </div>
+ </div>
+
+ <div class="mt-4 text-subtitle flex-start gap-2">
+ <i class="fas fa-user fs-4"></i>
+ <span class="fs-5">۱۱۰</span>
+ </div>
+
+ <div class="fs-4 mt-4 text-subtitle fw-bold">
+ <span>تخفیف :</span>
+ <span
+ >۱۰
+ <span class="text-primary">درصد</span>
+ </span>
+ </div>
+
+ <div class="fs-4 mt-2 text-subtitle fw-bold">
+ <span>هزینه دوره :</span>
+ <span
+ >۳,۳۴۰,۰۰۰
+ <span class="text-primary">تومان</span>
+ </span>
+ </div>
+ </div>
+ <div class="w-100 px-4 py-3 border-top border-1 border-gray">
+ <a href="#" class="w-100 flex-center gap-3 fs-4">
+ <span>مشاهده اطلاعات</span>
+ <i class="fas fa-arrow-left"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-4 col-md-6 col-12">
+ <div class="card mt-5 rounded-5 overflow-hidden">
+ <div class="w-100">
+ <a href="#" class="w-100">
+ <img class="w-100" src="public/images/course/sass.webp" />
+ </a>
+ </div>
+ <div class="w-100 py-4 px-5">
+ <h2 class="mb-3">
+ <a href="#" class="fw-bold fs-4"> دوره آموزشی SASS </a>
+ </h2>
+ <div class="flex-between">
+ <div class="text-subtitle fs-4">
+ <i class="fas fa-chalkboard-user"></i>
+ <a href="#"> فرهاد کاظم زاده </a>
+ </div>
+ <div>
+ <img src="public/images/star/star.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ </div>
+ </div>
+
+ <div class="mt-4 text-subtitle flex-start gap-2">
+ <i class="fas fa-user fs-4"></i>
+ <span class="fs-5">۱۱۰</span>
+ </div>
+
+ <div class="fs-4 mt-4 text-subtitle fw-bold">
+ <span>تخفیف :</span>
+ <span
+ >۱۰
+ <span class="text-primary">درصد</span>
+ </span>
+ </div>
+
+ <div class="fs-4 mt-2 text-subtitle fw-bold">
+ <span>هزینه دوره :</span>
+ <span
+ >۳,۳۴۰,۰۰۰
+ <span class="text-primary">تومان</span>
+ </span>
+ </div>
+ </div>
+ <div class="w-100 px-4 py-3 border-top border-1 border-gray">
+ <a href="#" class="w-100 flex-center gap-3 fs-4">
+ <span>مشاهده اطلاعات</span>
+ <i class="fas fa-arrow-left"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-4 col-md-6 col-12">
+ <div class="card mt-5 rounded-5 overflow-hidden">
+ <div class="w-100">
+ <a href="#" class="w-100">
+ <img class="w-100" src="public/images/course/sass.webp" />
+ </a>
+ </div>
+ <div class="w-100 py-4 px-5">
+ <h2 class="mb-3">
+ <a href="#" class="fw-bold fs-4"> دوره آموزشی SASS </a>
+ </h2>
+ <div class="flex-between">
+ <div class="text-subtitle fs-4">
+ <i class="fas fa-chalkboard-user"></i>
+ <a href="#"> فرهاد کاظم زاده </a>
+ </div>
+ <div>
+ <img src="public/images/star/star.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ </div>
+ </div>
+
+ <div class="mt-4 text-subtitle flex-start gap-2">
+ <i class="fas fa-user fs-4"></i>
+ <span class="fs-5">۱۱۰</span>
+ </div>
+
+ <div class="fs-4 mt-4 text-subtitle fw-bold">
+ <span>تخفیف :</span>
+ <span
+ >۱۰
+ <span class="text-primary">درصد</span>
+ </span>
+ </div>
+
+ <div class="fs-4 mt-2 text-subtitle fw-bold">
+ <span>هزینه دوره :</span>
+ <span
+ >۳,۳۴۰,۰۰۰
+ <span class="text-primary">تومان</span>
+ </span>
+ </div>
+ </div>
+ <div class="w-100 px-4 py-3 border-top border-1 border-gray">
+ <a href="#" class="w-100 flex-center gap-3 fs-4">
+ <span>مشاهده اطلاعات</span>
+ <i class="fas fa-arrow-left"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-4 col-md-6 col-12">
+ <div class="card mt-5 rounded-5 overflow-hidden">
+ <div class="w-100">
+ <a href="#" class="w-100">
+ <img class="w-100" src="public/images/course/sass.webp" />
+ </a>
+ </div>
+ <div class="w-100 py-4 px-5">
+ <h2 class="mb-3">
+ <a href="#" class="fw-bold fs-4"> دوره آموزشی SASS </a>
+ </h2>
+ <div class="flex-between">
+ <div class="text-subtitle fs-4">
+ <i class="fas fa-chalkboard-user"></i>
+ <a href="#"> فرهاد کاظم زاده </a>
+ </div>
+ <div>
+ <img src="public/images/star/star.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ </div>
+ </div>
+
+ <div class="mt-4 text-subtitle flex-start gap-2">
+ <i class="fas fa-user fs-4"></i>
+ <span class="fs-5">۱۱۰</span>
+ </div>
+
+ <div class="fs-4 mt-4 text-subtitle fw-bold">
+ <span>تخفیف :</span>
+ <span
+ >۱۰
+ <span class="text-primary">درصد</span>
+ </span>
+ </div>
+
+ <div class="fs-4 mt-2 text-subtitle fw-bold">
+ <span>هزینه دوره :</span>
+ <span
+ >۳,۳۴۰,۰۰۰
+ <span class="text-primary">تومان</span>
+ </span>
+ </div>
+ </div>
+ <div class="w-100 px-4 py-3 border-top border-1 border-gray">
+ <a href="#" class="w-100 flex-center gap-3 fs-4">
+ <span>مشاهده اطلاعات</span>
+ <i class="fas fa-arrow-left"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ <div class="col-lg-4 col-md-6 col-12">
+ <div class="card mt-5 rounded-5 overflow-hidden">
+ <div class="w-100">
+ <a href="#" class="w-100">
+ <img class="w-100" src="public/images/course/sass.webp" />
+ </a>
+ </div>
+ <div class="w-100 py-4 px-5">
+ <h2 class="mb-3">
+ <a href="#" class="fw-bold fs-4"> دوره آموزشی SASS </a>
+ </h2>
+ <div class="flex-between">
+ <div class="text-subtitle fs-4">
+ <i class="fas fa-chalkboard-user"></i>
+ <a href="#"> فرهاد کاظم زاده </a>
+ </div>
+ <div>
+ <img src="public/images/star/star.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ <img src="public/images/star/star_fill.svg" />
+ </div>
+ </div>
+
+ <div class="mt-4 text-subtitle flex-start gap-2">
+ <i class="fas fa-user fs-4"></i>
+ <span class="fs-5">۱۱۰</span>
+ </div>
+
+ <div class="fs-4 mt-4 text-subtitle fw-bold">
+ <span>تخفیف :</span>
+ <span
+ >۱۰
+ <span class="text-primary">درصد</span>
+ </span>
+ </div>
+
+ <div class="fs-4 mt-2 text-subtitle fw-bold">
+ <span>هزینه دوره :</span>
+ <span
+ >۳,۳۴۰,۰۰۰
+ <span class="text-primary">تومان</span>
+ </span>
+ </div>
+ </div>
+ <div class="w-100 px-4 py-3 border-top border-1 border-gray">
+ <a href="#" class="w-100 flex-center gap-3 fs-4">
+ <span>مشاهده اطلاعات</span>
+ <i class="fas fa-arrow-left"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <div class="pagination container flex-center mt-8">
+ <ul class="pagination-list">
+ <li class="pagination-item">
+ <i class="fas fa-right-long"></i>
+ </li>
+ <li class="pagination-item active">
+ <a>۱</a>
+ </li>
+ <li class="pagination-item">
+ <a>۲</a>
+ </li>
+ <li class="pagination-item">
+ <i class="fas fa-left-long"></i>
+ </li>
+ </ul>
+ </div>
+ </div>
+</main>
+<?php $this->stopSection(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('pages.layouts.master',[
+ 'pageTitle'=>$teacher->family
+]); } ?>

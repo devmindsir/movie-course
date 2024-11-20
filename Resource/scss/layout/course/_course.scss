@@ -1,0 +1,46 @@
+.course {
+  &-tag {
+    padding: 0.5rem 1rem;
+    background-color: rgba(158, 18, 177, 0.1);
+    border-radius: 0.3rem;
+    color: rgb(158, 18, 177);
+    font-size: 1.2rem;
+  }
+  &-video {
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 1.8rem rgba(70, 71, 73, 0.7);
+    }
+  }
+  &-introduction {
+    width: 90%;
+  }
+  &-video {
+    &--number {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+  &-teacher {
+    &-img {
+      width: 7rem;
+      height: 7rem;
+    }
+  }
+  &-comment {
+    &-description {
+      min-height: 20rem;
+    }
+  }
+  &-line {
+    height: 4rem;
+    width: 0.2rem;
+  }
+  &-category {
+    &-img {
+      height: 4rem;
+      object-fit: cover;
+    }
+  }
+}

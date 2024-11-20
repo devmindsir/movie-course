@@ -2,44 +2,36 @@
 
 
 //!USE
-use App\Http\controllers\actors\ActorControllers;
-use App\Http\controllers\admin\movies\AdminMovieController;
 use App\Http\controllers\IndexController;
-use App\Http\controllers\login\LoginController;
-use App\Http\controllers\movies\MovieController;
-use App\Http\controllers\register\RegisterController;
-use App\Http\controllers\series\SerieController;
+use App\Http\controllers\CourseController;
+use App\Http\controllers\ProductController;
+use App\Http\controllers\TeacherController;
+use App\Http\controllers\CourseCategoryController;
+use App\Http\controllers\BlogController;
+use App\Http\controllers\BlogCategoryController;
+use App\Http\controllers\AuthorController;
+
 
 //!ROOT
 $router->get('/', [IndexController::class, 'index']);
 
-//!MOVIE
-$router->get('/movies', [MovieController::class, 'index']);
-$router->get('/movies/show/{id}/{slug}', [MovieController::class, 'show']);
+//!Course
+$router->get('/course/show/{id}/{slug}', [CourseController::class, 'show']);
 
-//!SERIES
-$router->get('/series', [SerieController::class, 'index']);
+//!Teacher
+$router->get('/teacher/show/{id}/{slug}', [TeacherController::class, 'show']);
 
-//!ACTOR
-$router->get('/actors', [ActorControllers::class, 'index']);
-$router->get('/actors/show/{id}/{slug}', [ActorControllers::class, 'show']);
+//!Course_Category
+$router->get('/course-category/index/{id}/{slug}', [CourseCategoryController::class, 'index']);
 
-//!ADMIN
-$router->get('/admin', [AdminMovieController::class, 'index'])->auth('login');
-$router->delete('/admin/{id}', [AdminMovieController::class, 'destroy'])->auth('login');
-$router->post('/admin', [AdminMovieController::class, 'store'])->auth('login');
-$router->patch('/admin/{id}', [AdminMovieController::class, 'update'])->auth('login');
+//!BLOG
+$router->get('/blog/show/{id}/{slug}', [BlogController::class, 'show']);
 
-$router->get('/admin/create',  [AdminMovieController::class, 'create'])->auth('login');
-$router->get('/admin/edit/{id}',  [AdminMovieController::class, 'edit'])->auth('login');
+//!Blog-Category
+$router->get('/blog-category/index/{id}/{slug}', [BlogCategoryController::class, 'index']);
 
-//!REGISTER
-$router->get('/register', [RegisterController::class, 'index'])->auth('guest');
-$router->post('/register', [RegisterController::class, 'store'])->auth('guest');
+//!Author
+$router->get('/author/show/{id}/{slug}', [AuthorController::class, 'show']);
 
-//!LOGIN
-$router->get('/login', [LoginController::class, 'index'])->auth('guest');
-$router->post('/login', [LoginController::class, 'login'])->auth('guest');
-
-//!LOGOUT
-$router->delete('/login', [LoginController::class, 'destroy'])->auth('login');
+//!Product
+$router->get('/product/show/{id}/{slug}', [ProductController::class, 'show']);

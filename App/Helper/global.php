@@ -56,7 +56,6 @@ function view($path, $params = [])
 //!SLUG
 function generateSlug($string)
 {
-
   $slug = trim($string);
   //!تبدیل به حروف کوچک
 
@@ -68,13 +67,28 @@ function generateSlug($string)
 
   //!حذف کاراکترهای غیر مجاز
 
-  $slug = preg_replace('/[^a-z0-9\-]/', '', $slug);
+    $slug = preg_replace('/[^a-z0-9\-آ-ی]/u', '', $slug);
 
-  //!حذف - های اضافی   
+
+    //!حذف - های اضافی
 
   $slug = preg_replace('/-+/', '-', $slug);
+
 
   $slug = trim($slug, '-');
   //!return
   return $slug;
 }
+function checkSlug(string $slug){
+$slug_generate=generateSlug($slug);
+return urlencode($slug_generate);
+}
+
+function dd($variable){
+    echo '<pre>';
+    print_r($variable);
+    echo '<pre>';
+    die();
+}
+
+

@@ -1,0 +1,53 @@
+.otp {
+  width: 100%;
+  position: relative;
+  margin: 8rem 0;
+  @include Responsive(phoneL) {
+    margin: 6rem 0;
+  }
+
+  @include Responsive(phone) {
+    margin: 4rem 0;
+  }
+  &::after {
+    content: "";
+    width: 150%;
+    height: 30rem;
+    background-color: rgb(158, 18, 177);
+    position: absolute;
+    z-index: -1;
+    transform: rotate(-3deg);
+    top: 8rem;
+    right: -2rem;
+  }
+  &::before {
+    content: "";
+    width: 150%;
+    height: 35rem;
+    background-color: rgb(192, 14, 216);
+    position: absolute;
+    z-index: -1;
+    transform: rotate(-3deg);
+    top: 16rem;
+  }
+  &-content {
+    width: 100%;
+    margin: auto;
+  }
+  &-input {
+    width: 5rem;
+    text-align: center;
+    font-size: 24px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 5rem;
+    &:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+  }
+
+ 
+
+}

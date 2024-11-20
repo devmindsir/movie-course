@@ -1,0 +1,60 @@
+.login {
+  width: 100%;
+  position: relative;
+  margin: 12rem 0;
+  @include Responsive(phoneL) {
+    margin: 8rem 0;
+  }
+
+  @include Responsive(phone) {
+    margin: 4rem 0;
+  }
+  &::after {
+    content: "";
+    width: 150%;
+    height: 30rem;
+    background-color: rgb(158, 18, 177);
+    position: absolute;
+    z-index: -1;
+    transform: rotate(-3deg);
+    top: 8rem;
+    right: -2rem;
+  }
+  &::before {
+    content: "";
+    width: 150%;
+    height: 35rem;
+    background-color: rgb(192, 14, 216);
+    position: absolute;
+    z-index: -1;
+    transform: rotate(-3deg);
+    top: 16rem;
+  }
+  &-content {
+    width: 50rem;
+    margin: auto;
+  }
+  &-item {
+    &-icon {
+      top: 1.5rem;
+      left: 1rem;
+    }
+    &-checkbox {
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      border-radius: 0.5rem;
+      border: 2px solid $primary;
+    }
+    &-input {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  &-list {
+    &-item {
+      list-style: disc;
+    }
+  }
+}

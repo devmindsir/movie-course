@@ -1,0 +1,106 @@
+.product {
+  &-breadcrumb {
+  }
+  &-item {
+    &-color {
+      width: 4.5rem;
+      height: 4.5rem;
+      position: relative;
+      &.active {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          background: url("/public/images/slices.png");
+          background-position: -659px -108px;
+        }
+      }
+      & > span {
+        width: 3.5rem;
+        height: 3.5rem;
+        display: flex;
+        border-radius: 100%;
+      }
+    }
+  }
+  &-attr {
+    width: 100%;
+    height: 2px;
+    background-color: gray;
+    margin-top: 8rem;
+    position: relative;
+    &-box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 23rem;
+      height: 5rem;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 1rem;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+  &-send {
+    &-icon {
+      width: 15rem;
+    }
+  }
+  &-express {
+    & > div {
+      display: flex;
+      align-items: center;
+    }
+    &-icon {
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      background: url("/public/images/slices.png");
+      &--1 {
+        background-position: -85px -678px;
+      }
+      &--2 {
+        background-position: -172px -678px;
+      }
+      &--3 {
+        background-position: -247px -678px;
+      }
+      &--4 {
+        background-position: -328px -678px;
+      }
+      &--5 {
+        background-position: -405px -678px;
+      }
+    }
+  }
+  &-title {
+    position: relative;
+    &::before {
+      content: "";
+      width: 6rem;
+      height: 2px;
+      background-color: red;
+      position: absolute;
+      top: 2.8rem;
+    }
+  }
+  &-nav {
+    & > li {
+      &.active {
+        color: red;
+        font-weight: bold;
+        border-bottom: 2px solid red;
+      }
+    }
+  }
+}

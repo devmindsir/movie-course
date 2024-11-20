@@ -60,26 +60,27 @@ class Router implements RouterInterface
   {
 
     foreach ($this->routes as $route) {
+      $pattern = preg_replace('/{(\w+)}/', '([^\/]+)', $route['url']);
 
-      $pattern = preg_replace('/{(\w+)}/', '([\w\-]+)', $route['url']);
-      if (preg_match('#^' . $pattern . '$#', $url, $matches) && $method === $route['method']) {
+      if (preg_match('#^' . $pattern . '$#u', $url, $matches) && $method === $route['method']) {
 
         //!Middleware
         Middleware::handle($route['auth']);
 
         //!Controller
         $nameController = $route['controller'][0];
-        $methodController = $route['controller'][1];;
+        $methodController = $route['controller'][1];
+
         return (new $nameController)->$methodController(...array_slice($matches, 1));
       }
     }
     $this->abort();
   }
 
-  public function abort($code = 404)
+  public function abort($code = 404,$message='')
   {
     http_response_code($code);
-    view("errors/{$code}");
+   view("errors/$code",['message'=>$message]);
     die();
   }
 }

@@ -1,0 +1,51 @@
+.header {
+  &-shoping {
+    width: 2.5rem;
+    height: 2.5rem;
+    top: -1rem;
+    right: -1rem;
+  }
+  &-socialmedia {
+    @include Responsive(tabletL) {
+      display: none;
+    }
+  }
+  &-top {
+    @include Responsive(tabletL) {
+      justify-content: center;
+    }
+    @include Responsive(phoneL) {
+      display: none;
+    }
+  }
+  &-navbar {
+    @include Responsive(phoneL) {
+      display: none;
+    }
+  }
+  &-bottom {
+    @include Responsive(phoneL) {
+      flex-direction: column-reverse;
+      gap: 2rem;
+    }
+    &-items {
+      @include Responsive(phoneL) {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 3rem;
+      }
+    }
+  }
+  &-shop-icon {
+    @include Responsive(phoneL) {
+      border-bottom: 1px solid $silver;
+      padding-bottom: 2rem;
+      width: 100%;
+    }
+  }
+  &-hamburger {
+    @include Responsive(phoneL) {
+      display: flex !important;
+    }
+  }
+}

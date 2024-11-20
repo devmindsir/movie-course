@@ -1,0 +1,69 @@
+//!---------------- other Colors-----------//
+
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+
+//!--------------- override Colors----------//
+
+$primary: #9e12b1;
+$secondary: #f0f2f7;
+$tertiary: rgba(43, 114, 206, 0.2);
+$title: #555555;
+$subtitle: rgb(107, 107, 107);
+$link: #464749;
+$fullstack-box: #f9f9f9;
+$silver: silver;
+$danger: red;
+$danger-light: rgb(250, 205, 205);
+$danger-text: #bd2121;
+$success: green;
+$success-light: #d7facd;
+$khaki: khaki;
+$khaki-text: #91630a;
+$yellow: #f9bc00;
+$basket: rgb(242, 53, 76);
+$info: rgb(6, 6, 179);
+//!--------------- Color MAPS---------------//
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "subtitle": $subtitle,
+  "link": $link,
+  "fullstackBox": $fullstack-box,
+  "silver": $silver,
+  "danger": $danger,
+  "danger-light": $danger-light,
+  "danger-text": $danger-text,
+  "success": $success,
+  "success-Light": $success-light,
+  "tertiary": $tertiary,
+  "title": $title,
+  "khaki": $khaki,
+  "khaki-text": $khaki-text,
+  "yellow": $yellow,
+  "basket": $basket,
+  "info": $info,
+);
+
+//!--------------- fontSize Variables---------------//
+
+$fs-1: 2.5rem;
+$fs-2: 2rem;
+$fs-3: 1.75rem;
+$fs-4: 1.5rem;
+$fs-5: 1.25rem;
+$fs-6: 1rem;
+$fs-7: 0.75rem;
+$fs-8: 0.5rem;
+$fs-9: 0.25rem;
+$fs-big: 3.5rem;

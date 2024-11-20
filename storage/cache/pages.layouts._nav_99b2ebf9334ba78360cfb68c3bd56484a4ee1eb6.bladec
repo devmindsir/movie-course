@@ -1,0 +1,223 @@
+<!--! Responsive Menu Page Start -->
+<section class="hamburger">
+ <div class="hamburger__dark"></div>
+ <div class="hamburger__content">
+ <div class="hamburger__top">
+ <a href="index.html" class="hamburger__Link">
+ <img
+ class="hamburger__Link-Image"
+ src="assets/images/logo/dev.png" />
+ </a>
+
+ <ul class="hamburger__Lists">
+ <li class="hamburger__Item">
+ <a href="#" class="hamburger__Item-Links">
+ <i class="fa-brands fa-html5 hamburger__Item-Icon"></i>
+ <span class="hamburger__Item-Text">پنل اختصاصی دوره های آنلاین</span>
+ </a>
+ </li>
+ <li class="hamburger__Item">
+ <a href="#" class="hamburger__Item-Links">
+ <i class="fa-brands fa-css3-alt hamburger__Item-Icon"></i>
+ <span class="hamburger__Item-Text">قوانین سایت</span>
+ </a>
+ </li>
+ <li class="hamburger__Item">
+ <a href="course.html" class="hamburger__Item-Links">
+ <i class="fa-brands fa-js hamburger__Item-Icon"></i>
+ <span class="hamburger__Item-Text">درباره ما</span>
+ </a>
+ </li>
+ <li class="hamburger__Item">
+ <a href="#" class="hamburger__Item-Links">
+ <i class="fa-brands fa-bootstrap hamburger__Item-Icon"></i>
+ <span class="hamburger__Item-Text">همکاری با ما</span>
+ </a>
+ </li>
+ <li class="hamburger__Item">
+ <a href="#" class="hamburger__Item-Links">
+ <i class="fa-brands fa-python hamburger__Item-Icon"></i>
+ <span class="hamburger__Item-Text">سوالات متداول</span>
+ </a>
+ </li>
+ <li class="hamburger__Item">
+ <a href="#" class="hamburger__Item-Links">
+ <i class="fa-brands fa-react hamburger__Item-Icon"></i>
+ <span class="hamburger__Item-Text">فروشگاه</span>
+ </a>
+ </li>
+ </ul>
+ </div>
+ <div class="hamburger__Buttom">
+ <h5>دسته بندی ها </h5>
+ <div class="hamburger__Buttom-Content">
+ <ul class="hamburger__Lists">
+ <li class="hamburger__Item" onclick="showSubMenu(this)">
+ <div class="hamburger__SubItem-Links">
+ <div class="hamburger__Item-sub">
+ <i class="fa-solid fa-code hamburger__Item-Icon"></i>
+ <span class="hamburger__Item-Text">دوره ها</span>
+ </div>
+ <i class="fas fa-chevron-down"></i>
+ </div>
+
+ <ul class="hamburger__SubMenu-List">
+ <li class="hamburger__SubMenu-Item">
+ <a href="category.html" class="hamburger__SubMenu-Link">
+ <i class="hamburger__SubMenu-Icon"></i>
+ <span class="hamburger__SubMenu-Text"
+ >مشاهده همه دوره ها
+ </span>
+ </a>
+ </li>
+ <li class="hamburger__SubMenu-Item">
+ <a href="#" class="hamburger__SubMenu-Link">
+ <i class="hamburger__SubMenu-Icon"></i>
+ <span class="hamburger__SubMenu-Text">آموزش Html</span>
+ </a>
+ </li>
+ <li class="hamburger__SubMenu-Item">
+ <a href="#" class="hamburger__SubMenu-Link">
+ <i class="hamburger__SubMenu-Icon"></i>
+ <span class="hamburger__SubMenu-Text">آموزش css</span>
+ </a>
+ </li>
+
+ <li class="hamburger__SubMenu-Item">
+ <a href="#" class="hamburger__SubMenu-Link">
+ <i class="hamburger__SubMenu-Icon"></i>
+ <span class="hamburger__SubMenu-Text"
+ >آموزش جامع ریکت</span
+ >
+ </a>
+ </li>
+
+ <li class="hamburger__SubMenu-Item">
+ <a href="#" class="hamburger__SubMenu-Link">
+ <i class="hamburger__SubMenu-Icon"></i>
+ <span class="hamburger__SubMenu-Text"
+ >آموزش جاوااسکریپت</span
+ >
+ </a>
+ </li>
+
+ <li class="hamburger__SubMenu-Item">
+ <a href="#" class="hamburger__SubMenu-Link">
+ <i class="hamburger__SubMenu-Icon"></i>
+ <span class="hamburger__SubMenu-Text"
+ >آموزش ویو جی اس</span
+ >
+ </a>
+ </li>
+ </ul>
+ </li>
+ <li class="hamburger__Item" onclick="showSubMenu(this)">
+ <div class="hamburger__SubItem-Links">
+ <div class="hamburger__Item-sub">
+ <i class="fa-solid fa-bug hamburger__Item-Icon"></i>
+ <span class="hamburger__Item-Text">محصولات</span>
+ </div>
+ <i class="fas fa-chevron-down"></i>
+ </div>
+ <ul class="hamburger__SubMenu-List">
+ <li class="hamburger__SubMenu-Item">
+ <a href="#" class="hamburger__SubMenu-Link">
+ <i class="hamburger__SubMenu-Icon"></i>
+ <span class="hamburger__SubMenu-Text"
+ >مشاهده همه محصولات
+ </span>
+ </a>
+ </li>
+ <li class="hamburger__SubMenu-Item">
+ <a href="#" class="hamburger__SubMenu-Link">
+ <i class="hamburger__SubMenu-Icon"></i>
+ <span class="hamburger__SubMenu-Text"
+ >کالای دیجیتال</span
+ >
+ </a>
+ </li>
+ <li class="hamburger__SubMenu-Item">
+ <a href="#" class="hamburger__SubMenu-Link">
+ <i class="hamburger__SubMenu-Icon"></i>
+ <span class="hamburger__SubMenu-Text"
+ >
+ گوشی موبایل
+ </span>
+ </a>
+ </li>
+
+ <li class="hamburger__SubMenu-Item">
+ <a href="#" class="hamburger__SubMenu-Link">
+ <i class="hamburger__SubMenu-Icon"></i>
+ <span class="hamburger__SubMenu-Text"
+ >لپ تاپ</span
+ >
+ </a>
+ </li>
+
+ <li class="hamburger__SubMenu-Item">
+ <a href="#" class="hamburger__SubMenu-Link">
+ <i class="hamburger__SubMenu-Icon"></i>
+ <span class="hamburger__SubMenu-Text">کیبورد و موس</span>
+ </a>
+ </li>
+ </ul>
+ </li>
+
+ <li class="hamburger__Item" onclick="showSubMenu(this)">
+ <div class="hamburger__SubItem-Links">
+ <div class="hamburger__Item-sub">
+ <i class="fa-solid fa-book hamburger__Item-Icon"></i>
+ <span class="hamburger__Item-Text">مقالات</span>
+ </div>
+ <i class="fas fa-chevron-down"></i>
+ </div>
+ <ul class="hamburger__SubMenu-List">
+ <li class="hamburger__SubMenu-Item">
+ <a href="#" class="hamburger__SubMenu-Link">
+ <i class="hamburger__SubMenu-Icon"></i>
+ <span class="hamburger__SubMenu-Text"
+ >مشاهده همه دسته بندی ها
+ </span>
+ </a>
+ </li>
+ <li class="hamburger__SubMenu-Item">
+ <a href="#" class="hamburger__SubMenu-Link">
+ <i class="hamburger__SubMenu-Icon"></i>
+ <span class="hamburger__SubMenu-Text"> توسعه وب</span>
+ </a>
+ </li>
+ <li class="hamburger__SubMenu-Item">
+ <a href="#" class="hamburger__SubMenu-Link">
+ <i class="hamburger__SubMenu-Icon"></i>
+ <span class="hamburger__SubMenu-Text"
+ >دوره جاوااسکریپت
+ </span>
+ </a>
+ </li>
+
+ <li class="hamburger__SubMenu-Item">
+ <a href="#" class="hamburger__SubMenu-Link">
+ <i class="hamburger__SubMenu-Icon"></i>
+ <span class="hamburger__SubMenu-Text"> پایتون</span>
+ </a>
+ </li>
+ </ul>
+ </li>
+ <li class="hamburger__Item">
+ <div class="hamburger__SubItem-Links">
+ <div class="hamburger__Item-sub">
+ <i class="fa-brands fa-windows hamburger__Item-Icon"></i>
+ <span class="hamburger__Item-Text">مهارت های نرم</span>
+ </div>
+ </div>
+ </li>
+ </ul>
+ </div>
+ </div>
+
+ <div class="hamburger__Close-Icon">
+ <i class="fas fa-xmark"></i>
+ </div>
+ </div>
+</section>

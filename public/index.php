@@ -17,6 +17,7 @@ $router = new Router();
 require(BASE_PATH . "routes/routes.php");
 
 $method = $_POST['_method_'] ?? $_SERVER['REQUEST_METHOD'];
+
 $router->checkRoute($url, $method);
 
 Session::unFlash();

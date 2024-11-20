@@ -1,0 +1,47 @@
+.title {
+  &-structuring {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    position: relative;
+    &::after {
+      content: "";
+      width: 100%;
+      max-width: 25rem;
+      background-color: rgba(43, 114, 206, 0.2);
+      height: 50%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &-header {
+    &::before {
+      content: "";
+      width: 0.4rem;
+      height: 100%;
+      border-radius: 3rem;
+      background-color: rgb(158, 18, 177);
+      position: absolute;
+      right: -1.5rem;
+      top: 0;
+      transform: rotate(10deg);
+    }
+  }
+
+  &-square {
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 5rem;
+      height: 4rem;
+      background-color: rgb(158, 18, 177);
+      position: absolute;
+      right: -6rem;
+      top: -1rem;
+      border-radius: 1rem 0 0 1rem;
+      transform: skewX(-10deg);
+    }
+  }
+}

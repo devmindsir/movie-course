@@ -1,0 +1,560 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('content'); ?>
+ <main>
+ <!-- //!Landing Section -->
+ <div class="landing">
+ <div class="container-fluid p-0 landing-cover">
+ <div class="container h-100">
+ <div
+ class="row h-100 justify-content-center justify-content-xl-start">
+ <div class="col-xl-6 position-relative h-100 d-none d-xl-flex">
+ <div>
+ <div class="landing-character"></div>
+ <div class="landing-circle">
+ <span style="--i: 1">
+ <img
+ src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/landing/SVGIcons/Github-Dark.svg"/>
+ </span>
+ <span style="--i: 2">
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/landing/SVGIcons/css3.svg"/>
+ </span>
+ <span style="--i: 3">
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/landing/SVGIcons/dart.svg"/>
+ </span>
+ <span style="--i: 4">
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/landing/SVGIcons/figma.svg"/>
+ </span>
+ <span style="--i: 5">
+ <img
+ src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/landing/SVGIcons/Firebase-Dark.svg"/>
+ </span>
+ <span style="--i: 6">
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/landing/SVGIcons/flutter.svg"/>
+ </span>
+ <span style="--i: 7">
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/landing/SVGIcons/html-5.svg"/>
+ </span>
+ <span style="--i: 8">
+ <img
+ src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/landing/SVGIcons/javascript.svg"/>
+ </span>
+ <span style="--i: 9">
+ <img
+ src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/landing/SVGIcons/MySQL-Dark.svg"/>
+ </span>
+ <span style="--i: 10">
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/landing/SVGIcons/nodejs.svg"/>
+ </span>
+ <span style="--i: 11">
+ <img
+ src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/landing/SVGIcons/PostgreSQL-Dark.svg"/>
+ </span>
+ <span style="--i: 12">
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/landing/SVGIcons/python.svg"/>
+ </span>
+ </div>
+ <div class="landing-bg"></div>
+ </div>
+ </div>
+ <div
+ class="col-xl-6 col-12 col-md-9 h-100 text-white flex-center flex-column gap-4">
+ <h1 class="landing-title fw-bold mb-5">بهترین یا هرگز!</h1>
+ <h3 class="fs-2">
+ اجازه دهید صفر و یک ها را ما برایتان ساده کنیم!
+ </h3>
+ <a
+ class="w-50 flex-center gap-2 bg-primary rounded-4 py-4 text-white">
+ <span>شروع یادگیری برنامه نویسی </span>
+ <i class="fas fa-arrow-left"></i>
+ </a>
+
+ <div class="mt-9 landing-list">
+ <div class="row">
+ <div
+ class="col-6 text-white d-flex gap-2 align-items-center">
+ <div
+ class="landing-icon bg-primary rounded-circle flex-center">
+ <i class="fas fa-headphones"></i>
+ </div>
+ <span class="fw-bold">پشتیبانی 24 ساعته</span>
+ </div>
+ <div
+ class="col-6 text-white d-flex gap-2 align-items-center">
+ <div
+ class="landing-icon bg-primary rounded-circle flex-center">
+ <i class="fas fa-gift"></i>
+ </div>
+ <span class="fw-bold">پشتیبانی دوره های رایگان</span>
+ </div>
+ </div>
+ <div class="row mt-4">
+ <div
+ class="col-6 text-white d-flex gap-2 align-items-center">
+ <div
+ class="landing-icon bg-primary rounded-circle flex-center">
+ <i class="fas fa-bank"></i>
+ </div>
+ <span class="fw-bold">ضمانت بازگشت وجه</span>
+ </div>
+ <div
+ class="col-6 text-white d-flex gap-2 align-items-center">
+ <div
+ class="landing-icon bg-primary rounded-circle flex-center">
+ <i class="fas fa-file"></i>
+ </div>
+ <span class="fw-bold">یادگیری با تمرین و آزمون</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <div class="container">
+ <!-- //!Course Section -->
+ <div class="course my-8">
+ <div>
+ <div class="row">
+ <div class="col-12 flex-between">
+ <div class="flex-start gap-2">
+ <div
+ class="course-wrapper bg-primary text-white flex-center rounded-2">
+ <i class="fas fs-2 fa-graduation-cap"></i>
+ </div>
+ <div>
+ <h3 class="fw-bold fs-3">جدیدترین دوره ها</h3>
+ <span class="fs-4 text-subtitle"
+ >برای پیشرفت شما هر روز در تلاشیم</span
+ >
+ </div>
+ </div>
+ <div>
+ <a
+ class="course-links fs-5 rounded-3 py-2 px-3 bg-primary text-white flex-between">
+ <span>مشاهده دوره ها</span>
+ <i class="fas fa-chevron-left"></i>
+ </a>
+ </div>
+ </div>
+ <div class="col-12 mt-4">
+ <div class="row justify-content-center">
+ <?php $__currentLoopData = $courses; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $course): $loop = $this->incrementLoopIndices();  ?>
+ <div class="col-lg-4 col-md-6 col-12">
+ <div class="card mt-5 rounded-5 overflow-hidden">
+ <div class="w-100">
+ <a href="/course/show/<?php echo \htmlentities($course->id??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities(generateSlug($course->title)??'', ENT_QUOTES, 'UTF-8', false); ?>" class="w-100">
+ <img
+ class="w-100"
+ src="<?php echo \htmlentities($course->poster??'', ENT_QUOTES, 'UTF-8', false); ?>"/>
+ </a>
+ </div>
+ <div class="w-100 py-4 px-5" >
+ <h2 class="mb-3 ellipsis-1">
+ <a href="/course/show/<?php echo \htmlentities($course->id??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities(generateSlug($course->title)??'', ENT_QUOTES, 'UTF-8', false); ?>"  class="fw-bold fs-4">
+ <?php echo \htmlentities($course->title??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </a>
+ </h2>
+ <div class="flex-between">
+ <div class="text-subtitle fs-4">
+ <i class="fas fa-chalkboard-user"></i>
+ <a href="/teacher/show/<?php echo \htmlentities($course->teacher_id??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities(generateSlug($course->family)??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($course->family??'', ENT_QUOTES, 'UTF-8', false); ?></a>
+ </div>
+ <div>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star.svg"/>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star_fill.svg"/>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star_fill.svg"/>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star_fill.svg"/>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star_fill.svg"/>
+ </div>
+ </div>
+
+ <div class="mt-4 text-subtitle flex-start gap-2">
+ <i class="fas fa-user fs-4"></i>
+ <span class="fs-5"><?php echo \htmlentities($course->students??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+
+ <div class="fs-4 mt-4 text-subtitle fw-bold">
+ <span>تخفیف :</span>
+ <span
+ ><?php echo \htmlentities($course->discount??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ <span class="text-primary">درصد</span>
+ </span>
+ </div>
+
+ <div class="fs-4 mt-2 text-subtitle fw-bold">
+ <span>هزینه دوره :</span>
+ <span
+ >
+
+ <?php echo \htmlentities(number_format($course->price*(1-$course->discount/100))??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ <span class="text-primary">تومان</span>
+ </span>
+ </div>
+ </div>
+ <div
+ class="w-100  border-top border-1 border-gray">
+ <a href="/course/show/<?php echo \htmlentities($course->id??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities(generateSlug($course->title)??'', ENT_QUOTES, 'UTF-8', false); ?>"  class="w-100 px-4 py-3 flex-center gap-3 fs-4">
+ <span>مشاهده اطلاعات</span>
+ <i class="fas fa-arrow-left"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- //!Favorite course -->
+ <div class="favorite mt-9">
+ <div class="row">
+ <div class="col-12 flex-between">
+ <div class="flex-start gap-2">
+ <div
+ class="course-wrapper bg-primary text-white flex-center rounded-2">
+ <i class="fa-solid fa-code fs-2"></i>
+ </div>
+ <div>
+ <h3 class="fw-bold fs-3">محبوب ترین دوره ها</h3>
+ <span class="fs-4 text-subtitle"
+ >دوره هایی که بیشترین بازدید را داشته اند</span
+ >
+ </div>
+ </div>
+ </div>
+ <div class="overflow-hidden py-2">
+ <div class="swiper mySwiper">
+ <div class="swiper-wrapper row flex-nowrap">
+ <?php $__currentLoopData = $populars; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $popular): $loop = $this->incrementLoopIndices();  ?>
+ <div class="swiper-slide col-lg-4 col-md-6 col-12">
+ <div class="card mt-5 rounded-5 overflow-hidden">
+ <div class="w-100">
+ <a href="/course/show/<?php echo \htmlentities($popular->id??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities(generateSlug($popular->title)??'', ENT_QUOTES, 'UTF-8', false); ?>"  class="w-100">
+ <img
+ class="w-100"
+ src="<?php echo \htmlentities($popular->poster??'', ENT_QUOTES, 'UTF-8', false); ?>"/>
+ </a>
+ </div>
+ <div class="w-100 py-4 px-5">
+ <h2 class="mb-3 ellipsis-1">
+ <a href="/course/show/<?php echo \htmlentities($popular->id??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities(generateSlug($popular->title)??'', ENT_QUOTES, 'UTF-8', false); ?>" class="fw-bold fs-4">
+ <?php echo \htmlentities($popular->title??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </a>
+ </h2>
+ <div class="flex-between">
+ <div class="text-subtitle fs-4">
+ <i class="fas fa-chalkboard-user"></i>
+ <a href="#"><?php echo \htmlentities($popular->family??'', ENT_QUOTES, 'UTF-8', false); ?> </a>
+ </div>
+ <div>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star.svg"/>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star_fill.svg"/>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star_fill.svg"/>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star_fill.svg"/>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star_fill.svg"/>
+ </div>
+ </div>
+
+ <div class="mt-4 text-subtitle flex-start gap-2">
+ <i class="fas fa-user fs-4"></i>
+ <span class="fs-5"><?php echo \htmlentities($popular->students??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+
+ <div class="fs-4 mt-4 text-subtitle fw-bold">
+ <span>تخفیف :</span>
+ <span
+ ><?php echo \htmlentities($popular->discount??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ <span class="text-primary">درصد</span>
+ </span>
+ </div>
+
+ <div class="fs-4 mt-2 text-subtitle fw-bold">
+ <span>هزینه دوره :</span>
+ <span
+ >
+ <?php echo \htmlentities(number_format($popular->price*(1-$popular->discount/100))??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ <span class="text-primary">تومان</span>
+ </span>
+ </div>
+ </div>
+ <div
+ class="w-100 px-4 py-3 border-top border-1 border-gray">
+ <a href="/course/show/<?php echo \htmlentities($popular->id??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities(generateSlug($popular->title)??'', ENT_QUOTES, 'UTF-8', false); ?>" class="w-100 flex-center gap-3 fs-4">
+ <span>مشاهده اطلاعات</span>
+ <i class="fas fa-arrow-left"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!--! //!product Section -->
+ <div class="course my-8">
+ <div>
+ <div class="row">
+ <div class="col-12 flex-between">
+ <div class="flex-start gap-2">
+ <div
+ class="course-wrapper bg-primary text-white flex-center rounded-2">
+ <i class="fas fs-2 fa-gamepad"></i>
+ </div>
+ <div>
+ <h3 class="fw-bold fs-3">جدیدترین محصولات</h3>
+ <span class="fs-4 text-subtitle"
+ >محصولات برند رو از ما بخر</span
+ >
+ </div>
+ </div>
+ <div>
+ <a
+ class="course-links fs-5 rounded-3 py-2 px-3 bg-primary text-white flex-between">
+ <span>تمام محصولات</span>
+ <i class="fas fa-chevron-left"></i>
+ </a>
+ </div>
+ </div>
+ <div class="col-12 mt-4">
+ <div class="row justify-content-center">
+ <?php $__currentLoopData = $products; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $product): $loop = $this->incrementLoopIndices();  ?>
+ <div class="col-lg-4 col-md-6 col-12">
+ <div class="card mt-5 rounded-5 overflow-hidden">
+ <div class="w-100">
+ <a href="/product/show/<?php echo \htmlentities($product->id??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities(generateSlug($product->title)??'', ENT_QUOTES, 'UTF-8', false); ?>" class="card-product flex-center">
+ <img
+ class="card-product-img"
+ src="<?php echo \htmlentities($product->image??'', ENT_QUOTES, 'UTF-8', false); ?>"/>
+ </a>
+ </div>
+ <div class="w-100 py-4 px-5">
+ <h2 class="mb-3 ellipsis-1">
+ <a href="#" class="fw-bold fs-4">
+ <?php echo \htmlentities($product->title??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </a>
+ </h2>
+ <div class="flex-between">
+ <div
+ class="text-subtitle fs-4 d-flex align-items-center gap-1">
+ <span>امتیاز محصول</span>
+ <span class="text-primary fw-bold"><?php echo \htmlentities($product->rate??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+ <div class="d-flex gap-1 align-items-center">
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star.svg"/>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star_fill.svg"/>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star_fill.svg"/>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star_fill.svg"/>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star_fill.svg"/>
+ </div>
+ </div>
+
+ <div class="fs-4 mt-4 text-subtitle fw-bold">
+ <span>تخفیف :</span>
+ <span
+ ><?php echo \htmlentities($product->discount??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ <span class="text-primary">درصد</span>
+ </span>
+ </div>
+
+ <div class="fs-4 mt-2 text-subtitle fw-bold">
+ <span>قیمت محصول :</span>
+ <span
+ >
+ <?php echo \htmlentities(number_format($popular->price*(1-$popular->discount/100))??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ <span class="text-primary">تومان</span>
+ </span>
+ </div>
+ </div>
+ <div
+ class="w-100 px-4 py-3 border-top border-1 border-gray">
+ <a href="#" class="w-100 flex-center gap-3 fs-4">
+ <span>مشاهده جزئیات محصول</span>
+ <i class="fas fa-arrow-left"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- //!Online Course -->
+ <div class="mt-9">
+ <div class="row">
+ <div class="col-12 flex-between">
+ <div class="flex-start gap-2">
+ <div
+ class="course-wrapper bg-primary text-white flex-center rounded-2">
+ <i class="fa-solid fa-code fs-2"></i>
+ </div>
+ <div>
+ <h3 class="fw-bold fs-3">پربازدید ترین محصولات</h3>
+ <span class="fs-4 text-subtitle">محصولات محبوب کاربران</span>
+ </div>
+ </div>
+ <div>
+ <a
+ class="course-links fs-5 rounded-3 py-2 px-3 bg-primary text-white flex-between">
+ <span>مشاهده بیشتر</span>
+ <i class="fas fa-chevron-left"></i>
+ </a>
+ </div>
+ </div>
+ <div class="overflow-hidden py-2">
+ <div class="Swiper mySwiper">
+ <div class="swiper-wrapper row flex-nowrap">
+ <?php $__currentLoopData = $popular_products; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $row): $loop = $this->incrementLoopIndices();  ?>
+ <div class="swiper-slide col-lg-4 col-md-6 col-12">
+ <div class="card mt-5 rounded-5 overflow-hidden">
+ <div class="w-100">
+ <a href="#" class="card-product flex-center">
+ <img
+ class="card-product-img"
+ src="<?php echo \htmlentities($row->image??'', ENT_QUOTES, 'UTF-8', false); ?>"/>
+ </a>
+ </div>
+ <div class="w-100 py-4 px-5">
+ <h2 class="mb-3 ellipsis-1">
+ <a href="#" class="fw-bold fs-4">
+ <?php echo \htmlentities($row->title??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </a>
+ </h2>
+ <div class="flex-between">
+ <div
+ class="text-subtitle fs-4 d-flex align-items-center gap-1">
+ <span>امتیاز محصول</span>
+ <span class="text-primary fw-bold"><?php echo \htmlentities($row->rate??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+ <div class="d-flex gap-1 align-items-center">
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star.svg"/>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star_fill.svg"/>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star_fill.svg"/>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star_fill.svg"/>
+ <img src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/images/star/star_fill.svg"/>
+ </div>
+ </div>
+
+ <div class="fs-4 mt-4 text-subtitle fw-bold">
+ <span>تخفیف :</span>
+ <span
+ ><?php echo \htmlentities($row->discount??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ <span class="text-primary">درصد</span>
+ </span>
+ </div>
+
+ <div class="fs-4 mt-2 text-subtitle fw-bold">
+ <span>قیمت محصول :</span>
+ <span
+ >
+ <?php echo \htmlentities(number_format($row->price*(1-$row->discount/100))??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ <span class="text-primary">تومان</span>
+ </span>
+ </div>
+ </div>
+ <div
+ class="w-100 px-4 py-3 border-top border-1 border-gray">
+ <a href="#" class="w-100 flex-center gap-3 fs-4">
+ <span>مشاهده جزئیات محصول</span>
+ <i class="fas fa-arrow-left"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- //!Blog -->
+ <div class="mt-9">
+ <div class="row">
+ <div class="col-12 flex-between">
+ <div class="flex-start gap-2">
+ <div
+ class="course-wrapper bg-primary text-white flex-center rounded-2">
+ <i class="fa-solid fa-code fs-2"></i>
+ </div>
+ <div>
+ <h3 class="fw-bold fs-3">جدترین مقاله ها</h3>
+ <span class="fs-4 text-subtitle"
+ >اطلاعات خود را افزایش دهید</span
+ >
+ </div>
+ </div>
+ <div>
+ <a
+ class="course-links fs-5 rounded-3 py-2 px-3 bg-primary text-white flex-between">
+ <span>همه مقالات</span>
+ <i class="fas fa-chevron-left"></i>
+ </a>
+ </div>
+ </div>
+ <div class="col-12">
+ <div class="row">
+ <?php $__currentLoopData = $blogs; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $blog): $loop = $this->incrementLoopIndices();  ?>
+ <div class="col-lg-4 col-md-6 col-12">
+ <div class="card mt-5 rounded-5 overflow-hidden">
+ <div class="w-100 p-4">
+ <a href="/blog/show/<?php echo \htmlentities($blog->id??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities(generateSlug($blog->title)??'', ENT_QUOTES, 'UTF-8', false); ?>" class="w-100 d-flex">
+ <img
+ class="w-100 rounded-3"
+ src="<?php echo \htmlentities($blog->image??'', ENT_QUOTES, 'UTF-8', false); ?>"/>
+ </a>
+ <h2 class="fs-4 my-4">
+ <?php echo \htmlentities($blog->title??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </h2>
+ <p class="fs-5 text-subtitle ellipsis-2 mb-4">
+ <?php echo \htmlentities($blog->description??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </p>
+ <a href="/blog/show/<?php echo \htmlentities($blog->id??'', ENT_QUOTES, 'UTF-8', false); ?>/<?php echo \htmlentities(generateSlug($blog->title)??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ class="py-2 rounded-1 px-4 flex-center border border-1 border-primary text-primary fs-5 fw-bold"
+ >بیشتر بخوانید</a
+ >
+ </div>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </main>
+<?php $this->stopSection(); ?>
+
+<?php $this->startPush('script'); ?>
+ <script src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/js/swiper.js"></script>
+<?php $this->stopPush(); ?>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('pages.layouts.master'); } ?>

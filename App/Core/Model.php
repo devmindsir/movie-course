@@ -12,13 +12,21 @@ class Model
   {
     $this->db = new Database();
   }
-  public function all()
+  public function all(int $limit=null,string $order=null)
   {
-    return $this->db->doSelect("SELECT * FROM `$this->table`", class: get_called_class());
+    $sql="SELECT * FROM `$this->table` ";
+      if ($order){
+          $sql.="ORDER BY $order DESC ";
+    }
+    if ($limit){
+        $sql.="LIMIT $limit";
+    }
+    return $this->db->doSelect($sql, class:get_called_class());
   }
 
   public function find($id)
   {
     return $this->db->doFetch("SELECT * FROM `$this->table` WHERE id=?", [$id], get_called_class());
   }
+
 }

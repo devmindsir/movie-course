@@ -1,0 +1,24 @@
+.footer {
+  &-title {
+    font-size: $fs-4;
+    font-weight: bold;
+    position: relative;
+    &::before {
+      content: "";
+      width: 4rem;
+      height: 4rem;
+      background-color: $tertiary;
+      transform: rotate(45deg);
+      opacity: 0.9;
+      border-radius: 1rem;
+      position: absolute;
+      top: -1rem;
+      right: 0;
+    }
+  }
+  &-description {
+    line-height: 3rem;
+    width: 90%;
+    text-align: justify;
+  }
+}

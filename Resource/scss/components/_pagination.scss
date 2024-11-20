@@ -1,0 +1,24 @@
+.pagination {
+  &-list {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  &-item {
+    width: 4rem;
+    height: 4rem;
+    @include centerizeTag();
+    cursor: pointer;
+    background-color: $secondary;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in;
+    &.active {
+      background-color: $primary;
+      color: $white;
+    }
+    &:hover {
+      background-color: $primary;
+      opacity: 0.6;
+    }
+  }
+}

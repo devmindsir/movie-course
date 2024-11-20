@@ -1,0 +1,80 @@
+.landing {
+  &-cover {
+    width: 100%;
+    height: 68rem;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.2)
+      ),
+      url(/public/images/landing/cover.webp) no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+  }
+  &-title {
+    font-size: 4rem;
+  }
+  &-icon {
+    width: 4rem;
+    height: 4rem;
+  }
+  &-list {
+    width: 80%;
+  }
+  &-character {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: url("/public/images/landing/Hoodie-guy.webp") no-repeat;
+    width: 55rem;
+    height: 55rem;
+    background-size: cover;
+    z-index: 10;
+  }
+  &-circle {
+    position: relative;
+    z-index: 11;
+    height: 10rem;
+    top: 43rem;
+    width: 10rem;
+    left: -20rem;
+    transform-style: preserve-3d;
+    animation: animateCircle 30s linear infinite;
+    & > span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      background-color: rgb(54, 54, 54);
+      border-radius: 50%;
+      transform: rotateY(calc(var(--i) * 30deg)) translateZ(30rem);
+      overflow: hidden;
+      & > img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &-bg {
+    background-color: rgb(54, 54, 54);
+    width: 58rem;
+    height: 58rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    border-radius: 50%;
+  }
+}
+
+@keyframes animateCircle {
+  0% {
+    transform: perspective(1000px) rotateY(0deg) rotateX(15deg)
+      translateY(-30px);
+  }
+
+  100% {
+    transform: perspective(1000px) rotateY(360deg) rotateX(15deg)
+      translateY(-30px);
+  }
+}

@@ -1,0 +1,158 @@
+//!------------------- Width Project --------------------------//
+.container2xl {
+  width: 94vw;
+  margin: auto;
+  @include Responsive(tablet) {
+    width: 98vw;
+  }
+  @include Responsive(phoneL) {
+    width: 100%;
+  }
+}
+
+.max-content {
+  width: max-content;
+}
+
+//!------------------- Flex Class --------------------------//
+
+.line1 {
+  line-height: 3.5rem;
+}
+.line2 {
+  line-height: 3rem;
+}
+.line3 {
+  line-height: 2.5rem;
+}
+.line4 {
+  line-height: 2rem;
+}
+.line5 {
+  line-height: 1.5rem;
+}
+
+//!------------------- Flex Class --------------------------//
+.flex-center {
+  @include centerizeTag();
+}
+.flex-start {
+  @include centerizeTag($justify: flex-start);
+}
+.flex-between {
+  @include centerizeTag($justify: space-between);
+}
+.flex-around {
+  @include centerizeTag($justify: space-around);
+}
+
+//!------------------- Position Class --------------------------//
+
+.position-center {
+  @include positionCenter();
+}
+
+//!------------------- Font-Size Class --------------------------//
+
+.fs-1 {
+  font-size: $fs-1 !important;
+}
+.fs-2 {
+  font-size: $fs-2 !important;
+}
+.fs-3 {
+  font-size: $fs-3 !important;
+}
+.fs-4 {
+  font-size: $fs-4 !important;
+}
+.fs-5 {
+  font-size: $fs-5 !important;
+}
+.fs-6 {
+  font-size: $fs-6 !important;
+}
+.fs-7 {
+  font-size: $fs-7 !important;
+}
+.fs-8 {
+  font-size: $fs-8 !important;
+}
+.fs-9 {
+  font-size: $fs-9 !important;
+}
+.fs-big {
+  font-size: $fs-big !important;
+}
+.text-justify {
+  text-align: justify;
+}
+
+//!------------------- Shadow Class --------------------------//
+
+.p-shadow {
+  box-shadow: 0 0 1.4rem rgba(70, 71, 73, 0.3);
+}
+
+//!------------------- ellipsis Class --------------------------//
+
+.ellipsis-1 {
+  @include lineBreak(1);
+}
+.ellipsis-2 {
+  @include lineBreak();
+}
+.ellipsis-3 {
+  @include lineBreak(3);
+}
+
+//!------------------- BTN Class --------------------------//
+
+.btn-primary {
+  width: 15rem;
+  height: 4.5rem;
+  border: none !important;
+  font-size: $fs-5;
+  background-color: $primary;
+  color: $white;
+  @include centerizeTag();
+  border-radius: 0.5rem;
+}
+
+.ltr {
+  direction: ltr;
+}
+
+.c-pointer {
+  cursor: pointer;
+}
+
+.horizontal {
+  width: 100%;
+  height: 1px;
+  background-color: gray;
+}
+
+.vertical {
+  width: 1px;
+  height: 2.5rem;
+  background-color: gray;
+}
+
+.circle {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: gray;
+  border-radius: 100%;
+}
+
+.border-break {
+  border-bottom: 4px solid #ececed;
+}
+
+//!Width
+@for $i from 1 through 20 {
+  .width-#{$i} {
+    @include create-width-class($i);
+  }
+}

@@ -1,0 +1,66 @@
+//!---------- Utilities--------------
+@import "utilities/functions";
+@import "utilities/variables";
+@import "utilities/mixin";
+
+//!---------- BootStrap--------------
+
+@import "custom";
+
+//!---------- Base--------------
+@import "base/typography";
+@import "base/default";
+@import "base/class";
+
+//!---------- vendors--------------
+@import "vendor/accordion";
+//!---------- Themes--------------
+
+//!---------- layouts--------------
+
+//*Home
+@import "layout/home/header";
+@import "layout/home/landing";
+@import "layout/home/fullstack";
+@import "layout/home/footer";
+//*Course
+@import "layout/course/course";
+
+//*Login
+@import "layout/login/login";
+
+//*showCart
+@import "layout/showcart/showcart";
+@import "layout/showcart/product";
+@import "layout/showcart/table";
+@import "layout/showcart/checkinfo";
+
+//*order
+@import "layout/order/order";
+
+//*403
+@import "layout/403/403";
+
+//*404
+@import "layout/404/404";
+
+//*500
+@import "layout/500/500";
+
+//*OTP
+@import "layout/login/otp";
+
+//*Product
+@import "layout/product/product";
+@import "layout/product/thubnails";
+
+//!---------- components--------------
+@import "components/courseWrapper";
+@import "components/card";
+@import "components/nav";
+@import "components/pagination";
+@import "components/breadcrumb";
+@import "components/title";
+@import "components/hamburger";
+@import "components/swipper";
+//!---------- pages--------------

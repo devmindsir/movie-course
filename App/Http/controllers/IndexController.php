@@ -3,34 +3,19 @@
 namespace App\Http\controllers;
 
 use App\Core\Controller;
-use App\Models\Movie;
-use App\Models\Slider;
+use App\Services\IndexService;
 
 class IndexController extends Controller
 {
+    public function index(): void
+    {
+        try {
+            $indexData = (new IndexService())->getIndexData();
 
-  public function index()
-  {
-    $data = $this->loadData();
-
-    $this->view('index', $data);
-  }
-
-  private function loadData()
-  {
-    //!SLIDER
-    $sliders = (new Slider)->all();
-
-    //!New Movie
-    $movie = new Movie();
-    $newMovies = $movie->new();
-    //!Popular Movie
-    $popularMovies = $movie->popular();
-
-    return [
-      'sliders' => $sliders,
-      'newMovies' => $newMovies,
-      'popularMovies' => $popularMovies
-    ];
-  }
+            $this->view('pages.index', $indexData);
+        } catch (\Exception $e) {
+            // مدیریت خطا و نمایش صفحه خطا
+            $this->abort(500, $e->getMessage());
+        }
+    }
 }
