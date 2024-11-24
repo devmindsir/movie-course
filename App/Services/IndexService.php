@@ -10,15 +10,9 @@ use Exception;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
-class IndexService
+class IndexService extends BaseService
 {
-    private Logger $logger;
 
-    public function __construct()
-    {
-        $this->logger = new Logger('index_service');
-        $this->logger->pushHandler(new StreamHandler(BASE_PATH . 'storage/log/errors.log', Logger::ERROR));
-    }
 
     public function getIndexData(): array
     {

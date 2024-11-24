@@ -14,7 +14,7 @@ function getUrl($url)
   return currentUrl() == $url;
 }
 //!Redirect
-function redirect($path = '', $message = '')
+function redirect($path = '', $message = '',$statusCode=302)
 {
   $url = URL . $path;
 
@@ -27,8 +27,8 @@ function redirect($path = '', $message = '')
   if (!empty($message)) {
     $url .= $separator . "message=" . urlencode($message);
   }
-
-  header('location:' . $url);
+    http_response_code($statusCode);
+    header('location:' . $url);
   die();
 }
 

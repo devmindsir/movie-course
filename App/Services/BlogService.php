@@ -7,18 +7,11 @@ use App\Models\Author;
 use App\Models\BlogCategories;
 use App\Models\Courses;
 use App\Exceptions\BlogNotFoundException;
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
 
-class BlogService
+class BlogService extends BaseService
 {
-    private Logger $logger;
 
-    public function __construct()
-    {
-        $this->logger = new Logger('blog_service');
-        $this->logger->pushHandler(new StreamHandler(BASE_PATH . 'storage/log/errors.log', Logger::ERROR));
-    }
+
 
     public function getBlogDetails(int $id, string $slug): array
     {

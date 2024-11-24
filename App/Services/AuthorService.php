@@ -5,17 +5,10 @@ namespace App\Services;
 use App\Models\Author;
 use App\Models\Blog;
 use App\Exceptions\AuthorNotFoundException;
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
 
-class AuthorService
+
+class AuthorService extends BaseService
 {
-    private Logger $logger;
-
-    public function __construct() {
-        $this->logger = new Logger('author_service');
-        $this->logger->pushHandler(new StreamHandler(BASE_PATH . 'storage/log/errors.log', Logger::ERROR));
-    }
 
     public function getAuthorDetails(int $author_id, string $slug, int $page): array {
         $author = $this->getAuthor($author_id, $slug);
@@ -45,12 +38,11 @@ class AuthorService
             $this->logger->error("Blog data incomplete for author ID $author_id, page $page");
             throw new AuthorNotFoundException($author_id, 'Incomplete blog data');
         }
-
         return [
-            'blogs' => $blogInfo[0],
-            'count' => $blogInfo[1],
-            'views' => $blogInfo[2],
-            'pages' => $blogInfo[3],
+            'blogs' => $blogInfo['items'],
+            'count' => $blogInfo['totalItems'],
+            'views' => $blogInfo['totalViews'],
+            'pages' => $blogInfo['totalPages'],
         ];
     }
 

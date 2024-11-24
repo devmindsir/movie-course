@@ -4,7 +4,7 @@ namespace App\Models;
 
 use App\Core\Model;
 
-class Course_Videos extends Model
+class CourseVideos extends Model
 {
     protected $table='course_videos';
     public function __construct()

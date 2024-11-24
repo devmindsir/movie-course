@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Core\Model;
+use App\Helper\Paginator;
 
 class Blog extends Model
 {
@@ -12,6 +13,7 @@ class Blog extends Model
         parent::__construct();
     }
 
+    //!Footer Blogs
     public static function lastBlogs():array
     {
         $options=Options::getOptions();
@@ -20,32 +22,21 @@ class Blog extends Model
         return $blogs;
     }
 
+    //!GET Category
     public function getCategoryBlog(int $category_id,int $currentPage):array
     {
-        $sql="SELECT * FROM $this->table WHERE `category_id`=? AND `status`=?";
-        $result=$this->db->doSelect($sql,[$category_id,'publish'],__CLASS__);
-        $count=count($result);
+        $condition='`category_id`=? AND `status`=?';
+        $params=[$category_id,'publish'];
+        return (new Paginator($this->db,$this->table,__CLASS__))->pagination($condition,$params,$currentPage);
 
-        $itemsPerPage=1;
-        $totalPages=ceil($count/$itemsPerPage);
-        $offset=($currentPage-1)*$itemsPerPage;
-        $paginationResult=array_slice($result,$offset,$itemsPerPage);
-        return [$paginationResult,$count,$totalPages];
     }
 
+    //!GET Author
     public function getAuthorBlog(int $author_id,int $currentPage):array
     {
-        $sql="SELECT * FROM $this->table WHERE `author_id`=? AND `status`=?";
-        $result=$this->db->doSelect($sql,[$author_id,'publish'],__CLASS__);
-        $count=count($result);
-        $countView=array_sum(array_column($result,'views'));
-
-        $itemsPerPage=1;
-        $totalPages=ceil($count/$itemsPerPage);
-        $offset=($currentPage-1)*$itemsPerPage;
-        $paginationResult=array_slice($result,$offset,$itemsPerPage);
-
-        return [$paginationResult,$count,$countView,$totalPages];
+        $condition='`author_id`=? AND `status`=?';
+        $params=[$author_id,'publish'];
+        return (new Paginator($this->db,$this->table,__CLASS__))->pagination($condition,$params,$currentPage);
     }
 
 

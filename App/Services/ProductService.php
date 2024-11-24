@@ -6,16 +6,10 @@ use App\Exceptions\ProductNotFoundException;
 use App\Models\ProductGallery;
 use App\Models\ProductSpecial;
 use App\Models\Products;
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
 
-class ProductService
+
+class ProductService extends BaseService
 {
-    private Logger $logger;
-    public function __construct(){
-        $this->logger=new Logger('product_service');
-        $this->logger->pushHandler(new StreamHandler(BASE_PATH.'storage/log/errors.log'),Logger::WARNING);
-    }
 
     public function getProductDetails(int $product_id,string $slug):array{
         $product=$this->getProduct($product_id,$slug);

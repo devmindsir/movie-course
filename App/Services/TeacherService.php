@@ -5,19 +5,10 @@ namespace App\Services;
 use App\Models\Courses;
 use App\Models\Teachers;
 use App\Exceptions\TeacherNotFoundException;
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
 
-class TeacherService
+
+class TeacherService extends BaseService
 {
-    private Logger $logger;
-
-    public function __construct()
-    {
-        $this->logger = new Logger('teacher_service');
-        $this->logger->pushHandler(new StreamHandler(BASE_PATH . 'storage/log/errors.log', Logger::ERROR));
-    }
-
     public function getTeacherDetails(int $teacher_id, string $slug, int $page = 1): array
     {
         $teacher = $this->getTeacher($teacher_id, $slug);
@@ -51,10 +42,10 @@ class TeacherService
         }
 
         return [
-            'courses' => $courseInfo[0],
-            'count' => $courseInfo[1],
-            'views' => $courseInfo[2],
-            'pages' => $courseInfo[3]
+            'courses' => $courseInfo['items'],
+            'count' => $courseInfo['totalItems'],
+            'views' => $courseInfo['totalViews'],
+            'pages' => $courseInfo['totalPages']
         ];
     }
 }

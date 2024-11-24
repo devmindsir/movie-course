@@ -4,18 +4,36 @@ namespace App\Models;
 
 use App\Core\Model;
 use App\Exceptions\TeacherNotFoundException;
+use App\Helper\Paginator;
 
 class Courses extends Model
 {
     protected $table = 'Courses';
+
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function getCourses(int $limit=null,string $orderby=null):array
+    //!Footer Get Course
+    public static function lastCourses(): array
     {
-        $order=$orderby? "ORDER BY $orderby DESC" : "";
+        $instance = new self();
+        return $instance->courses();
+    }
+
+    //!GET OPTIONS
+    private function options($variable)
+    {
+        $options = Options::getOptions();
+        return $options[$variable];
+
+    }
+
+    //!GET COURSE JOIN TEACHER
+    public function getCourses(int $limit = null, string $orderby = null): array
+    {
+        $order = $orderby ? "ORDER BY $orderby DESC" : "";
         $sql = "
         SELECT c.*,t.id AS teacher_id,t.family
         FROM courses c 
@@ -25,78 +43,52 @@ class Courses extends Model
         $order
         LIMIT ?
         ";
-        return $this->db->doSelect($sql,['publish',$limit],class:__CLASS__);
+        return $this->db->doSelect($sql, ['publish', $limit], class: __CLASS__);
     }
 
-    private function options($variable){
-        $options=Options::getOptions();
-        return $options[$variable];
-
-    }
-
-    public function courses():array
+    //!GET COURSE
+    public function courses(): array
     {
-        $limit=$this->options('limit');
+        $limit = $this->options('limit');
         return $this->getCourses($limit);
     }
-    public function populars():array
+
+    //!GET POPULAR COURSE
+    public function populars(): array
     {
-        $limit=$this->options('slider_limit');
-        return $this->getCourses($limit,'views');
+        $limit = $this->options('slider_limit');
+        return $this->getCourses($limit, 'views');
     }
 
 
-    public static function lastCourses():array
+//!GET CATEGORY COURSE
+    public function getCourseCategory(int $category, int $id): array
     {
-        $instance=new self();
-        return $instance->courses();
+        $sql = "SELECT id,title,poster FROM $this->table WHERE `category_id`=? AND `id`!=?";
+        return $this->db->doSelect($sql, [$category, $id], __CLASS__);
     }
 
-
-    public function getCourseCategory(int $category,int $id):array
+    //!GET TEACHER COURSE
+    public function getTeacherCourse(int $teacher_id, int $currentPage): array
     {
-        $sql="SELECT id,title,poster FROM $this->table WHERE `category_id`=? AND `id`!=?";
-        return $this->db->doSelect($sql,[$category,$id],__CLASS__);
+        $condition = '`teacher_id`=? AND `status`=?';
+        $params = [$teacher_id, 'publish'];
+        return (new Paginator($this->db, $this->table, __CLASS__))->pagination($condition, $params, $currentPage);
     }
 
+    //!GET Category COURSE JOIN Teacher
 
-
-    public function getTeacherCourse(int $teacher_id,int $currentPage):array
+    public function getCategoryCourse(int $category_id, int $currentPage): array
     {
-        $sql="SELECT * FROM $this->table WHERE `teacher_id`=? AND `status`=?";
-        $result=$this->db->doSelect($sql,[$teacher_id,'publish'],__CLASS__);
-        $count=count($result);
-        $countView=array_sum(array_column($result,'views'));
-
-
-        $itemsPerPage=1;
-        $totalPages=ceil($count/$itemsPerPage);
-
-        $offset=($currentPage-1)*$itemsPerPage;
-        $paginationResult=array_slice($result,$offset,$itemsPerPage);
-
-        return [$paginationResult,$count,$countView,$totalPages];
-    }
-
-    public function getCategoryCourse(int $category_id,int $currentPage):array
-    {
-        $sql="SELECT c.*,t.family
-               FROM courses c
+        $condition = '`category_id`=? AND `status`=?';
+        $params = [$category_id, 'publish'];
+        $selectColumn='c.*,t.family';
+        $join='courses c
                JOIN teachers t
-               ON c.teacher_id=t.id
-               WHERE `category_id`=? AND `status`=?";
-        $result=$this->db->doSelect($sql,[$category_id,'publish'],__CLASS__);
-        $count=count($result);
-        $countView=array_sum(array_column($result,'views'));
-
-        $itemsPerPage=1;
-        $totalPages=ceil($count/$itemsPerPage);
-        $offset=($currentPage-1)*$itemsPerPage;
-        $paginationResult=array_slice($result,$offset,$itemsPerPage);
-
-        return [$paginationResult,$count,$countView,$totalPages];
+               ON c.teacher_id=t.id';
+        return (new Paginator($this->db, $this->table, __CLASS__))->
+        pagination($condition, $params, $currentPage,$selectColumn,$join);
     }
-
 
 
 }

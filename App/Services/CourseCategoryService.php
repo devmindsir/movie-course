@@ -5,26 +5,15 @@ namespace App\Services;
 use App\Models\CourseCategories;
 use App\Models\Courses;
 use App\Exceptions\CategoryNotFoundException;
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
 
-class CourseCategoryService
+
+class CourseCategoryService extends BaseService
 {
-    private Logger $logger;
-
-    public function __construct()
-    {
-        $this->logger = new Logger('course_category_service');
-        $this->logger->pushHandler(new StreamHandler(BASE_PATH . 'storage/log/errors.log', Logger::ERROR));
-    }
 
     public function getCategoryDetails(int $id, string $slug, int $page): array
     {
-
         $category = $this->getCategory($id, $slug);
-
         $categoryCourses = $this->getCategoryCourses($id, $page);
-
         return [
             'category' => $category,
             'courses' => $categoryCourses['courses'],
@@ -55,10 +44,10 @@ class CourseCategoryService
         }
 
         return [
-            'courses' => $categoryInfo[0],
-            'count' => $categoryInfo[1],
-            'views' => $categoryInfo[2],
-            'pages' => $categoryInfo[3],
+            'courses' => $categoryInfo['items'],
+            'count' => $categoryInfo['totalItems'],
+            'views' => $categoryInfo['totalViews'],
+            'pages' => $categoryInfo['totalPages'],
         ];
     }
 }

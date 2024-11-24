@@ -4,26 +4,20 @@ namespace App\Services;
 
 use App\Models\CourseCategories;
 use App\Models\CourseIntro;
-use App\Models\Course_Videos;
+use App\Models\CourseVideos;
 use App\Models\Courses;
 use App\Models\Teachers;
 use App\Exceptions\CourseNotFoundException;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
-class CourseService
+class CourseService extends BaseService
 {
-    private Logger $logger;
-
-    public function __construct()
-    {
-        $this->logger = new Logger('course_service');
-        $this->logger->pushHandler(new StreamHandler(BASE_PATH . 'storage/log/errors.log', Logger::ERROR));
-    }
 
     public function getCourseDetails(int $id, string $slug): array
     {
         $course = $this->getCourse($id, $slug);
+
         $courseIntro = $this->getCourseIntro($id);
         $courseVideos = $this->getCourseVideos($id);
         $courseCategory = $this->getCourseCategory($course->category_id, $id);
@@ -63,7 +57,7 @@ class CourseService
 
     private function getCourseVideos(int $id)
     {
-        $videos = (new Course_Videos())->getCourseVideos($id);
+        $videos = (new CourseVideos())->getCourseVideos($id);
 
         if (!$videos) {
             $this->logger->error("Course videos not found: ID $id");
