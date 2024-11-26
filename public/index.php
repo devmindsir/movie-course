@@ -2,6 +2,7 @@
 
 use App\Core\Router;
 use App\Core\Session;
+use App\Helper\Cart;
 
 @session_start();
 
@@ -11,6 +12,8 @@ require(__DIR__ . "/../config/config.php");
 require(BASE_PATH . 'vendor/autoload.php');
 
 require(BASE_PATH . "App/Helper/global.php");
+
+$cart=new Cart();
 
 $url = currentUrl();
 $router = new Router();

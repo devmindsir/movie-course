@@ -345,13 +345,18 @@
                         <div class="col-12 col-lg-4">
                             <div class="position-sticky top-0">
                                 <!-- //!Add To Basket -->
-                                <div class="bg-white p-shadow p-7 rounded-4">
-                                    <div
+                                <form action="{{URL}}cart" method="POST">
+                                    <input type="hidden" name="product_id" value="{{$course->id}}">
+                                    <input type="hidden" name="product_type" value="course">
+
+                                    <div class="bg-white p-shadow p-7 rounded-4">
+                                    <button
                                             class="bg-primary py-3 w-100 rounded-3 text-white gap-2 fw-bold flex-center">
                                         <i class="fas fa-graduation-cap"></i>
                                         <span>افزودن به سبد خرید</span>
-                                    </div>
+                                    </button>
                                 </div>
+                                </form>
                                 <!-- //!CourseInfo -->
                                 <div class="bg-white p-shadow p-7 rounded-4 mt-6">
                                     <div

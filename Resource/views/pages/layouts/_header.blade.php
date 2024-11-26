@@ -406,16 +406,18 @@ $options=Options::getOptions();
 
         <!--! Header-Bottom-Left -->
         <div class="header-shop-icon flex-center gap-3">
-            <div
+            <a href="{{URL}}cart"
                     class="rounded-3 fs-5 bg-secondary py-3 px-3 flex-center position-relative">
-                <a href="">
+                <div>
                     <i class="fas fa-cart-shopping fs-4"></i>
-                </a>
+                </div>
                 <span
                         class="header-shoping position-absolute fs-6 rounded-circle bg-primary text-white flex-center"
-                >۰</span
                 >
-            </div>
+                    {{cart()->getTotalCount()}}
+                </span
+                >
+            </a>
             <div
                     class="border border-1 border-primary rounded-3 fs-5 fw-bold py-3 px-4 flex-center">
                 <a href="/login.html" class="text-primary" href="#">

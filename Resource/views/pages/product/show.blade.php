@@ -42,14 +42,14 @@
                     <div class="flex-center gap-2">
                         @foreach($gallery as $row)
                             @if($loop->index < 5)
-                        <div
-                                class="product-image-item border border-1 border-gray rounded-2 flex-center p-2">
-                            <a href="#">
-                                <img
-                                        src="{{URL.$row->image_src}}"
-                                        class="w-100 h-100 object-fit-cover"/>
-                            </a>
-                        </div>
+                                <div
+                                        class="product-image-item border border-1 border-gray rounded-2 flex-center p-2">
+                                    <a href="#">
+                                        <img
+                                                src="{{URL.$row->image_src}}"
+                                                class="w-100 h-100 object-fit-cover"/>
+                                    </a>
+                                </div>
                             @endif
                         @endforeach
                     </div>
@@ -87,6 +87,7 @@
                                         <span
                                                 class="product-item-color border border-1 border-gray rounded-circle flex-center {{$index===0 ? 'active' : ''}}"
                                                 data-colortitle="{{$color->title}}"
+                                                data-colorid="{{ $color->id }}"
                                                 onclick="ColorTag(this)">
                       <span style="background-color: {{$color->hex_code}}"></span>
                     </span>
@@ -260,12 +261,17 @@
                                     </div>
                                 </div>
 
-                                <div class="w-100 mt-5">
-                                    <div
-                                            class="w-100 py-2 flex-center bg-basket rounded-2 text-white fs-5 fw-bold">
-                                        افزودن به سبد خرید
+                                <form action="{{ URL . 'cart' }}" method="POST">
+                                    <input type="hidden" name="product_id" value="{{ $product->id }}" />
+                                    <input type="hidden" name="product_type" value="product" />
+                                    <input type="hidden" name="product_color" id="selected-color-id" value="{{$product->all_color[0]->id}}" />
+
+                                    <div class="w-100 mt-5">
+                                        <button class="w-100 py-2 flex-center bg-basket rounded-2 text-white fs-5 fw-bold">
+                                            افزودن به سبد خرید
+                                        </button>
                                     </div>
-                                </div>
+                                </form>
 
                                 @foreach($product->all_garanti as $garanti)
                                     <div class="w-100 my-5 fs-5 flex-start gap-2">
@@ -331,62 +337,62 @@
                     <div class="swiper mySwiper1">
                         <div class="swiper-wrapper row flex-nowrap">
                             @foreach($product_categories as $row)
-                            <div class="swiper-slide swiper-slide-item">
-                                <div class="card mt-5 rounded-5 overflow-hidden">
-                                    <div class="w-100">
-                                        <a href="/product/show/{{$row->id}}/{{generateSlug($row->title)}}" class="card-product flex-center">
-                                            <img
-                                                    class="card-product-img"
-                                                    src="{{URL.$row->image}}"/>
-                                        </a>
-                                    </div>
-                                    <div class="w-100 py-4 px-5">
-                                        <h2 class="mb-3 ellipsis-1">
-                                            <a href="#" class="fw-bold fs-4">
-                                                {{$row->title}}
+                                <div class="swiper-slide swiper-slide-item">
+                                    <div class="card mt-5 rounded-5 overflow-hidden">
+                                        <div class="w-100">
+                                            <a href="/product/show/{{$row->id}}/{{generateSlug($row->title)}}" class="card-product flex-center">
+                                                <img
+                                                        class="card-product-img"
+                                                        src="{{URL.$row->image}}"/>
                                             </a>
-                                        </h2>
-                                        <div class="flex-between">
-                                            <div
-                                                    class="text-subtitle fs-4 d-flex align-items-center gap-1">
-                                                <span>امتیاز محصول</span>
-                                                <span class="text-primary fw-bold">{{$row->rate}}</span>
-                                            </div>
-                                            <div class="d-flex gap-1 align-items-center">
-                                                <img src="{{URL}}assets/images/star/star.svg"/>
-                                                <img src="{{URL}}assets/images/star/star_fill.svg"/>
-                                                <img src="{{URL}}assets/images/star/star_fill.svg"/>
-                                                <img src="{{URL}}assets/images/star/star_fill.svg"/>
-                                                <img src="{{URL}}assets/images/star/star_fill.svg"/>
-                                            </div>
                                         </div>
+                                        <div class="w-100 py-4 px-5">
+                                            <h2 class="mb-3 ellipsis-1">
+                                                <a href="#" class="fw-bold fs-4">
+                                                    {{$row->title}}
+                                                </a>
+                                            </h2>
+                                            <div class="flex-between">
+                                                <div
+                                                        class="text-subtitle fs-4 d-flex align-items-center gap-1">
+                                                    <span>امتیاز محصول</span>
+                                                    <span class="text-primary fw-bold">{{$row->rate}}</span>
+                                                </div>
+                                                <div class="d-flex gap-1 align-items-center">
+                                                    <img src="{{URL}}assets/images/star/star.svg"/>
+                                                    <img src="{{URL}}assets/images/star/star_fill.svg"/>
+                                                    <img src="{{URL}}assets/images/star/star_fill.svg"/>
+                                                    <img src="{{URL}}assets/images/star/star_fill.svg"/>
+                                                    <img src="{{URL}}assets/images/star/star_fill.svg"/>
+                                                </div>
+                                            </div>
 
-                                        <div class="fs-4 mt-4 text-subtitle fw-bold">
-                                            <span>تخفیف :</span>
-                                            <span
-                                            >{{$row->discount}}
+                                            <div class="fs-4 mt-4 text-subtitle fw-bold">
+                                                <span>تخفیف :</span>
+                                                <span
+                                                >{{$row->discount}}
                             <span class="text-primary">درصد</span>
                           </span>
-                                        </div>
+                                            </div>
 
-                                        <div class="fs-4 mt-2 text-subtitle fw-bold">
-                                            <span>قیمت محصول :</span>
-                                            <span
-                                            >
+                                            <div class="fs-4 mt-2 text-subtitle fw-bold">
+                                                <span>قیمت محصول :</span>
+                                                <span
+                                                >
                                                     {{number_format($row->price*(1-$row->discount/100))}}
                             <span class="text-primary">تومان</span>
                           </span>
+                                            </div>
+                                        </div>
+                                        <div
+                                                class="w-100 px-4 py-3 border-top border-1 border-gray">
+                                            <a href="#" class="w-100 flex-center gap-3 fs-4">
+                                                <span>مشاهده جزئیات محصول</span>
+                                                <i class="fas fa-arrow-left"></i>
+                                            </a>
                                         </div>
                                     </div>
-                                    <div
-                                            class="w-100 px-4 py-3 border-top border-1 border-gray">
-                                        <a href="#" class="w-100 flex-center gap-3 fs-4">
-                                            <span>مشاهده جزئیات محصول</span>
-                                            <i class="fas fa-arrow-left"></i>
-                                        </a>
-                                    </div>
                                 </div>
-                            </div>
                             @endforeach
                         </div>
                     </div>
@@ -427,7 +433,7 @@
                                     class="text-justify overflow-hidden fs-5 text-subtitle footer__text"
                                     style="max-height: 14rem; line-height: 3rem">
                                 <p>
-                                   {{$special->description}}
+                                    {{$special->description}}
                                 </p>
                             </div>
                             <span
@@ -834,15 +840,15 @@
 
                                 @foreach($product->all_garanti as $garanti)
 
-                                <div class="flex-start gap-2 my-3 text-subtitle">
-                                    <i class="fas fa-shield"></i>
-                                    <span class="fs-5">{{$garanti->title}}</span>
-                                </div>
+                                    <div class="flex-start gap-2 my-3 text-subtitle">
+                                        <i class="fas fa-shield"></i>
+                                        <span class="fs-5">{{$garanti->title}}</span>
+                                    </div>
                                 @endforeach
                                 <div class="flex-start gap-2 my-3 text-subtitle">
                                     <i class="fas fa-save"></i>
                                     @if($product->stock>0)
-                                    <span class="fs-5">موجود در انبار فروشنده</span>
+                                        <span class="fs-5">موجود در انبار فروشنده</span>
                                     @else
                                         <span class="fs-5 text-danger">اتمام موجودی</span>
                                     @endif
@@ -879,9 +885,9 @@
                 <h4>{{$product->title}}</h4>
                 <ul>
                     @foreach($gallery as $row)
-                    <li data-image="{{URL.$row->image_src}}">
-                        <img src="{{URL.$row->image_src}}"/>
-                    </li>
+                        <li data-image="{{URL.$row->image_src}}">
+                            <img src="{{URL.$row->image_src}}"/>
+                        </li>
                     @endforeach
                 </ul>
             </div>

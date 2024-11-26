@@ -45,6 +45,19 @@
     </div>
 </footer>
 
+<!--  TOAST-->
+@if($toast=error('toast'))
+    <section id="toast-section" class="position-fixed" style="top: 2rem; left: 2rem; z-index: 9999;">
+        <div id="toast-container" class="toast-container">
+            <div id="toast" class="toast-elm mb-1 text-white flex-center px-4 py-3 gap-3 rounded-2
+            {{ $toast['status'] === 'success' ? 'bg-success' : 'bg-danger' }}">
+                <div class="toast-bar"></div>
+                <i class="{{ $toast['status'] === 'success' ? 'fas fa-check' : 'fas fa-times' }}"></i>
+                <span id="toast-message">{{$toast['message']}}</span>
+            </div>
+        </div>
+    </section>
+@endif
 @stack('Thubnails')
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
@@ -52,6 +65,8 @@
 <script src="{{URL}}assets/js/jquery/jquery.min.js"></script>
 <script src="{{URL}}assets/js/menu.js"></script>
 <script src="{{URL}}assets/js/navbar.js"></script>
+<script src="{{URL}}assets/js/toast.js"></script>
+
 @stack('script')
 
 </body>

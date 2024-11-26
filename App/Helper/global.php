@@ -42,7 +42,9 @@ function old($key)
 
 function error($key)
 {
-  return Session::getFlash('errors')[$key] ?? '';
+//  return Session::getFlash('errors')[$key] ?? '';
+     return Session::getFlash($key) ?? '';
+
 }
 
 //!view
@@ -91,4 +93,8 @@ function dd($variable){
     die();
 }
 
+function cart(){
+    global $cart;
+    return $cart;
+}
 

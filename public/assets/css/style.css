@@ -11075,3 +11075,79 @@ main #g6219 {
 }
 
 /*# sourceMappingURL=style.css.map */
+.toast-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  }
+
+.toast-elm {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background-color: #28a745; /* سبز موفقیت */
+  opacity: 0;
+  animation: fadeInOut 5s forwards; /* انیمیشن */
+  padding: 15px;
+  }
+
+.toast-bar {
+  width:            100%;
+  height:           5px;
+  background-color: #ffffff; /* رنگ نوار */
+  position:         absolute;
+  top:              0;
+  left:             0;
+  animation:        barAnimation 5s forwards;
+  }
+
+@keyframes barAnimation {
+  0% {
+    width: 0;
+    }
+  100% {
+    width: 100%;
+    }
+  }
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    top: -10px;
+    }
+  10% {
+    opacity: 1;
+    top: 2rem;
+    }
+  90% {
+    opacity: 1;
+    top: 2rem;
+    }
+  100% {
+    opacity: 0;
+    top: -10px;
+    }
+  }
+
+.checkmark {
+  display: none; /* به‌صورت پیش‌فرض مخفی است */
+  }
+
+.selected .checkmark {
+  display: block !important /* وقتی انتخاب می‌شود، نمایش داده می‌شود */
+
+  }
+
+.selected .checkmark::after{
+  content: "✔";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 5px;
+  bottom: 0;
+  margin: auto;
+  color: white;
+  font-size: 20px;
+  }

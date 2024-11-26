@@ -1,8 +1,12 @@
 function ColorTag(index) {
 	var tag = $(index);
-	var Color_Attr = tag.attr("data-colortitle");
-	var Color_Title = $("#color-title");
-	Color_Title.text(Color_Attr);
+	var colorTitle = tag.attr("data-colortitle");
+	var colorId = tag.attr("data-colorid");
+
+	$("#color-title").text(colorTitle);
+
+	$("#selected-color-id").val(colorId);
+
 	tag.parent().find(".product-item-color").removeClass("active");
 	tag.addClass("active");
 }

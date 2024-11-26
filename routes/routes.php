@@ -4,12 +4,16 @@
 //!USE
 use App\Http\controllers\IndexController;
 use App\Http\controllers\CourseController;
+use App\Http\controllers\LoginController;
+use App\Http\controllers\PostController;
 use App\Http\controllers\ProductController;
+use App\Http\controllers\RegisterController;
 use App\Http\controllers\TeacherController;
 use App\Http\controllers\CourseCategoryController;
 use App\Http\controllers\BlogController;
 use App\Http\controllers\BlogCategoryController;
 use App\Http\controllers\AuthorController;
+use App\Http\controllers\CartController;
 
 
 //!ROOT
@@ -35,3 +39,23 @@ $router->get('/author/show/{id}/{slug}', [AuthorController::class, 'show']);
 
 //!Product
 $router->get('/product/show/{id}/{slug}', [ProductController::class, 'show']);
+
+//!CART
+$router->get('/cart', [CartController::class, 'index']);
+$router->post('/cart', [CartController::class, 'store']);
+
+//!POST
+$router->get('/post', [PostController::class, 'index'])->auth('login');
+
+//!REGISTER
+$router->get('/register', [RegisterController::class, 'index'])->auth('guest');
+//$router->post('/register', [RegisterController::class, 'store'])->auth('guest');
+
+//!LOGIN
+$router->get('/login', [LoginController::class, 'index'])->auth('guest');
+//$router->post('/login', [LoginController::class, 'login'])->auth('guest');
+
+//!LOGOUT
+//$router->delete('/login', [LoginController::class, 'destroy'])->auth('login');
+
+
