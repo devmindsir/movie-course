@@ -46,14 +46,14 @@
 </footer>
 
 <!--  TOAST-->
-@if($toast=error('toast'))
+@if(toast('message'))
     <section id="toast-section" class="position-fixed" style="top: 2rem; left: 2rem; z-index: 9999;">
         <div id="toast-container" class="toast-container">
             <div id="toast" class="toast-elm mb-1 text-white flex-center px-4 py-3 gap-3 rounded-2
-            {{ $toast['status'] === 'success' ? 'bg-success' : 'bg-danger' }}">
+            {{ toast('status') === 'success' ? 'bg-success' : 'bg-danger' }}">
                 <div class="toast-bar"></div>
-                <i class="{{ $toast['status'] === 'success' ? 'fas fa-check' : 'fas fa-times' }}"></i>
-                <span id="toast-message">{{$toast['message']}}</span>
+                <i class="{{toast('status') === 'success' ? 'fas fa-check' : 'fas fa-times' }}"></i>
+                <span id="toast-message">{{toast('message')}}</span>
             </div>
         </div>
     </section>

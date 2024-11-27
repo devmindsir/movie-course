@@ -418,11 +418,19 @@ $options=Options::getOptions();
                 </span
                 >
             </a>
+
+
             <div
                     class="border border-1 border-primary rounded-3 fs-5 fw-bold py-3 px-4 flex-center">
-                <a href="/login.html" class="text-primary" href="#">
+                @if(!getSession('name'))
+                <a href="{{URL}}login" class="text-primary" >
                     ورود / ثبت نام
                 </a>
+                @else
+                    <a href="{{URL}}dashboard" class="text-primary">
+                         {{getSession('name')}}
+                    </a>
+                @endif
             </div>
         </div>
     </div>

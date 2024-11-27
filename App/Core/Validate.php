@@ -24,12 +24,23 @@ class Validate
     self::validateField('image', $image, 4, 200);
   }
 
-  public static function validateFullName($name, $family)
+
+  public static function validateFullName($name)
   {
-    self::validateField('name', $name, 2, 40);
-    self::validateField('family', $family, 3, 60);
+    self::validateField('name', $name, 3, 30);
     self::validateRegex('name', $name);
-    self::validateRegex('family', $family);
+  }
+
+  public static function validateUserName($username){
+      self::validateRequired('username',$username);
+      self::validateRegex('username',$username);
+  }
+  public static function validatePhone($phone){
+      self::validateRequired('phone',$phone);
+        $pattern='/^09\d{9}$/';
+        if (!preg_match($pattern,$phone)){
+            self::$errors['phone'] = 'phone number format is invalid';
+        }
   }
   public static function validateRegex($fieldName, $value)
   {

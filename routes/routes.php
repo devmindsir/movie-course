@@ -49,11 +49,11 @@ $router->get('/post', [PostController::class, 'index'])->auth('login');
 
 //!REGISTER
 $router->get('/register', [RegisterController::class, 'index'])->auth('guest');
-//$router->post('/register', [RegisterController::class, 'store'])->auth('guest');
+$router->post('/register', [RegisterController::class, 'store'])->auth('guest');
 
 //!LOGIN
 $router->get('/login', [LoginController::class, 'index'])->auth('guest');
-//$router->post('/login', [LoginController::class, 'login'])->auth('guest');
+$router->post('/login', [LoginController::class, 'store'])->auth('guest');
 
 //!LOGOUT
 //$router->delete('/login', [LoginController::class, 'destroy'])->auth('login');

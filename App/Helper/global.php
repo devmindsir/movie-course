@@ -42,10 +42,17 @@ function old($key)
 
 function error($key)
 {
-//  return Session::getFlash('errors')[$key] ?? '';
-     return Session::getFlash($key) ?? '';
-
+ return Session::getFlash('errors')[$key] ?? '';
 }
+
+function toast($key){
+    return Session::getFlash('toast')[$key] ?? '';
+}
+
+function getSession($key){
+    return Session::get('user_id')[$key] ?? '';
+}
+
 
 //!view
 function view($path, $params = [])

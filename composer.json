@@ -14,8 +14,8 @@
         "eftec/bladeone": "^4.16",
         "ext-pdo": "*",
         "monolog/monolog": "^3.8",
-        "illuminate/collections": "^11.33"
-
+        "illuminate/collections": "^11.33",
+      "ext-couchbase": "*"
     },
     "autoload": {"psr-4": {"App\\":"App"}}
 }

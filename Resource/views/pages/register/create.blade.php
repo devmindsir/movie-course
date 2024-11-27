@@ -18,41 +18,62 @@
                     >
                 </div>
                 <div class="mt-4">
-                    <form>
+                    <form action="{{URL}}register" method="POST">
                         <div class="position-relative mb-1">
                             <input
+                                    name="name"
+                                    value="{{ old('name') ?? '' }}"
                                     class="w-100 border-1 border border-gray rounded-2 py-3 px-4 fs-5 text-subtitle"
                                     type="text"
                                     placeholder="نام و نام خانوادگی" />
                             <i
                                     class="login-item-icon fas fa-face-smile text-subtitle fs-2 position-absolute"></i>
+                            @if (error('name'))
+                                <p class="fs-5 my-2 text-danger"> {{error('name')}} </p>
+                            @endif
                         </div>
                         <div class="position-relative mb-1">
                             <input
+                                    name="username"
+                                    value="{{ old('username') ?? '' }}"
                                     class="w-100 border-1 border border-gray rounded-2 py-3 px-4 fs-5 text-subtitle"
                                     type="text"
                                     placeholder="نام کاربری  " />
                             <i
                                     class="login-item-icon fas fa-user text-subtitle fs-2 position-absolute"></i>
+                            @if (error('username'))
+                                <p class="fs-5 my-2 text-danger"> {{error('username')}} </p>
+                            @endif
                         </div>
                         <div class="position-relative mb-1">
                             <input
+                                    name="email"
+                                    value="{{ old('email') ?? '' }}"
                                     class="w-100 border-1 border border-gray rounded-2 py-3 px-4 fs-5 text-subtitle"
                                     type="email"
                                     placeholder=" آدرس ایمیل " />
                             <i
                                     class="login-item-icon fas fa-message text-subtitle fs-2 position-absolute"></i>
+                            @if (error('email'))
+                                <p class="fs-5 my-2 text-danger"> {{error('email')}} </p>
+                            @endif
                         </div>
                         <div class="position-relative mb-1">
                             <input
+                                    name="phone"
+                                    value="{{ old('phone') ?? '' }}"
                                     class="w-100 border-1 border border-gray rounded-2 py-3 px-4 fs-5 text-subtitle"
                                     type="text"
                                     placeholder="شماره تماس" />
                             <i
                                     class="login-item-icon fas fa-phone text-subtitle fs-2 position-absolute"></i>
+                            @if (error('phone'))
+                                <p class="fs-5 my-2 text-danger"> {{error('phone')}} </p>
+                            @endif
                         </div>
                         <div class="position-relative mb-2">
                             <input
+                                    name="password"
                                     class="w-100 border-1 border border-gray rounded-2 py-3 px-4 fs-5 text-subtitle"
                                     type="password"
                                     placeholder=" گذرواژه " />
@@ -61,17 +82,21 @@
                         </div>
                         <div class="position-relative mb-2">
                             <input
+                                    name="repassword"
                                     class="w-100 border-1 border border-gray rounded-2 py-3 px-4 fs-5 text-subtitle"
                                     type="password"
                                     placeholder=" تکرار گذرواژه " />
                             <i
                                     class="login-item-icon fas fa-lock-open text-subtitle fs-2 position-absolute"></i>
+                            @if (error('password'))
+                                <p class="fs-5 my-2 text-danger"> {{error('password')}} </p>
+                            @endif
                         </div>
-                        <div
+                        <button
                                 class="mt-2 w-100 py-3 bg-primary rounded-3 flex-center text-white gap-2 fs-5 fw-bold">
                             <i class="fas fa-right-from-bracket"></i>
                             <span>ثبت نام</span>
-                        </div>
+                        </button>
                     </form>
 
                     <div class="mt-4">

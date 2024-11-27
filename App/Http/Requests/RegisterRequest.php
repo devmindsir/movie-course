@@ -9,13 +9,15 @@ class RegisterRequest extends BaseRequest
 {
   protected $errors = [];
 
-  public function validate($name, $family, $email, $password)
+  public function validate(string $name ,string $username, string $email,mixed $password,string $phone)
   {
     Validate::resetError();
-    Validate::validateFullName($name, $family);
+    Validate::validateFullName($name);
     Validate::validatePassword($password);
     Validate::validateRegexPassword($password);
     Validate::validateEmail($email);
+    Validate::validateUserName($username);
+    Validate::validatePhone($phone);
     $this->errors = Validate::getErrors();
     return $this;
   }
