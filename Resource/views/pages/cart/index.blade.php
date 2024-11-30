@@ -123,10 +123,13 @@
                         <i class="fas fa-arrow-right"></i>
                         <span>بازگشت</span>
                     </a>
+
+                    @if(cart()->getTotalCount()>=1)
                     <a href="{{URL}}post" class="showcart-btn bg-success gap-2">
                         <span>ادامه سفارش</span>
                         <i class="fas fa-arrow-left"></i>
                     </a>
+                    @endif
                 </div>
             </div>
         </div>

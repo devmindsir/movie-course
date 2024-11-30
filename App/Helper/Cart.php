@@ -54,16 +54,20 @@ class Cart
 
     private function addNewItem(Collection $cart, object $item, string $type,?int $color_id,?string $color_name): Collection
     {
-        $cart->push([
+        $cartItem=[
             'id' => $item->id,
             'type' => $type,
             'title' => $item->title,
-            'color_id'=>$color_id,
-            'color_name'=>$color_name,
             'price' => $item->price,
             'discount' => $item->discount,
             'count' => 1
-        ]);
+        ];
+        if ($type==='product'){
+              $cartItem['color_id']=$color_id;
+              $cartItem['color_name']=$color_name;
+            $cartItem['weight']=$item->weight;
+        }
+        $cart->push($cartItem);
         $this->setFlush();
         return $cart;
     }
@@ -96,4 +100,37 @@ class Cart
     {
         return $this->getCart();
     }
+
+    public function hasProduct():bool{
+        $cart=$this->getCart();
+        return $cart->contains(fn($item)=>$item['type']==='product');
+    }
+
+    public function calculatePostPrice(string $postType){
+
+        $cart=$this->getCart();
+        //!BasePrice
+        $basePrice=0;
+        if ($postType==='special'){
+            $basePrice=50000;
+        }elseif ($postType==='express'){
+            $basePrice=25000;
+        }
+
+        //!get Weight
+        $totalWeight=0;
+        foreach ($cart as $row){
+            if ($row['type']==='product'){
+                $totalWeight+=$row['weight']*$row['count'];
+            }
+        }
+        $postWeightPrice=4000;
+        $addationalPrice=0;
+        if ($totalWeight>0){
+            $addationalPrice=ceil($totalWeight/500)*$postWeightPrice;
+        }
+        $totalShippingPrice=$basePrice+$addationalPrice;
+        return $totalShippingPrice;
+    }
+
 }

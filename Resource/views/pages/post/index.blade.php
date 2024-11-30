@@ -99,12 +99,14 @@
                         </div>
                     </div>
                     <div class="width-5 h-100 flex-center text-center gap-3">
-                        <span>هزینه ارسال: 75,000 تومان</span>
+                        <span>هزینه ارسال:
+
+                            {{number_format($post->cost)}}
+
+                            تومان</span>
                     </div>
                 </div>
                 @endforeach
-
-
 
             </div>
             <div class="w-100 flex-between mt-4 px-0 px-lg-8">

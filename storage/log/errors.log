@@ -273,3 +273,7 @@
 [2024-11-27T09:49:19.012936+01:00] author_service.ERROR: Course videos not found: ID 3 [] []
 SQLSTATE[42S02]: Base table or view not found: 1146 Table 'db_devminds.tbl_users' doesn't exist[2024-11-27T15:16:25.559437+01:00] author_service.ERROR: Course intro not found: ID 3 [] []
 [2024-11-27T15:16:25.575497+01:00] author_service.ERROR: Course videos not found: ID 3 [] []
+[2024-11-28T09:20:22.167773+01:00] author_service.ERROR: Course intro not found: ID 3 [] []
+[2024-11-28T09:20:22.505179+01:00] author_service.ERROR: Course videos not found: ID 3 [] []
+[2024-11-28T09:20:24.908633+01:00] author_service.ERROR: Course intro not found: ID 3 [] []
+[2024-11-28T09:20:24.912688+01:00] author_service.ERROR: Course videos not found: ID 3 [] []
