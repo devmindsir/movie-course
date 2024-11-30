@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Core\Model;
+use App\Core\Session;
 use App\Http\Requests\LoginRequest;
 use Carbon\Carbon;
 
@@ -34,6 +35,12 @@ class Users extends Model
         return $this->db->doQuery("INSERT INTO $this->table
     (`name`,`username`,`email`,`phone`,`password`,`create_at`) VALUES (?,?,?,?,?,?)",
             [$name, $username, $email, $phone, $password_hash, $date_register]);
+    }
+
+    public function getUserId(){
+        $userId=Session::get('user_id')['id'];
+        $sql="SELECT username,name,email,phone,id FROM $this->table WHERE id=?";
+        return $this->db->doFetch($sql,[$userId],__CLASS__);
     }
 
 

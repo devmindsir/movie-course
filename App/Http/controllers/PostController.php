@@ -20,4 +20,19 @@ class PostController extends Controller
         $getAddress = (new Address())->getUserAddress();
         $this->view('pages.post.index',['address'=>$getAddress,'posts'=>$type_post]);
     }
+    public function create(){
+    $service=new PostService();
+    $inputData=json_decode(file_get_contents('php://input'),true);
+    $addressId=$inputData['addressId']??null;
+    $shippingId=$inputData['shippingId']??null;
+    $service->checkValidate($addressId,$shippingId);
+    $postPrice=$service->calculatePost($shippingId);
+    Session::set('post',['addressID'=>$addressId,'shippingID'=>$shippingId,'postPrice'=>$postPrice]);
+
+    echo json_encode([
+        'success'=>true,
+        'message'=>'اطلاعات با موفقیت ثبت شد'
+    ]);
+
+    }
 }

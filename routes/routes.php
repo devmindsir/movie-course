@@ -2,6 +2,7 @@
 
 
 //!USE
+use App\Http\controllers\CheckoutController;
 use App\Http\controllers\IndexController;
 use App\Http\controllers\CourseController;
 use App\Http\controllers\LoginController;
@@ -46,6 +47,7 @@ $router->post('/cart', [CartController::class, 'store']);
 
 //!POST
 $router->get('/post', [PostController::class, 'index'])->auth('login');
+$router->post('/post', [PostController::class, 'create'])->auth('login');
 
 //!REGISTER
 $router->get('/register', [RegisterController::class, 'index'])->auth('guest');
@@ -58,4 +60,6 @@ $router->post('/login', [LoginController::class, 'store'])->auth('guest');
 //!LOGOUT
 //$router->delete('/login', [LoginController::class, 'destroy'])->auth('login');
 
+//!Checkout
+$router->get('/checkout', [CheckoutController::class, 'index'])->auth('login');
 
