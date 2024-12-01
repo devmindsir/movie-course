@@ -11151,3 +11151,13 @@ main #g6219 {
   color: white;
   font-size: 20px;
   }
+
+.gift-success{
+  background-color: #a6f9a7;
+  color: green !important;
+  }
+
+.gift-error{
+  background-color: #f9a6a6;
+  color: red !important;
+  }

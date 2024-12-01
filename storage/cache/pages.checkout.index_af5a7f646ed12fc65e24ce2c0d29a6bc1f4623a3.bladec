@@ -56,6 +56,7 @@
  >ثبت کد تخفیف</span
  >
  </div>
+ <span class="gift-message mt-3 fs-5 text-primary d-flex"></span>
  </div>
 
  <div class="mt-4 px-4 py-5">
@@ -212,32 +213,41 @@
  class="w-100 flex-between px-5 py-4 border-bottom border-1 boder-title">
  <span class="fw-bold fs-4">جمع کل خرید شما:</span>
  <span class="fw-bold fs-4">
+ <span class="amount">
  <?php echo \htmlentities(number_format(cart()->getTotalPrice())??'', ENT_QUOTES, 'UTF-8', false); ?>
 
+ </span>
  تومان </span>
  </div>
  <div
  class="w-100 flex-between px-5 py-4 border-bottom border-1 boder-title">
  <span class="fw-bold fs-4"> هزینه ارسال سفارش: </span>
  <span class="fw-bold fs-4">
+ <span class="post-price">
  <?php echo \htmlentities(number_format($postPrice)??'', ENT_QUOTES, 'UTF-8', false); ?>
 
+ </span>
  تومان </span>
  </div>
 
  <div
  class="w-100 flex-between px-5 py-4 border-bottom border-1 boder-title bg-khaki">
- <span class="fw-bold text-khaki-text fs-4"
- >میزان کد تخفیف: ( 0 درصد)
+ <span class="fw-bold text-khaki-text fs-4">
+
+ میزان کد تخفیف: (
+ <span class="discount-percent">0</span>
+ درصد)
+
  </span>
  <span class="fw-bold text-khaki-text fs-4">
- 0
+ <span class="discount-amount">0</span>
  تومان </span>
  </div>
+
  <div class="w-100 flex-between px-5 py-4 bg-success-Light">
  <span class="fw-bold text-success fs-4">مبلغ قابل پرداخت:</span>
  <span class="fw-bold text-success fs-4">
- <?php echo \htmlentities(number_format($totalPrice)??'', ENT_QUOTES, 'UTF-8', false); ?>
+ <span class="total-price"><?php echo \htmlentities(number_format($totalPrice)??'', ENT_QUOTES, 'UTF-8', false); ?></span>
 
  تومان </span>
  </div>
@@ -268,5 +278,10 @@
  </div>
  </div>
 </main>
+
 <?php $this->stopSection(); ?>
+
+<?php $this->startPush('script'); ?>
+ <script src="<?php echo \htmlentities(URL??'', ENT_QUOTES, 'UTF-8', false); ?>assets/js/checkoutAjax.js"></script>
+ <?php $this->stopPush(); ?>
 <?php if (isset($_shouldextend[1])) { echo $this->runChild('pages.layouts.master'); } ?>

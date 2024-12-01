@@ -56,6 +56,7 @@
                     >ثبت کد تخفیف</span
                     >
                 </div>
+                <span class="gift-message mt-3 fs-5 text-primary d-flex"></span>
             </div>
 
             <div class="mt-4 px-4 py-5">
@@ -202,30 +203,40 @@
                             class="w-100 flex-between px-5 py-4 border-bottom border-1 boder-title">
                         <span class="fw-bold fs-4">جمع کل خرید شما:</span>
                         <span class="fw-bold fs-4">
+                            <span class="amount">
                             {{number_format(cart()->getTotalPrice())}}
+                                </span>
                             تومان </span>
                     </div>
                     <div
                             class="w-100 flex-between px-5 py-4 border-bottom border-1 boder-title">
                         <span class="fw-bold fs-4"> هزینه ارسال سفارش: </span>
                         <span class="fw-bold fs-4">
+                            <span class="post-price">
                             {{number_format($postPrice)}}
+                                </span>
                             تومان </span>
                     </div>
 
                     <div
                             class="w-100 flex-between px-5 py-4 border-bottom border-1 boder-title bg-khaki">
-                <span class="fw-bold text-khaki-text fs-4"
-                >میزان کد تخفیف: ( 0 درصد)
+                <span class="fw-bold text-khaki-text fs-4">
+
+                    میزان کد تخفیف: (
+                    <span class="discount-percent">0</span>
+                    درصد)
+
                 </span>
                         <span class="fw-bold text-khaki-text fs-4">
-                            0
+                            <span class="discount-amount">0</span>
                             تومان </span>
                     </div>
+
                     <div class="w-100 flex-between px-5 py-4 bg-success-Light">
                         <span class="fw-bold text-success fs-4">مبلغ قابل پرداخت:</span>
                         <span class="fw-bold text-success fs-4">
-                            {{number_format($totalPrice)}}
+                            <span class="total-price">{{number_format($totalPrice)}}</span>
+
                             تومان </span>
                     </div>
                 </div>
@@ -255,4 +266,9 @@
         </div>
     </div>
 </main>
+
 @endsection
+
+@push('script')
+    <script src="{{URL}}assets/js/checkoutAjax.js"></script>
+ @endpush

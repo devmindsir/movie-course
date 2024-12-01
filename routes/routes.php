@@ -62,4 +62,5 @@ $router->post('/login', [LoginController::class, 'store'])->auth('guest');
 
 //!Checkout
 $router->get('/checkout', [CheckoutController::class, 'index'])->auth('login');
+$router->post('/checkout', [CheckoutController::class, 'create'])->auth('login');
 

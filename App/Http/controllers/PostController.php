@@ -20,6 +20,7 @@ class PostController extends Controller
         $getAddress = (new Address())->getUserAddress();
         $this->view('pages.post.index',['address'=>$getAddress,'posts'=>$type_post]);
     }
+
     public function create(){
     $service=new PostService();
     $inputData=json_decode(file_get_contents('php://input'),true);

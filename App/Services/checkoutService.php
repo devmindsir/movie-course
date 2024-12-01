@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Core\Controller;
 use App\Core\Session;
 use App\Helper\Cart;
+use App\Models\Gift;
 
 class checkoutService extends Controller
 {
@@ -19,9 +20,7 @@ class checkoutService extends Controller
         }
     }
 
-    public function getTotalPrice($postPrice){
-        $totalPrice=cart()->getTotalPrice();
-        return $postPrice+$totalPrice;
-    }
+
+
 
 }
