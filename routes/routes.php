@@ -6,6 +6,7 @@ use App\Http\controllers\CheckoutController;
 use App\Http\controllers\IndexController;
 use App\Http\controllers\CourseController;
 use App\Http\controllers\LoginController;
+use App\Http\controllers\PayController;
 use App\Http\controllers\PostController;
 use App\Http\controllers\ProductController;
 use App\Http\controllers\RegisterController;
@@ -64,3 +65,5 @@ $router->post('/login', [LoginController::class, 'store'])->auth('guest');
 $router->get('/checkout', [CheckoutController::class, 'index'])->auth('login');
 $router->post('/checkout', [CheckoutController::class, 'create'])->auth('login');
 
+//!PAY
+$router->post('/pay', [PayController::class, 'pay'])->auth('login');

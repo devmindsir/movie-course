@@ -241,12 +241,16 @@
                     </div>
                 </div>
             </div>
-
+            <form action="{{URL}}pay" method="POST">
             <div class="px-4 py-2">
                 <span class="title-structuring">انتخاب نوع پرداخت</span>
-                <div class="mt-5 flex-start px-3 fs-4 fw-bold gap-3">
-                    <span>درگاه زرین پال</span>
-                    <input type="checkbox" />
+                <div class="flex-start gap-4">
+                @foreach($gateway as $gate)
+                <label class="mt-5 flex-start px-3 fs-4 fw-bold gap-3">
+                    <span>{{$gate->title}}</span>
+                    <input type="radio" name="gateway" value="{{$gate->id}}" />
+                </label>
+                @endforeach
                 </div>
             </div>
             <div class="px-4 py-2">
@@ -257,12 +261,14 @@
               </span>
                     <input type="checkbox" />
                 </div>
+                <span class="checkout-rule mt-3 d-flex fs-5"></span>
             </div>
 
-            <div
-                    class="mt-5 w-100 bg-primary text-white py-3 rounded-3 flex-center fs-4 fw-bold">
+            <button
+                    class="submit-checkout mt-5 w-100 bg-primary text-white py-3 rounded-3 flex-center fs-4 fw-bold">
                 ثبت سفارش و پرداخت
-            </div>
+            </button>
+            </form>
         </div>
     </div>
 </main>
@@ -271,4 +277,5 @@
 
 @push('script')
     <script src="{{URL}}assets/js/checkoutAjax.js"></script>
+    <script src="{{URL}}assets/js/rule.js"></script>
  @endpush

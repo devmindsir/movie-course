@@ -283,3 +283,12 @@ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'db_devminds.tbl_users
 [2024-11-30T18:11:52.182046+01:00] author_service.ERROR: Course videos not found: ID 3 [] []
 [2024-11-30T18:11:53.899306+01:00] author_service.ERROR: Course intro not found: ID 3 [] []
 [2024-11-30T18:11:53.907093+01:00] author_service.ERROR: Course videos not found: ID 3 [] []
+[2024-12-03T08:05:45.438410+01:00] author_service.ERROR: Course intro not found: ID 3 [] []
+[2024-12-03T08:05:45.573869+01:00] author_service.ERROR: Course videos not found: ID 3 [] []
+[2024-12-03T08:05:48.318232+01:00] author_service.ERROR: Course intro not found: ID 3 [] []
+[2024-12-03T08:05:48.328737+01:00] author_service.ERROR: Course videos not found: ID 3 [] []
+[2024-12-03T10:36:33.927064+01:00] author_service.ERROR: Course intro not found: ID 3 [] []
+[2024-12-03T10:36:33.947759+01:00] author_service.ERROR: Course videos not found: ID 3 [] []
+[2024-12-03T10:36:35.489147+01:00] author_service.ERROR: Course intro not found: ID 3 [] []
+[2024-12-03T10:36:35.503694+01:00] author_service.ERROR: Course videos not found: ID 3 [] []
+SQLSTATE[HY093]: Invalid parameter number

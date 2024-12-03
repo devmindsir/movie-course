@@ -6,7 +6,7 @@ use App\Core\Controller;
 use App\Core\Router;
 use App\Helper\Cart;
 use App\Models\Address;
-use App\Models\shipping_post;
+use App\Models\shippingPost;
 
 class PostService extends Controller
 {
@@ -28,7 +28,7 @@ class PostService extends Controller
 
     public function checkPostPrice()
     {
-        $type_post = (new shipping_post())->all();
+        $type_post = (new shippingPost())->all();
         $postSpecial = (new Cart())->calculatePostPrice('special');
         $postExpress = (new Cart())->calculatePostPrice('express');
         foreach ($type_post as $post) {
@@ -44,14 +44,14 @@ class PostService extends Controller
     public function checkValidate(int $addressId, int $postId)
     {
         $address = (new Address())->find($addressId);
-        $post = (new shipping_post())->find($postId);
+        $post = (new shippingPost())->find($postId);
         if (!$address || !$post) {
             (new Router())->abort();
         }
     }
 
     public function calculatePost(int $postId){
-        $post = (new shipping_post())->find($postId);
+        $post = (new shippingPost())->find($postId);
         return (new Cart())->calculatePostPrice($post->type);
     }
 

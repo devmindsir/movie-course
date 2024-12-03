@@ -61,6 +61,11 @@ class Database implements DatabaseInterface
         return $this->pdo;
     }
 
+    //!Last Insert ID
+    public function lastInsertId(){
+        return $this->pdo->lastInsertId();
+    }
+
     //!prepare & Execute
     private function executeQuery($sql, $params = [], $fetchMode = null, $class = null)
     {
@@ -105,5 +110,6 @@ class Database implements DatabaseInterface
         return $this->executeQuery($sql, $params);
     }
     public function __debugInfo(){}
+
 
 }

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use App\Core\Model;
 
-class shipping_post extends Model
+class ShippingPost extends Model
 {
     protected $table='shipping_post';
     public function __construct()

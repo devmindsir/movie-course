@@ -133,4 +133,11 @@ class Cart
         return $totalShippingPrice;
     }
 
+    function getFinalPrice(){
+        $postPrice=Session::get('post')['postPrice']??0;
+        $codePrice=Session::get('total_cart')['discountAmount']??0;
+        $totalPrice=$this->getTotalPrice();
+        return $postPrice+$totalPrice-$codePrice;
+    }
+
 }
