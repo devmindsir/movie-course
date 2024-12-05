@@ -33,4 +33,11 @@ class OrderItems extends Model
         $this->db->doQuery($sql, [$product_id,$course_id,$title,$color_id,$order_id,$quantity,$unit_price,$unit_discount]);
     }
 
+    public function getOrderIds(int $order_id){
+        $sql="SELECT * FROM $this->table WHERE order_id=?";
+        return $this->db->doSelect($sql,[$order_id],__CLASS__);
+    }
+
+
+
 }

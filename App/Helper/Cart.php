@@ -24,7 +24,6 @@ class Cart
             $cart = $this->addNewItem($cart, $item, $type,$color_id,$color_name);
         }
         $this->setSession($cart);
-//       dd($this->all());
     }
 
     private function findItemInCart(Collection $cart, object $item, string $type,?int $color_id): ?array
@@ -133,11 +132,17 @@ class Cart
         return $totalShippingPrice;
     }
 
-    function getFinalPrice(){
+    public function getFinalPrice(){
         $postPrice=Session::get('post')['postPrice']??0;
         $codePrice=Session::get('total_cart')['discountAmount']??0;
         $totalPrice=$this->getTotalPrice();
         return $postPrice+$totalPrice-$codePrice;
+    }
+
+    public function clear(){
+        Session::remove('cart');
+        Session::remove('post');
+        Session::remove('total_cart');
     }
 
 }

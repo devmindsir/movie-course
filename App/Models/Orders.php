@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Core\Model;
 use App\Core\Session;
+use Exception;
 
 class Orders extends Model
 {
@@ -28,4 +29,28 @@ class Orders extends Model
 
         return $this->db->lastInsertId();
     }
+
+    public function updateRefID($refID,$txCode,$orderId){
+    $sql="UPDATE $this->table SET refID=?,transaction_code=? WHERE id=?";
+    $this->db->doQuery($sql,[$refID,$txCode,$orderId]);
+    }
+
+    public function getRefID(string $refID){
+        $sql="SELECT * FROM $this->table WHERE refID=? AND status=?";
+        $result=$this->db->doFetch($sql,[$refID,0],__CLASS__);
+        if (!$result){
+            throw new Exception('Order with RefID not Found');
+        }
+        return ["gateway"=>$result->gateway_id,"id"=>$result->id,"gift_id"=>$result->gift_id];
+    }
+
+    public function updatePay(string $refID){
+        $sql="UPDATE $this->table SET status=? WHERE refID=? AND status=?";
+        $this->db->doQuery($sql,[1,$refID,0]);
+    }
+
+
+
+
+
 }

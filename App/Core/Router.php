@@ -62,8 +62,8 @@ class Router implements RouterInterface
     foreach ($this->routes as $route) {
       $pattern = preg_replace('/{(\w+)}/', '([^\/]+)', $route['url']);
 
-      if (preg_match('#^' . $pattern . '$#u', $url, $matches) && $method === $route['method']) {
 
+      if (preg_match('#^' . $pattern . '$#u', $url, $matches) && $method === $route['method']) {
         //!Middleware
         Middleware::handle($route['auth']);
 

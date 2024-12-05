@@ -35,6 +35,11 @@ class Session
     unset($_SESSION['_flash_']);
   }
 
+  public static function remove($key)
+  {
+      unset($_SESSION[$key]);
+  }
+
   public static function destroy()
   {
 

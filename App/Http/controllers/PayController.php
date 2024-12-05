@@ -3,10 +3,10 @@
 namespace App\Http\controllers;
 
 use App\Core\Controller;
-use App\Core\Session;
-use App\Models\OrderItems;
+use App\Models\Gift;
 use App\Models\Orders;
-use App\Models\Shipments;
+use App\Services\PayService;
+use Exception;
 
 class PayController extends Controller
 {
@@ -17,17 +17,32 @@ class PayController extends Controller
         if (!$gateway) {
             redirect('checkout');
         }
-
-        //!Insert Order
-        $lastId = (new Orders())->insert($gateway);
-        //!Insert Order Items
-        foreach (cart()->all() as $item) {
-            (new OrderItems)->insert($item,$lastId);
+        try {
+            $response=(new PayService)->processPayment($gateway);
+            header("Location:".$response['link']);
+        }catch (Exception $e){
+            echo $e->getMessage();
         }
-        //!Insert Shipments
-        $postCheck=Session::get('post')??null;
-        if ($postCheck){
-            (new Shipments)->insert($lastId);
+    }
+
+    public function callback(){
+        $params=[
+            'id' => $_POST['id'],
+            'order_id' => $_POST['order_id']
+        ];
+        try {
+            $order=(new Orders)->getRefID($params['id']);
+            $gatewayId=$order['gateway'];
+            $order_id=$order['id'];
+            $response=(new PayService)->verifyPayment($params,$gatewayId);
+            if(!is_null($order['gift_id'])){
+                (new Gift())->updateGift($order['gift_id']);
+            }
+            (new Orders())->updatePay($response['id']);
+            cart()->clear();
+            redirect("done/show/$order_id");
+        }catch (Exception $e){
+            echo $e->getMessage();
         }
     }
 }

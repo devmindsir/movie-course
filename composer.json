@@ -15,7 +15,8 @@
         "ext-pdo": "*",
         "monolog/monolog": "^3.8",
         "illuminate/collections": "^11.33",
-      "ext-couchbase": "*"
+      "ext-couchbase": "*",
+      "ext-curl": "*"
     },
     "autoload": {"psr-4": {"App\\":"App"}}
 }

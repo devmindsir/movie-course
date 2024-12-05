@@ -291,4 +291,7 @@ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'db_devminds.tbl_users
 [2024-12-03T10:36:33.947759+01:00] author_service.ERROR: Course videos not found: ID 3 [] []
 [2024-12-03T10:36:35.489147+01:00] author_service.ERROR: Course intro not found: ID 3 [] []
 [2024-12-03T10:36:35.503694+01:00] author_service.ERROR: Course videos not found: ID 3 [] []
-SQLSTATE[HY093]: Invalid parameter number
+SQLSTATE[HY093]: Invalid parameter numberSQLSTATE[22007]: Invalid datetime format: 1367 Illegal double '71e6865' value found during parsingSQLSTATE[42S22]: Column not found: 1054 Unknown column 'suatus' in 'field list'[2024-12-05T12:31:38.555864+01:00] author_service.ERROR: Course intro not found: ID 3 [] []
+[2024-12-05T12:31:38.680983+01:00] author_service.ERROR: Course videos not found: ID 3 [] []
+[2024-12-05T12:31:40.673147+01:00] author_service.ERROR: Course intro not found: ID 3 [] []
+[2024-12-05T12:31:40.686931+01:00] author_service.ERROR: Course videos not found: ID 3 [] []

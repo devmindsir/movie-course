@@ -3,6 +3,7 @@
 
 //!USE
 use App\Http\controllers\CheckoutController;
+use App\Http\controllers\DoneController;
 use App\Http\controllers\IndexController;
 use App\Http\controllers\CourseController;
 use App\Http\controllers\LoginController;
@@ -16,6 +17,7 @@ use App\Http\controllers\BlogController;
 use App\Http\controllers\BlogCategoryController;
 use App\Http\controllers\AuthorController;
 use App\Http\controllers\CartController;
+use App\Http\controllers\TestController;
 
 
 //!ROOT
@@ -67,3 +69,12 @@ $router->post('/checkout', [CheckoutController::class, 'create'])->auth('login')
 
 //!PAY
 $router->post('/pay', [PayController::class, 'pay'])->auth('login');
+$router->post('/pay/callback', [PayController::class, 'callback'])->auth('login');
+
+//!done
+$router->get('/done/show/{id}', [DoneController::class, 'show'])->auth('login');
+
+
+//!Test
+$router->get('/test', [TestController::class, 'index']);
+
