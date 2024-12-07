@@ -14,14 +14,17 @@ class Shipments extends Model
         parent::__construct();
     }
 
-    public function insert(int $order_id)
+    public function insertShipments(int $order_id)
     {
+
         $post = Session::get('post');
-        $addressId = $post['addressID'];
-        $shippingID = $post['shippingID'];
-        $sql = "INSERT INTO $this->table
-      (order_id,address_id,shipping_id,status_id)
-      VALUES (?,?,?,?)";
-        $this->db->doQuery($sql, [$order_id, $addressId, $shippingID, 1]);
+        $data=[
+            'order_id'=>$order_id,
+            'address_id'=>$post['addressID'],
+            'shipping_id'=>$post['shippingID'],
+            'status_id'=>1
+        ];
+
+        $this->insert($data);
     }
 }

@@ -16,7 +16,7 @@
                             <i class="fas fa-code text-primary"></i>
                             <div class="fs-4 flex-start gap-3">
                                 <span>تاریخ عضویت:</span>
-                                <span class="text-subtitle">{{$author->create_at}}</span>
+                                <span class="text-subtitle">{{to_jalali($author->create_at)}}</span>
                             </div>
                         </div>
                         <div class="flex-start gap-2">

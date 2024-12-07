@@ -3,6 +3,7 @@
 //Current URL
 
 use App\Core\Session;
+use Morilog\Jalali\Jalalian;
 
 function currentUrl()
 {
@@ -103,5 +104,14 @@ function dd($variable){
 function cart(){
     global $cart;
     return $cart;
+}
+
+function to_jalali($date,$format='Y/m/d'){
+    return Jalalian::forge($date)->format($format);
+}
+
+function to_jalali_relative($date){
+    return Jalalian::forge($date)->ago();
+
 }
 

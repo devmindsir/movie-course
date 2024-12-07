@@ -68,11 +68,11 @@ class PayService extends BaseService
         return $params;
     }
     private function InsertOrder(int $gateway){
-       return (new Orders)->insert($gateway);
+       return (new Orders)->insertOrder($gateway);
     }
     private function InsertOrderItems(int $lastId){
         foreach (cart()->all() as $item) {
-            (new OrderItems)->insert($item,$lastId);
+            (new OrderItems)->insertOrderItems($item,$lastId);
         }
     }
     private function InsertShipments(int $lastId){
@@ -80,7 +80,7 @@ class PayService extends BaseService
         if (!$postCheck){
             return;
         }
-        (new Shipments)->insert($lastId);
+        (new Shipments)->insertShipments($lastId);
     }
 
 

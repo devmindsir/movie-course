@@ -10,31 +10,6 @@ class Orders extends Model
 {
     protected $table = 'orders';
 
-    public function insert(int $gatewayId)
-    {
-        $user_id = getSession('id');
-        $gift = Session::get('total_cart') ?? null;
-        $gift_price = null;
-        $gift_id = null;
-        if ($gift) {
-            $gift_price = $gift['discountAmount'];
-            $gift_id = $gift['code_id'];
-        }
-        $postPrice = Session::get('post')['postPrice'] ?? null;
-        $totalAmount = cart()->getFinalPrice();
-        $sql = "INSERT INTO $this->table
-      (user_id,total_amount,status,gateway_id,gift_price,gift_id,post_price)
-      VALUES (?,?,?,?,?,?,?)";
-        $this->db->doQuery($sql, [$user_id, $totalAmount, 0, $gatewayId, $gift_price, $gift_id, $postPrice]);
-
-        return $this->db->lastInsertId();
-    }
-
-    public function updateRefID($refID,$txCode,$orderId){
-    $sql="UPDATE $this->table SET refID=?,transaction_code=? WHERE id=?";
-    $this->db->doQuery($sql,[$refID,$txCode,$orderId]);
-    }
-
     public function getRefID(string $refID){
         $sql="SELECT * FROM $this->table WHERE refID=? AND status=?";
         $result=$this->db->doFetch($sql,[$refID,0],__CLASS__);
@@ -44,9 +19,29 @@ class Orders extends Model
         return ["gateway"=>$result->gateway_id,"id"=>$result->id,"gift_id"=>$result->gift_id];
     }
 
+    public function insertOrder(int $gatewayId)
+    {
+        $gift = Session::get('total_cart') ?? null;
+        $data=[
+            'user_id'=>getSession('id'),
+            'total_amount'=>cart()->getFinalPrice(),
+            'status'=>0,
+            'gateway_id'=>$gatewayId,
+            'gift_price'=>$gift['discountAmount']??null,
+            'gift_id'=>$gift['code_id']??null,
+            'post_price'=>Session::get('post')['postPrice'] ?? null
+        ];
+        return $this->insert($data);
+
+    }
+
+    public function updateRefID($refID,$txCode,$orderId){
+    $this->update(['refID'=>$refID,'transaction_code'=>$txCode],['id'=>$orderId]);
+    }
+
     public function updatePay(string $refID){
-        $sql="UPDATE $this->table SET status=? WHERE refID=? AND status=?";
-        $this->db->doQuery($sql,[1,$refID,0]);
+
+        $this->update(['status'=>1],['refID'=>$refID,'status'=>0]);
     }
 
 

@@ -53,15 +53,14 @@
                         </button>
                     </form>
                     <div class="mt-5 flex-between">
-                        <div class="flex-start gap-2">
+                        <div class="flex-start gap-2" id="remember-me-container">
                             <div class="position-relative">
                                 <span class="login-item-checkbox"></span>
-                                <input class="login-item-input" type="checkbox" hidden />
+                                <input class="login-item-input" type="checkbox" hidden id="remember-me-checkbox" />
                             </div>
-                            <span class="fs-5 fw-bold text-subtitle"
-                            >مرا به خاطر داشته باش</span
-                            >
+                            <span class="fs-5 fw-bold text-subtitle">مرا به خاطر داشته باش</span>
                         </div>
+
                         <div>
                             <a href="forget.html" class="text-subtitle fs-5"
                             >رمز عبور را فراموش کرده اید؟</a
@@ -90,3 +89,7 @@
 </main>
 
 @endsection
+
+@push('script')
+    <script src="{{URL}}assets/js/checkbox.js"></script>
+    @endpush

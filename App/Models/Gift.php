@@ -25,6 +25,7 @@ class Gift extends Model
     }
 
     public function updateGift(int $gift_id){
+
         $sql="UPDATE $this->table SET use_code=use_code+1 WHERE id=?";
         $this->db->doQuery($sql,[$gift_id]);
     }

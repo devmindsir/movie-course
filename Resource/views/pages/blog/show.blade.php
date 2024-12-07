@@ -45,7 +45,7 @@
                                 </li>
                                 <li class="text-subtitle fs-5 flex-start gap-2">
                                     <i class="fas fa-clock"></i>
-                                    <span>{{$blog->create_at}}</s>
+                                    <span>{{to_jalali_relative($blog->create_at)}}</s>
                                 </li>
                                 <li class="text-subtitle fs-5 flex-start gap-2">
                                     <i class="fas fa-eye"></i>

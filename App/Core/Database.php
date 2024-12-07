@@ -85,6 +85,7 @@ class Database implements DatabaseInterface
             } elseif ($fetchMode === 'fetch') {
                 return $stmt->fetch();
             }
+            return $stmt;
         } catch (PDOException $e) {
             error_log($e->getMessage(), 3, BASE_PATH . 'storage/log/errors.log');
            (new Router)->abort(500);

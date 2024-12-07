@@ -122,7 +122,7 @@
                                         <div class="d-flex flex-column text-subtitle">
                                             <span class="fs-4 fw-bold mb-2">  آخرین بروزرسانی:  </span>
                                             <span class="fs-5">
-                                            {{$course->update_at}}
+                                            {{to_jalali_relative($course->update_at)}}
 </span>
                                         </div>
                                     </div>
