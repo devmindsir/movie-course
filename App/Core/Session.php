@@ -49,8 +49,6 @@ class Session
     session_destroy();
 
     //!Step3
-    $cookie = session_get_cookie_params();
-
-    setcookie('PHPSESSID', '', time() - 3600, $cookie['path'], $cookie['domain'], $cookie['secure'], $cookie['httponly']);
+    Cookie::remove('PHPSESSID');
   }
 }

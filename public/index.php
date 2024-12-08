@@ -1,5 +1,5 @@
 <?php
-
+use App\Core\Authenticator;
 use App\Core\Router;
 use App\Core\Session;
 use App\Helper\Cart;
@@ -14,6 +14,7 @@ require(BASE_PATH . 'vendor/autoload.php');
 require(BASE_PATH . "App/Helper/global.php");
 
 $cart=new Cart();
+(new Authenticator)->check();
 
 $url = currentUrl();
 $router = new Router();

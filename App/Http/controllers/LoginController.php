@@ -2,6 +2,7 @@
 
 namespace App\Http\controllers;
 
+use App\Core\Authenticator;
 use App\Core\Controller;
 use App\Core\Session;
 use App\Services\AuthService;
@@ -13,36 +14,33 @@ class LoginController extends Controller
         $this->view('pages.login.create');
     }
 
-    public function store(){
-        if (isset($_POST['email'])) {
-            $email = $_POST['email'];
-            $password = $_POST['password'];
+    public function store()
+    {
+        $email = $_POST['email'] ?? null;
+        $password = $_POST['password'] ?? null;
+        $remember = $_POST['remember'] ?? null;
 
-            //!Check User
-            $data = (new AuthService())->checkUser($email, $password);
-            $user = $data[0];
-            $errors = $data[1];
-
-            //!check Errors
-            if (!empty($errors)) {
-               $this->setSessionFlush($email,$errors);
-            }
-
-            // //!SET SESSION
-           $this->setLogin($user);
+        //!check Errors
+        $errors = (new AuthService())->validateLogin($email, $password);
+        if (!empty($errors)) {
+            $this->setSessionFlush($email, $errors);
         }
+
+        //!CHECK USER
+        $user = (new Authenticator)->login($email, $password, $remember);
+        if (!$user['success']) {
+            $this->setSessionFlush($email, ['email' => $user['email']]);
+            redirect('login');
+        }
+        //!REDIRECT
+        redirect('dashboard');
+
     }
 
-    private function setSessionFlush($email,$errors){
+    private function setSessionFlush($email, $errors)
+    {
         Session::setFlash('old', ['email' => $email]);
         Session::setFlash('errors', $errors);
-        redirect('login');
-    }
-
-    private function setLogin($user){
-        Session::set('user_id', ['id'=>$user->id,'name'=>$user->name]);
-        Session::setFlash('toast',['message'=>'ورود موفقیت آمیز بود','status'=>'success']);
-        redirect('dashboard');
     }
 
 

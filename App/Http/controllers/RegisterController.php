@@ -4,6 +4,7 @@ namespace App\Http\controllers;
 
 use App\Core\Controller;
 use App\Core\Session;
+use App\Helper\SendSMS;
 use App\Http\Requests\RegisterRequest;
 use App\Models\Users;
 use App\Services\AuthService;
@@ -31,14 +32,35 @@ public function index(){
 
             //!Check Errors
             if (!empty($errors)) {
-                $this->setSession($name, $username, $email,$phone, $errors);
+                $this->setSessionFlush($name, $username, $email,$phone, $errors);
+                redirect('register');
             }
-            //!Store
-            $this->registerStore($name, $username, $email,$phone, $password);
+
+            //!CREATE RANDOM CODE (5)
+            $otpCode=rand(10000,99999);
+
+            //!SEND SMS
+            (new SendSMS())->send($phone,$name,$otpCode);
+
+            //!SET SESSION
+            Session::set('register_info',
+            [
+              "name"=>$name,
+              "username"=>$username,
+              "password"=>$password,
+              "email"=>$email,
+              "phone"=>$phone,
+               "otp"=>$otpCode
+            ]);
+
+            //!REDIRECT OTP
+            redirect('otp');
+
+
         }
     }
 
-   private function setSession($name, $username, $email,$phone, $errors)
+   private function setSessionFlush($name, $username, $email,$phone, $errors)
    {
        Session::setFlash('old', [
            'name' => $name,
@@ -47,14 +69,9 @@ public function index(){
            'phone'=>$phone
        ]);
        Session::setFlash('errors', $errors);
-       redirect('register');
+
    }
 
-   private function registerStore($name, $username, $email,$phone, $password){
-       (new Users())->setUser($name, $username, $email,$phone, $password);
-       Session::setFlash('toast', ['message'=>'ثبت نام با موفقیت انجام شد','status'=>'success']);
-       redirect('login');
-   }
 
 
 

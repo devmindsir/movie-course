@@ -39,24 +39,20 @@ class JwtService
   public function createToken($user)
   {
     $payload = [
-      'user_id' => $user->id
+      'user_email' => $user->email
     ];
-    $token = $this->encode($payload);
+    return $this->encode($payload);
 
-    setcookie('token', $token, $this->exp, '/', '', true, true);
+//    setcookie('token', $token, $this->exp, '/', '', true, true);
   }
 
   //!Get From Cookie
-  public function validateToken()
+  public function validateToken($token)
   {
-
-    $token = $_COOKIE['token'] ?? null;
-
     if ($token) {
       try {
         $decode = $this->decode($token);
-
-        return $decode->user_id;
+        return $decode->user_email;
       } catch (Exception $e) {
         $this->destroyToken();
       }

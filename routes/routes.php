@@ -7,6 +7,7 @@ use App\Http\controllers\DoneController;
 use App\Http\controllers\IndexController;
 use App\Http\controllers\CourseController;
 use App\Http\controllers\LoginController;
+use App\Http\controllers\OTPController;
 use App\Http\controllers\PayController;
 use App\Http\controllers\PostController;
 use App\Http\controllers\ProductController;
@@ -55,6 +56,10 @@ $router->post('/post', [PostController::class, 'create'])->auth('login');
 //!REGISTER
 $router->get('/register', [RegisterController::class, 'index'])->auth('guest');
 $router->post('/register', [RegisterController::class, 'store'])->auth('guest');
+
+//!OTP
+$router->get('/otp', [OTPController::class, 'index'])->auth('guest');
+$router->post('/otp', [OTPController::class, 'store'])->auth('guest');
 
 //!LOGIN
 $router->get('/login', [LoginController::class, 'index'])->auth('guest');

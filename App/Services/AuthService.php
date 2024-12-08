@@ -10,20 +10,12 @@ use Couchbase\User;
 class AuthService extends BaseService
 {
 
-    public function checkUser(string $email, string $password)
+    public function validateLogin(string $email, string $password)
     {
-        $userModel=new Users();
         //!VALIDATE
         $request = new LoginRequest();
         $request->validate($email, $password);
-        $user = $userModel->getUser($email);
-        if (!$user) {
-            $request->setError('email', 'هیچ کاربری با این ایمیل یافت نشد');
-        } elseif (!password_verify($password, $user->password)) {
-            $request->setError('password', 'پسورد یا ایمیل شما اشتباه است');
-        }
-        $errors = $request->getError();
-        return [$user, $errors];
+        return $request->getError();
     }
 
     public function validate(string $name, string $username, string $email, mixed $password,mixed $repasswrod,string $phone)
