@@ -4,6 +4,7 @@
 //!USE
 use App\Http\controllers\CheckoutController;
 use App\Http\controllers\DoneController;
+use App\Http\controllers\ForgetController;
 use App\Http\controllers\IndexController;
 use App\Http\controllers\CourseController;
 use App\Http\controllers\LoginController;
@@ -48,6 +49,7 @@ $router->get('/product/show/{id}/{slug}', [ProductController::class, 'show']);
 //!CART
 $router->get('/cart', [CartController::class, 'index']);
 $router->post('/cart', [CartController::class, 'store']);
+$router->post('/cart/delete', [CartController::class, 'delete']);
 
 //!POST
 $router->get('/post', [PostController::class, 'index'])->auth('login');
@@ -64,6 +66,11 @@ $router->post('/otp', [OTPController::class, 'store'])->auth('guest');
 //!LOGIN
 $router->get('/login', [LoginController::class, 'index'])->auth('guest');
 $router->post('/login', [LoginController::class, 'store'])->auth('guest');
+
+//!FORGET
+$router->get('/forget', [ForgetController::class, 'index'])->auth('guest');
+$router->post('/forget', [ForgetController::class, 'create'])->auth('guest');
+
 
 //!LOGOUT
 //$router->delete('/login', [LoginController::class, 'destroy'])->auth('login');

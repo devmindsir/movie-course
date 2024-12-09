@@ -54,7 +54,7 @@ $options=Options::getOptions();
 
  <!--! Header-Bottom -->
  <div
- class="header-bottom bg-white flex-between py-4 px-3 c-pointer container2xl">
+ class="header-bottom bg-white flex-between py-4 px-3  container2xl">
  <!--! Header-Bottom-Right -->
  <div class="flex-start gap-3 header-bottom-items">
  <div class="HamburgerMenu">
@@ -67,329 +67,329 @@ $options=Options::getOptions();
  </li>
  <li class="nav-link" data-time="2">
  <a href="course.html">دوره ها</a>
- <ul class="nav-submenu Submenu2 p-shadow">
- <div class="nav-submenu-right h-100 w-100">
- <ul class="h-100 nav-submenu-list bg-secondary w-25">
- <li
- class="nav-submenu-item flex-between py-4 px-3 c-pointer"
- data-time="3">
- <div class="nav-submenu2-item">
- <img
- width="25"
- height="25"
- src="https://img.icons8.com/fluency/48/javascript.png"
- alt="javascript" />
- <a class="text-subtitle fs-4"
- >برنامه نویسی فرانت اند</a
- >
- </div>
- <i class="fas fa-chevron-left text-subtitle fs-5"></i>
- <ul
- class="nav-submenu-sub Submenu3 p-6 flex-between overflow-hidden h-100">
- <div class="w-25">
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <img
- width="25"
- height="25"
- src="https://img.icons8.com/officel/50/react.png"
- alt="react" />
- <span>آموزش ریکت</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <img
- width="25"
- height="25"
- src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/24/external-vuejs-an-open-source-javascript-framework-for-building-user-interfaces-and-single-page-applications-logo-shadow-tal-revivo.png"
- alt="external-vuejs-an-open-source-javascript-framework-for-building-user-interfaces-and-single-page-applications-logo-shadow-tal-revivo" />
- <span>آموزش ویو جی اس</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <img
- width="25"
- height="25"
- src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-jquery-is-a-javascript-library-designed-to-simplify-html-logo-color-tal-revivo.png"
- alt="external-jquery-is-a-javascript-library-designed-to-simplify-html-logo-color-tal-revivo" />
- <span>آموزش جی کوئری</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <img
- width="25"
- height="25"
- src="https://img.icons8.com/fluency/48/bootstrap.png"
- alt="bootstrap" />
- <span>آموزش بوت استراپ</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- </div>
- <div class="w-25">
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <img
- width="25"
- height="25"
- src="https://img.icons8.com/color/48/html-5--v1.png"
- alt="html-5--v1" />
- <span>آموزش html</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <img
- width="25"
- height="25"
- src="https://img.icons8.com/plasticine/50/css3.png"
- alt="css3" />
- <span>آموزش css</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <img
- width="25"
- height="25"
- src="https://img.icons8.com/color/48/html-5--v1.png"
- alt="html-5--v1" />
- <span>آموزش html</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <img
- width="25"
- height="25"
- src="https://img.icons8.com/plasticine/50/css3.png"
- alt="css3" />
- <span>آموزش css</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- </div>
- <div class="w-25">
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <img
- width="25"
- height="25"
- src="https://img.icons8.com/color/48/tailwind_css.png"
- alt="tailwind_css" />
- <span>آموزش tailwind</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <img
- width="25"
- height="25"
- src="https://img.icons8.com/color/48/sass.png"
- alt="sass" />
- <span>آموزش sass</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <img
- width="25"
- height="25"
- src="https://img.icons8.com/color/48/html-5--v1.png"
- alt="html-5--v1" />
- <span>آموزش html</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <img
- width="25"
- height="25"
- src="https://img.icons8.com/plasticine/50/css3.png"
- alt="css3" />
- <span>آموزش css</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- </div>
- </ul>
- </li>
- <li
- class="nav-submenu-item flex-between py-4 px-3 c-pointer"
- data-time="4">
- <div>
- <img
- width="25"
- height="25"
- src="https://img.icons8.com/fluency/48/python.png"
- alt="python" />
- <span class="text-subtitle fs-4"
- >برنامه نویسی بک اند</span
- >
- </div>
- <i class="fas fa-chevron-left text-subtitle fs-5"></i>
- <ul
- class="nav-submenu-sub Submenu3 p-6 flex-between overflow-hidden h-100">
- <div class="w-25">
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <i class="fa-brands fa-react"></i>
- <span>آموزش ریکت</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <i class="fa-brands fa-react"></i>
- <span>آموزش ریکت</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- </div>
- </ul>
- </li>
- <li
- class="nav-submenu-item flex-between py-4 px-3 c-pointer"
- data-time="5">
- <div>
- <img
- width="25"
- height="25"
- src="https://img.icons8.com/external-flat-juicy-fish/60/external-hack-cyber-crime-flat-flat-juicy-fish-3.png"
- alt="external-hack-cyber-crime-flat-flat-juicy-fish-3" />
- <span class="text-subtitle fs-4">هک و امنیت</span>
- </div>
- <i class="fas fa-chevron-left text-subtitle fs-5"></i>
- <ul
- class="nav-submenu-sub Submenu3 p-6 flex-between overflow-hidden h-100">
- <div class="w-25">
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <i class="fa-brands fa-react"></i>
- <span>آموزش network+</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <i class="fa-brands fa-react"></i>
- <span>آموزش LISP</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- </div>
- </ul>
- </li>
- <li
- class="nav-submenu-item flex-between py-4 px-3 c-pointer"
- data-time="6">
- <div>
- <img
- width="25"
- height="25"
- src="https://img.icons8.com/fluency/48/flutter.png"
- alt="flutter" />
- <span class="text-subtitle fs-4"
- >برنامه نویسی موبایل</span
- >
- </div>
- <i class="fas fa-chevron-left text-subtitle fs-5"></i>
- <ul
- class="nav-submenu-sub Submenu3 p-6 flex-between overflow-hidden h-100">
- <div class="w-25">
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <i class="fa-brands fa-react"></i>
- <span>آموزش جاوا</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <i class="fa-brands fa-react"></i>
- <span>آموزش فلاتر</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- </div>
- </ul>
- </li>
- </ul>
- </div>
- </ul>
+<?php /*                        <ul class="nav-submenu Submenu2 p-shadow">*/ ?>
+<?php /*                            <div class="nav-submenu-right h-100 w-100">*/ ?>
+<?php /*                                <ul class="h-100 nav-submenu-list bg-secondary w-25">*/ ?>
+<?php /*                                    <li*/ ?>
+<?php /*                                            class="nav-submenu-item flex-between py-4 px-3 c-pointer"*/ ?>
+<?php /*                                            data-time="3">*/ ?>
+<?php /*                                        <div class="nav-submenu2-item">*/ ?>
+<?php /*                                            <img*/ ?>
+<?php /*                                                    width="25"*/ ?>
+<?php /*                                                    height="25"*/ ?>
+<?php /*                                                    src="https://img.icons8.com/fluency/48/javascript.png"*/ ?>
+<?php /*                                                    alt="javascript" />*/ ?>
+<?php /*                                            <a class="text-subtitle fs-4"*/ ?>
+<?php /*                                            >برنامه نویسی فرانت اند</a*/ ?>
+<?php /*                                            >*/ ?>
+<?php /*                                        </div>*/ ?>
+<?php /*                                        <i class="fas fa-chevron-left text-subtitle fs-5"></i>*/ ?>
+<?php /*                                        <ul*/ ?>
+<?php /*                                                class="nav-submenu-sub Submenu3 p-6 flex-between overflow-hidden h-100">*/ ?>
+<?php /*                                            <div class="w-25">*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <img*/ ?>
+<?php /*                                                                width="25"*/ ?>
+<?php /*                                                                height="25"*/ ?>
+<?php /*                                                                src="https://img.icons8.com/officel/50/react.png"*/ ?>
+<?php /*                                                                alt="react" />*/ ?>
+<?php /*                                                        <span>آموزش ریکت</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <img*/ ?>
+<?php /*                                                                width="25"*/ ?>
+<?php /*                                                                height="25"*/ ?>
+<?php /*                                                                src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/24/external-vuejs-an-open-source-javascript-framework-for-building-user-interfaces-and-single-page-applications-logo-shadow-tal-revivo.png"*/ ?>
+<?php /*                                                                alt="external-vuejs-an-open-source-javascript-framework-for-building-user-interfaces-and-single-page-applications-logo-shadow-tal-revivo" />*/ ?>
+<?php /*                                                        <span>آموزش ویو جی اس</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <img*/ ?>
+<?php /*                                                                width="25"*/ ?>
+<?php /*                                                                height="25"*/ ?>
+<?php /*                                                                src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-jquery-is-a-javascript-library-designed-to-simplify-html-logo-color-tal-revivo.png"*/ ?>
+<?php /*                                                                alt="external-jquery-is-a-javascript-library-designed-to-simplify-html-logo-color-tal-revivo" />*/ ?>
+<?php /*                                                        <span>آموزش جی کوئری</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <img*/ ?>
+<?php /*                                                                width="25"*/ ?>
+<?php /*                                                                height="25"*/ ?>
+<?php /*                                                                src="https://img.icons8.com/fluency/48/bootstrap.png"*/ ?>
+<?php /*                                                                alt="bootstrap" />*/ ?>
+<?php /*                                                        <span>آموزش بوت استراپ</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                            </div>*/ ?>
+<?php /*                                            <div class="w-25">*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <img*/ ?>
+<?php /*                                                                width="25"*/ ?>
+<?php /*                                                                height="25"*/ ?>
+<?php /*                                                                src="https://img.icons8.com/color/48/html-5--v1.png"*/ ?>
+<?php /*                                                                alt="html-5--v1" />*/ ?>
+<?php /*                                                        <span>آموزش html</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <img*/ ?>
+<?php /*                                                                width="25"*/ ?>
+<?php /*                                                                height="25"*/ ?>
+<?php /*                                                                src="https://img.icons8.com/plasticine/50/css3.png"*/ ?>
+<?php /*                                                                alt="css3" />*/ ?>
+<?php /*                                                        <span>آموزش css</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <img*/ ?>
+<?php /*                                                                width="25"*/ ?>
+<?php /*                                                                height="25"*/ ?>
+<?php /*                                                                src="https://img.icons8.com/color/48/html-5--v1.png"*/ ?>
+<?php /*                                                                alt="html-5--v1" />*/ ?>
+<?php /*                                                        <span>آموزش html</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <img*/ ?>
+<?php /*                                                                width="25"*/ ?>
+<?php /*                                                                height="25"*/ ?>
+<?php /*                                                                src="https://img.icons8.com/plasticine/50/css3.png"*/ ?>
+<?php /*                                                                alt="css3" />*/ ?>
+<?php /*                                                        <span>آموزش css</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                            </div>*/ ?>
+<?php /*                                            <div class="w-25">*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <img*/ ?>
+<?php /*                                                                width="25"*/ ?>
+<?php /*                                                                height="25"*/ ?>
+<?php /*                                                                src="https://img.icons8.com/color/48/tailwind_css.png"*/ ?>
+<?php /*                                                                alt="tailwind_css" />*/ ?>
+<?php /*                                                        <span>آموزش tailwind</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <img*/ ?>
+<?php /*                                                                width="25"*/ ?>
+<?php /*                                                                height="25"*/ ?>
+<?php /*                                                                src="https://img.icons8.com/color/48/sass.png"*/ ?>
+<?php /*                                                                alt="sass" />*/ ?>
+<?php /*                                                        <span>آموزش sass</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <img*/ ?>
+<?php /*                                                                width="25"*/ ?>
+<?php /*                                                                height="25"*/ ?>
+<?php /*                                                                src="https://img.icons8.com/color/48/html-5--v1.png"*/ ?>
+<?php /*                                                                alt="html-5--v1" />*/ ?>
+<?php /*                                                        <span>آموزش html</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <img*/ ?>
+<?php /*                                                                width="25"*/ ?>
+<?php /*                                                                height="25"*/ ?>
+<?php /*                                                                src="https://img.icons8.com/plasticine/50/css3.png"*/ ?>
+<?php /*                                                                alt="css3" />*/ ?>
+<?php /*                                                        <span>آموزش css</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                            </div>*/ ?>
+<?php /*                                        </ul>*/ ?>
+<?php /*                                    </li>*/ ?>
+<?php /*                                    <li*/ ?>
+<?php /*                                            class="nav-submenu-item flex-between py-4 px-3 c-pointer"*/ ?>
+<?php /*                                            data-time="4">*/ ?>
+<?php /*                                        <div>*/ ?>
+<?php /*                                            <img*/ ?>
+<?php /*                                                    width="25"*/ ?>
+<?php /*                                                    height="25"*/ ?>
+<?php /*                                                    src="https://img.icons8.com/fluency/48/python.png"*/ ?>
+<?php /*                                                    alt="python" />*/ ?>
+<?php /*                                            <span class="text-subtitle fs-4"*/ ?>
+<?php /*                                            >برنامه نویسی بک اند</span*/ ?>
+<?php /*                                            >*/ ?>
+<?php /*                                        </div>*/ ?>
+<?php /*                                        <i class="fas fa-chevron-left text-subtitle fs-5"></i>*/ ?>
+<?php /*                                        <ul*/ ?>
+<?php /*                                                class="nav-submenu-sub Submenu3 p-6 flex-between overflow-hidden h-100">*/ ?>
+<?php /*                                            <div class="w-25">*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <i class="fa-brands fa-react"></i>*/ ?>
+<?php /*                                                        <span>آموزش ریکت</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <i class="fa-brands fa-react"></i>*/ ?>
+<?php /*                                                        <span>آموزش ریکت</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                            </div>*/ ?>
+<?php /*                                        </ul>*/ ?>
+<?php /*                                    </li>*/ ?>
+<?php /*                                    <li*/ ?>
+<?php /*                                            class="nav-submenu-item flex-between py-4 px-3 c-pointer"*/ ?>
+<?php /*                                            data-time="5">*/ ?>
+<?php /*                                        <div>*/ ?>
+<?php /*                                            <img*/ ?>
+<?php /*                                                    width="25"*/ ?>
+<?php /*                                                    height="25"*/ ?>
+<?php /*                                                    src="https://img.icons8.com/external-flat-juicy-fish/60/external-hack-cyber-crime-flat-flat-juicy-fish-3.png"*/ ?>
+<?php /*                                                    alt="external-hack-cyber-crime-flat-flat-juicy-fish-3" />*/ ?>
+<?php /*                                            <span class="text-subtitle fs-4">هک و امنیت</span>*/ ?>
+<?php /*                                        </div>*/ ?>
+<?php /*                                        <i class="fas fa-chevron-left text-subtitle fs-5"></i>*/ ?>
+<?php /*                                        <ul*/ ?>
+<?php /*                                                class="nav-submenu-sub Submenu3 p-6 flex-between overflow-hidden h-100">*/ ?>
+<?php /*                                            <div class="w-25">*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <i class="fa-brands fa-react"></i>*/ ?>
+<?php /*                                                        <span>آموزش network+</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <i class="fa-brands fa-react"></i>*/ ?>
+<?php /*                                                        <span>آموزش LISP</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                            </div>*/ ?>
+<?php /*                                        </ul>*/ ?>
+<?php /*                                    </li>*/ ?>
+<?php /*                                    <li*/ ?>
+<?php /*                                            class="nav-submenu-item flex-between py-4 px-3 c-pointer"*/ ?>
+<?php /*                                            data-time="6">*/ ?>
+<?php /*                                        <div>*/ ?>
+<?php /*                                            <img*/ ?>
+<?php /*                                                    width="25"*/ ?>
+<?php /*                                                    height="25"*/ ?>
+<?php /*                                                    src="https://img.icons8.com/fluency/48/flutter.png"*/ ?>
+<?php /*                                                    alt="flutter" />*/ ?>
+<?php /*                                            <span class="text-subtitle fs-4"*/ ?>
+<?php /*                                            >برنامه نویسی موبایل</span*/ ?>
+<?php /*                                            >*/ ?>
+<?php /*                                        </div>*/ ?>
+<?php /*                                        <i class="fas fa-chevron-left text-subtitle fs-5"></i>*/ ?>
+<?php /*                                        <ul*/ ?>
+<?php /*                                                class="nav-submenu-sub Submenu3 p-6 flex-between overflow-hidden h-100">*/ ?>
+<?php /*                                            <div class="w-25">*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <i class="fa-brands fa-react"></i>*/ ?>
+<?php /*                                                        <span>آموزش جاوا</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <i class="fa-brands fa-react"></i>*/ ?>
+<?php /*                                                        <span>آموزش فلاتر</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                            </div>*/ ?>
+<?php /*                                        </ul>*/ ?>
+<?php /*                                    </li>*/ ?>
+<?php /*                                </ul>*/ ?>
+<?php /*                            </div>*/ ?>
+<?php /*                        </ul>*/ ?>
  </li>
 
  <li data-time="7">
  <a href="shop.html">محصولات</a>
- <ul class="nav-submenu Submenu2 p-shadow">
- <div class="nav-submenu-right h-100 w-100">
- <ul class="h-100 nav-submenu-list bg-secondary w-25">
- <li
- class="nav-submenu-item flex-between py-4 px-3 c-pointer"
- data-time="8">
- <div class="nav-submenu2-item">
- <img
- width="25"
- height="25"
- src="https://img.icons8.com/color/48/smartphone.png"
- alt="smartphone" />
- <a class="text-subtitle fs-4">موبایل</a>
- </div>
- <i class="fas fa-chevron-left text-subtitle fs-5"></i>
- <ul
- class="nav-submenu-sub Submenu3 p-6 flex-between overflow-hidden h-100">
- <div class="w-25">
- <a class="mb-5 flex-start text-info">گوشی موبایل</a>
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <span>آیفون</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- <li
- class="nav-item-hover flex-between text-subtitle mb-6">
- <div class="flex-start gap-2">
- <span>سامسونگ</span>
- </div>
- <i class="fas fa-chevron-left fs-5"></i>
- </li>
- </div>
- </ul>
- </li>
- </ul>
- </div>
- </ul>
+<?php /*                        <ul class="nav-submenu Submenu2 p-shadow">*/ ?>
+<?php /*                            <div class="nav-submenu-right h-100 w-100">*/ ?>
+<?php /*                                <ul class="h-100 nav-submenu-list bg-secondary w-25">*/ ?>
+<?php /*                                    <li*/ ?>
+<?php /*                                            class="nav-submenu-item flex-between py-4 px-3 c-pointer"*/ ?>
+<?php /*                                            data-time="8">*/ ?>
+<?php /*                                        <div class="nav-submenu2-item">*/ ?>
+<?php /*                                            <img*/ ?>
+<?php /*                                                    width="25"*/ ?>
+<?php /*                                                    height="25"*/ ?>
+<?php /*                                                    src="https://img.icons8.com/color/48/smartphone.png"*/ ?>
+<?php /*                                                    alt="smartphone" />*/ ?>
+<?php /*                                            <a class="text-subtitle fs-4">موبایل</a>*/ ?>
+<?php /*                                        </div>*/ ?>
+<?php /*                                        <i class="fas fa-chevron-left text-subtitle fs-5"></i>*/ ?>
+<?php /*                                        <ul*/ ?>
+<?php /*                                                class="nav-submenu-sub Submenu3 p-6 flex-between overflow-hidden h-100">*/ ?>
+<?php /*                                            <div class="w-25">*/ ?>
+<?php /*                                                <a class="mb-5 flex-start text-info">گوشی موبایل</a>*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <span>آیفون</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                                <li*/ ?>
+<?php /*                                                        class="nav-item-hover flex-between text-subtitle mb-6">*/ ?>
+<?php /*                                                    <div class="flex-start gap-2">*/ ?>
+<?php /*                                                        <span>سامسونگ</span>*/ ?>
+<?php /*                                                    </div>*/ ?>
+<?php /*                                                    <i class="fas fa-chevron-left fs-5"></i>*/ ?>
+<?php /*                                                </li>*/ ?>
+<?php /*                                            </div>*/ ?>
+<?php /*                                        </ul>*/ ?>
+<?php /*                                    </li>*/ ?>
+<?php /*                                </ul>*/ ?>
+<?php /*                            </div>*/ ?>
+<?php /*                        </ul>*/ ?>
  </li>
  <li data-time="9">
  <a href="blog.html">مقالات</a>

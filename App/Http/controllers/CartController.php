@@ -4,6 +4,7 @@ namespace App\Http\controllers;
 
 use App\Core\Controller;
 use App\Core\Router;
+use App\Core\Session;
 use App\Exceptions\CourseNotFoundException;
 use App\Helper\Cart;
 use App\Services\CartService;
@@ -15,6 +16,41 @@ class CartController extends Controller
     public function index(){
         $carts=cart()->all();
         $this->view('pages.cart.index',['carts'=>$carts]);
+    }
+
+    public function delete(){
+    //!GET DATA
+    $inputData=json_decode(file_get_contents('php://input'),true);
+    $id=$inputData['id'];
+    $type=$inputData['type'];
+    $colorId=$inputData['color_id'];
+
+    //!GET CART
+    $allItems=cart()->all();
+
+    //!FILTER  ---> FILTER / REJECT
+    $updateCart=$allItems->reject(function ($item) use ($id,$type,$colorId){
+        //!COLOR_ID
+        if ($colorId !==null){
+            return $item['id']==$id && $item['type']==$type && $item['color_id']==$colorId;
+        }
+        //!!!!!!COLOR_ID NOT FOUND
+        else{
+            return $item['id']==$id && $item['type']==$type;
+        }
+    });
+
+    Session::set('cart',$updateCart->toArray());
+
+    $totalPrice=cart()->getTotalPrice();
+
+    echo json_encode([
+       'success'=>true,
+       'message'=>'آیتم با موفقیت حذف شد',
+       'total_price'=>number_format($totalPrice)
+    ]);
+
+
     }
 
     public function store(){

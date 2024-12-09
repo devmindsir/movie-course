@@ -54,6 +54,7 @@
  </tr>
  </thead>
  <tbody>
+
  <?php $__currentLoopData = $carts; $this->addLoop($__currentLoopData);$this->getFirstLoop();
  foreach($__currentLoopData as $cart): $loop = $this->incrementLoopIndices();  ?>
  <tr class="align-middle">
@@ -102,9 +103,13 @@
  </td>
  <td class="table-item py-4 text-center fs-4 bg-secondary">
  <i class="fas fa-close fs-1 text-primary" style="cursor: pointer"
+ data-id="<?php echo \htmlentities($cart['id']??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ data-type="<?php echo \htmlentities($cart['type']??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ data-color-id="<?php echo \htmlentities($cart['color_id'] ?? ''??'', ENT_QUOTES, 'UTF-8', false); ?>"
  onclick="deleteRow(this)"></i>
  </td>
  </tr>
+
  <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
  </tbody>
  </table>
@@ -115,8 +120,10 @@
  class="w-50 flex-between bg-success-Light py-4 px-5 rounded-2 border border-1 border-silver">
  <div class="fs-4">جمع کل خرید شما</div>
  <div class="fs-4">
+ <span class="total_price">
  <?php echo \htmlentities(number_format(cart()->getTotalPrice())??'', ENT_QUOTES, 'UTF-8', false); ?>
 
+ </span>
  تومان
  </div>
  </div>

@@ -36,6 +36,10 @@ class Authenticator
         return (new Users())->getUser($email);
     }
 
+    public function getUserByPhone($phone){
+        return (new Users())->checkPhone($phone);
+    }
+
     public function login(string $email,string $password,int $remember=null){
     //!STEP 1 ---check email & password=user
     $user=$this->authenticate($email,$password);
@@ -69,6 +73,11 @@ class Authenticator
         $token=(new JwtService)->createToken($user);
         $time=time()+14*24*3600;
         Cookie::set('remember_me',$token,$time);
+    }
+
+    public function resetPassword($user,$newPassword){
+        $hashPassword=password_hash($newPassword, PASSWORD_BCRYPT);
+        (new Users())->update(['password'=>$hashPassword],['id'=>$user->id]);
     }
 
 }

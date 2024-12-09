@@ -379,7 +379,7 @@
  <span>قیمت محصول :</span>
  <span
  >
- <?php echo \htmlentities(number_format($popular->price*(1-$popular->discount/100))??'', ENT_QUOTES, 'UTF-8', false); ?>
+ <?php echo \htmlentities(number_format($product->price*(1-$product->discount/100))??'', ENT_QUOTES, 'UTF-8', false); ?>
 
  <span class="text-primary">تومان</span>
  </span>

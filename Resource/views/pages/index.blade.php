@@ -368,7 +368,7 @@
                                                 <span>قیمت محصول :</span>
                                                 <span
                                                 >
-                                                    {{number_format($popular->price*(1-$popular->discount/100))}}
+                                                    {{number_format($product->price*(1-$product->discount/100))}}
                             <span class="text-primary">تومان</span>
                           </span>
                                             </div>

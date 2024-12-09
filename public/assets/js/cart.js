@@ -1,22 +1,31 @@
-// تابعی برای تغییر تعداد محصول
-function changeQuantity(change) {
-	var quantityElement = document.getElementById("product-quantity");
-	var currentQuantity = parseInt(quantityElement.innerText);
-
-	// اضافه یا کم کردن مقدار
-	currentQuantity += change;
-
-	// اطمینان از اینکه تعداد منفی نمی‌شود
-	if (currentQuantity < 1) {
-		currentQuantity = 1;
-	}
-
-	// بروزرسانی نمایش تعداد
-	quantityElement.innerText = currentQuantity;
+function deleteRow(element){
+const productId=element.getAttribute('data-id');
+const productType=element.getAttribute('data-type');
+const productColorId=element.getAttribute('data-color-id');
+fetchData(productId,productType,productColorId,element);
 }
-// تابعی برای حذف سطر
-function deleteRow(element) {
-	// والد عنصر فعلی (آیکون) را پیدا کرده و کل سطر را حذف می‌کنیم
-	var row = element.closest("tr");
-	row.remove();
+
+function fetchData(productId,productType,productColorId,element){
+	fetch('/cart/delete',{
+		method:"post",
+		headers:{
+			'Content-Type':'application/json'
+		},
+		body:JSON.stringify({
+			id:productId,
+			type:productType,
+			color_id:productColorId
+		})
+	}).then(response=>response.json())
+	  .then(data=>{
+		  console.log(data);
+		  if (data.success){
+		  element.closest('tr').remove();
+			document.querySelector('.total_price').textContent=data.total_price;
+			return;
+		  }
+		  alert("مشکلی وجود دارد");
+	  }).catch(error=>{
+		  console.log("ERROR:",error)
+	})
 }

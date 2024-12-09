@@ -56,6 +56,7 @@
                         </tr>
                         </thead>
                         <tbody>
+
                         @foreach($carts as $cart)
                             <tr class="align-middle">
                                 <td class="table-item py-4 text-center fs-4 bg-secondary">
@@ -100,9 +101,13 @@
                                 </td>
                                 <td class="table-item py-4 text-center fs-4 bg-secondary">
                                     <i class="fas fa-close fs-1 text-primary" style="cursor: pointer"
+                                       data-id="{{$cart['id']}}"
+                                       data-type="{{$cart['type']}}"
+                                       data-color-id="{{$cart['color_id'] ?? ''}}"
                                        onclick="deleteRow(this)"></i>
                                 </td>
                             </tr>
+
                         @endforeach
                         </tbody>
                     </table>
@@ -113,7 +118,9 @@
                             class="w-50 flex-between bg-success-Light py-4 px-5 rounded-2 border border-1 border-silver">
                         <div class="fs-4">جمع کل خرید شما</div>
                         <div class="fs-4">
+                            <span class="total_price">
                             {{number_format(cart()->getTotalPrice())}}
+                                </span>
                              تومان
                         </div>
                     </div>
